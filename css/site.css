@@ -3500,3 +3500,52 @@ body {
   .score-chart { margin-bottom: 22px; }
   .score-notes { gap: 12px; }
 }
+
+/* Within-dataset observations: paper figure alongside compact findings. */
+.observations-summary { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin: 28px 0; padding: 18px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.observations-summary > div { display: flex; flex-direction: column-reverse; gap: 5px; }
+.observations-summary dt { color: var(--muted); font-size: .72rem; }
+.observations-summary dd { margin: 0; font-size: 1.8rem; font-weight: 600; font-variant-numeric: tabular-nums; }
+.observations-grid { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 28px; align-items: start; }
+.observations-figure { min-width: 0; margin: 0; }
+.observations-figure > a { display: block; padding: 12px; background: #fff; border: 1px solid var(--line); }
+.observations-figure img { width: 100%; height: auto; }
+.observations-figure figcaption { margin-top: 12px; color: var(--muted); font-size: .7rem; line-height: 1.7; }
+.observations-figure figcaption a { display: inline-block; margin-left: 6px; text-decoration: underline; text-underline-offset: 3px; }
+.observations-findings { min-width: 0; }
+.observations-findings article { display: grid; grid-template-columns: 30px minmax(0, 1fr); gap: 12px; padding: 16px 0; border-top: 1px solid var(--line); }
+.observations-findings article:first-child { padding-top: 0; border-top: 0; }
+.observations-panel { padding-top: 2px; color: #435f51; font-family: var(--font-mono); font-size: .74rem; }
+.observations-findings h3 { margin: 0 0 6px; font-size: 1rem; letter-spacing: -.02em; line-height: 1.4; }
+.observations-findings p { margin: 0; color: var(--muted); font-size: .77rem; line-height: 1.7; }
+.observations-findings strong { color: var(--ink); font-weight: 600; }
+.decoding-details { margin-top: 26px; padding: 18px 0; border-top: 1px solid var(--line-dark); border-bottom: 1px solid var(--line); }
+.decoding-details summary { width: fit-content; cursor: pointer; font-size: .9rem; font-weight: 600; }
+.decoding-details summary:focus-visible, .decoding-table-wrap:focus-visible { outline: 3px solid #778c7c; outline-offset: 4px; }
+.decoding-intro { display: flex; align-items: center; gap: 28px; margin: 18px 0 16px; }
+.decoding-intro p { flex: 1; margin: 0; color: var(--muted); font-size: .75rem; line-height: 1.7; }
+.decoding-intro a { flex-shrink: 0; font-size: .75rem; text-decoration: underline; text-underline-offset: 3px; }
+.decoding-table-wrap { max-width: 100%; overflow-x: auto; border: 1px solid var(--line); }
+.decoding-table { width: 100%; min-width: 650px; border-collapse: collapse; background: #fff; text-align: right; font-size: .75rem; font-variant-numeric: tabular-nums; }
+.decoding-table th, .decoding-table td { padding: 10px 14px; border-bottom: 1px solid var(--line); white-space: nowrap; }
+.decoding-table thead th { background: #f5f5f0; color: var(--muted); font-size: .68rem; font-weight: 500; }
+.decoding-table th:first-child { position: sticky; left: 0; text-align: left; background: #fff; border-right: 1px solid var(--line); }
+.decoding-table thead th:first-child { background: #f5f5f0; }
+.decoding-table th small { display: block; margin-top: 3px; font-weight: 400; }
+.decoding-table tbody tr:last-child > * { border-bottom: 0; }
+.decoding-note { margin: 14px 0 0 !important; color: var(--muted); font-size: .7rem; line-height: 1.7; }
+@media (max-width: 900px) {
+  .observations-grid { grid-template-columns: minmax(0, 1fr); gap: 24px; }
+  .observations-figure { max-width: 650px; justify-self: center; }
+  .observations-findings { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 24px; }
+  .observations-findings article:first-child { padding-top: 16px; border-top: 1px solid var(--line); }
+}
+@media (max-width: 650px) {
+  .observations-summary { gap: 12px; margin: 22px 0; }
+  .observations-summary dt { font-size: .63rem; line-height: 1.5; }
+  .observations-summary dd { font-size: 1.6rem; }
+  .observations-figure > a { padding: 4px; }
+  .observations-findings { display: block; }
+  .decoding-intro { display: block; }
+  .decoding-intro a { display: inline-block; margin-top: 10px; }
+}

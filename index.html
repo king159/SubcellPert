@@ -48,6 +48,7 @@
             <nav class="site-nav" id="site-nav" aria-label="Primary navigation" data-nav>
                 <a href="#overview">Overview</a>
                 <a href="#benchmark">Benchmark</a>
+                <a href="#statistics">Statistics</a>
                 <a href="#results">Results</a>
                 <a class="nav-code" href="https://github.com/king159/SubcellPert" target="_blank"
                     rel="noreferrer">Code</a>
@@ -295,8 +296,8 @@
                     </figure>
                 </details>
                 <p class="corpus-note">Corpus prepared 24 Sep 2026: ≥50 cells per context–condition group.
-                    Dataset release: <a href="https://huggingface.co/datasets/king159/SubcellPert/tree/2c46196b5522b2aba9770273e6a1baffa1ba4b78"
-                        target="_blank" rel="noreferrer">population-min50-20260924 ↗</a>.</p>
+                    Dataset release: <a href="https://huggingface.co/datasets/king159/SubcellPert/tree/b6db87c2023de68344e2c4a4a8d45a03eb86fdb7"
+                        target="_blank" rel="noreferrer">Dataset snapshot ↗</a>.</p>
 
                 <div class="filter-bar" role="group" aria-label="Filter datasets">
                     <button type="button" class="is-active" data-filter="all" aria-pressed="true">All datasets
@@ -409,6 +410,108 @@
             </div>
         </section>
 
+        <section class="section observations-section" id="statistics">
+            <div class="page-shell">
+                <div class="split-heading">
+                    <div>
+                        <div class="eyebrow"><span></span> Inside the datasets</div>
+                        <h2>Within-dataset statistics</h2>
+                    </div>
+                    <p>Observed RNA responses reveal how abundance, spatial organization,
+                        and population composition vary within each dataset.</p>
+                </div>
+                <dl class="observations-summary">
+                    <div><dt>Population comparisons</dt><dd>1,628</dd></div>
+                    <div><dt>Condition-decoding contexts</dt><dd>426</dd></div>
+                    <div><dt>Cell splits per decoding context</dt><dd>3</dd></div>
+                </dl>
+                <div class="observations-grid">
+                    <figure class="observations-figure">
+                        <a href="img/observed-rna-responses.svg" target="_blank" rel="noreferrer"
+                            aria-label="Open the within-dataset RNA response figure at full size">
+                            <img src="img/observed-rna-responses.svg" width="792" height="857" loading="lazy"
+                                alt="Six panels comparing abundance and spatial response magnitudes, condition-decoding gains, radial and angular changes, cluster contributions, and nuclear RNA fraction versus area-normalized enrichment." />
+                        </a>
+                        <figcaption>Each point is a context–condition comparison, except panel b (one point per context).
+                            Colors identify datasets. Hollow circles flag limited observability, clustering stability,
+                            or gene support; they do not mark significance.
+                            <a href="img/observed-rna-responses.svg" target="_blank" rel="noreferrer">View full figure ↗</a></figcaption>
+                    </figure>
+                    <div class="observations-findings">
+                        <article><span class="observations-panel">A</span><div>
+                            <h3>Abundance and localization</h3>
+                            <p>Response magnitudes vary on matched genes. Separate gene-level correlations are
+                                +0.264 in Adipose adipocytes, +0.086 in GBM tumor cells, and −0.139 in GBM
+                                macrophages/monocytes: weak associations with different signs.</p>
+                        </div></article>
+                        <article><span class="observations-panel">B</span><div>
+                            <h3>What spatial information adds</h3>
+                            <p>Median condition-decoding gains are <strong>+4.85 pp</strong> in Sickness
+                                (101/102 contexts improve), <strong>+0.67 pp</strong> in GBM-oHSV (7/8),
+                                and <strong>−3.01 pp</strong> in Spinal-KO.</p>
+                        </div></article>
+                        <article><span class="observations-panel">C–D</span><div>
+                            <h3>Radius and angle respond differently</h3>
+                            <p>1,622 comparisons across 12 datasets show dataset-specific radial and angular
+                                patterns. DSS-Colitis has low angular observability, limiting interpretation
+                                of its apparent direction.</p>
+                        </div></article>
+                        <article><span class="observations-panel">E</span><div>
+                            <h3>Composition versus within-cluster change</h3>
+                            <p>In Breast-FUS, within-cluster terms dominate radius changes in
+                                <strong>66/68</strong> comparisons; composition terms dominate angle in
+                                <strong>51/68</strong>. These spatial clusters do not establish biological states.</p>
+                        </div></article>
+                        <article><span class="observations-panel">F</span><div>
+                            <h3>Nuclear fraction depends on geometry</h3>
+                            <p>Four Adipose contexts have higher nuclear RNA fractions but lower enrichment
+                                after normalization by projected nuclear area. Fraction and area-normalized
+                                enrichment describe different aspects of the response.</p>
+                        </div></article>
+                    </div>
+                </div>
+                <details class="decoding-details">
+                    <summary>Condition-decoding statistics · all 14 datasets</summary>
+                    <div class="decoding-intro">
+                        <p>Adding spatial principal components (PCs) to abundance features; identical three
+                            stratified cell splits, λ = 1. Gains are medians of context-level mean
+                            balanced-accuracy differences, in percentage points (pp).</p>
+                        <a href="data/condition-decoding.csv" download>Download CSV ↓</a>
+                    </div>
+                    <div class="decoding-table-wrap" tabindex="0" role="region"
+                        aria-label="Condition-decoding statistics, scroll horizontally on small screens">
+                        <table class="decoding-table">
+                            <caption class="visually-hidden">Cell-level condition decoding by dataset</caption>
+                            <thead><tr><th scope="col">Dataset</th><th scope="col">Contexts</th>
+                                <th scope="col">Mean gain &gt; 0<small>64 PCs</small></th>
+                                <th scope="col">All splits &gt; 0<small>64 PCs</small></th>
+                                <th scope="col">Gain: 64 PCs<small>pp</small></th>
+                                <th scope="col">Gain: 32 PCs<small>pp</small></th></tr></thead>
+                            <tbody>
+                                <tr><th scope="row">Adipose</th><td>6</td><td>0</td><td>0</td><td>-1.672</td><td>-1.540</td></tr>
+                                <tr><th scope="row">ATM-RT</th><td>1</td><td>0</td><td>0</td><td>-0.115</td><td>-0.123</td></tr>
+                                <tr><th scope="row">Breast-FUS</th><td>46</td><td>19</td><td>8</td><td>-0.901</td><td>+0.033</td></tr>
+                                <tr><th scope="row">Cardiac-MI</th><td>50</td><td>18</td><td>7</td><td>-0.664</td><td>-0.283</td></tr>
+                                <tr><th scope="row">Ddx54-PD1</th><td>1</td><td>0</td><td>0</td><td>-0.120</td><td>-0.174</td></tr>
+                                <tr><th scope="row">DSS-Colitis</th><td>8</td><td>0</td><td>0</td><td>-0.091</td><td>-0.027</td></tr>
+                                <tr><th scope="row">GBM-oHSV</th><td>8</td><td>7</td><td>5</td><td>+0.666</td><td>+0.591</td></tr>
+                                <tr><th scope="row">Gut-Microbiota</th><td>66</td><td>5</td><td>2</td><td>-1.240</td><td>-0.589</td></tr>
+                                <tr><th scope="row">Kidney-IRI</th><td>20</td><td>13</td><td>6</td><td>+0.036</td><td>+0.107</td></tr>
+                                <tr><th scope="row">Lung-Drug</th><td>11</td><td>2</td><td>2</td><td>-0.105</td><td>-0.050</td></tr>
+                                <tr><th scope="row">PF-Astro</th><td>1</td><td>0</td><td>0</td><td>-0.371</td><td>-0.261</td></tr>
+                                <tr><th scope="row">Sickness</th><td>102</td><td>101</td><td>99</td><td>+4.851</td><td>+5.581</td></tr>
+                                <tr><th scope="row">Spinal-KO</th><td>83</td><td>9</td><td>1</td><td>-3.006</td><td>-1.859</td></tr>
+                                <tr><th scope="row">UC-VDZ</th><td>23</td><td>14</td><td>6</td><td>+0.357</td><td>+0.401</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p class="decoding-note">Positive counts are descriptive, with differences within 10⁻¹²
+                        balanced-accuracy units treated as ties. This analysis classifies observed conditions
+                        from held-out cells; it does not test prediction for unseen donors or perturbations.</p>
+                </details>
+            </div>
+        </section>
+
         <section class="section dataset-results-section" id="results">
             <div class="page-shell">
                 <div class="split-heading">
@@ -512,7 +615,7 @@
                     </svg>
                     <span>SubcellPert</span>
                 </a>
-                <p>Benchmarking Subcellular Resolution Perturbation Prediction.</p>
+                <p>SubcellPert: Benchmarking Subcellular Resolution Perturbation Prediction</p>
             </div>
             <div class="footer-authors">
                 <span class="footer-label">AUTHORS</span>
@@ -530,11 +633,11 @@
                     <a href="https://appsrv.cse.cuhk.edu.hk/~pheng/index.php" target="_blank" rel="noreferrer">Pheng Ann
                         Heng</a>
                 </p>
-                <small>Chinese University of Hong Kong · Duke University · Zhejiang University · Shanghai Innovation Institute</small>
+                <small>The Chinese University of Hong Kong · Duke University · Zhejiang University · Shanghai Innovation Institute</small>
             </div>
             <div class="footer-links">
                 <span class="footer-label">PROJECT</span>
-                <a href="#overview">Overview</a><a href="#benchmark">Benchmark</a><a href="#results">Results</a><a
+                <a href="#overview">Overview</a><a href="#benchmark">Benchmark</a><a href="#statistics">Statistics</a><a href="#results">Results</a><a
                     href="https://github.com/king159/SubcellPert" target="_blank" rel="noreferrer">Code</a>
             </div>
         </div>
