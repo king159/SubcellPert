@@ -68,15 +68,17 @@ SubcellPert/
 
 Use **Linux and Python 3.12**. Dependencies, including the pinned PyTorch and
 torchvision versions, are specified in [pyproject.toml](pyproject.toml).
-GPU runs require a compatible NVIDIA driver. On a shared cluster, use an
-allocated compute node for environment checks and experiments.
+GPU runs require a compatible NVIDIA driver. Install
+[uv](https://docs.astral.sh/uv/getting-started/installation/) first.
+On a shared cluster, install dependencies on a networked login node into shared
+storage, then use an allocated compute node for environment checks and experiments.
 
 Run these commands from the code repository root:
 
 ```bash
-python3.12 -m venv .venv
+uv venv --python 3.12 .venv
 source .venv/bin/activate
-python -m pip install -e .
+uv pip install -e .
 python -m subcellpert.main --help
 ```
 
