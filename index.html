@@ -1,0 +1,556 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description"
+        content="SubcellPert benchmarks perturbation-response prediction across 14 imaging datasets and eight baselines, extending virtual cell evaluation from gene counts to intracellular RNA organization." />
+    <meta name="theme-color" content="#f7f7f3" />
+    <meta property="og:title" content="SubcellPert" />
+    <meta property="og:description" content="SubcellPert benchmarks perturbation-response prediction across 14 imaging datasets and eight baselines, extending virtual cell evaluation from gene counts to intracellular RNA organization." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="img/subcellpert-overview.svg" />
+    <title>SubcellPert · Subcellular Perturbation Prediction</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;family=Playfair+Display:ital,wght@0,600;0,700;1,600&amp;display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="css/site.css" />
+    <script src="js/results-data.js" defer></script>
+    <script src="js/site.js" defer></script>
+</head>
+
+<body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <header class="site-header" data-header>
+        <div class="nav-shell">
+            <a class="brand" href="#top" aria-label="SubcellPert home">
+                <svg class="brand-mark" viewBox="0 0 42 42" aria-hidden="true">
+                    <circle cx="21" cy="21" r="18" />
+                    <circle cx="14" cy="16" r="2.3" />
+                    <circle cx="25" cy="12" r="1.7" />
+                    <circle cx="28" cy="23" r="2.5" />
+                    <circle cx="17" cy="28" r="1.8" />
+                </svg>
+                <span>SubcellPert</span>
+            </a>
+
+            <button class="menu-toggle" type="button" aria-label="Open navigation" aria-controls="site-nav"
+                aria-expanded="false" data-menu-toggle>
+                <span></span><span></span>
+            </button>
+
+            <nav class="site-nav" id="site-nav" aria-label="Primary navigation" data-nav>
+                <a href="#overview">Overview</a>
+                <a href="#benchmark">Benchmark</a>
+                <a href="#results">Results</a>
+                <a class="nav-code" href="https://github.com/king159/SubcellPert" target="_blank"
+                    rel="noreferrer">Code</a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <section class="hero" id="top">
+            <div class="hero-orb hero-orb-one" aria-hidden="true"></div>
+            <div class="hero-orb hero-orb-two" aria-hidden="true"></div>
+            <div class="hero-grid page-shell">
+                <div class="hero-copy">
+                    <h1>
+                        SubcellPert:<br />
+                        <em>Benchmarking Subcellular Perturbation Prediction</em>
+                    </h1>
+                    <span class="mono-label">AUTHORS &amp; AFFILIATIONS</span>
+                    <p class="paper-authors">
+                        <a href="https://personal-page.wjh.app/" target="_blank" rel="noreferrer">Jinghao
+                            Wang<sup>1</sup></a>
+                        <a href="https://chq1155.github.io/" target="_blank" rel="noreferrer">Hanqun
+                            Cao<sup>1</sup></a>
+                        <a href="https://icecreamartist.github.io/" target="_blank" rel="noreferrer">Xilin
+                            Dang<sup>1</sup></a>
+                        <a href="https://scholar.google.com/citations?user=aUerEOMAAAAJ" target="_blank"
+                            rel="noreferrer">Tianhui Zhou<sup>2</sup></a>
+                        <a href="https://yiyangzha0.github.io/" target="_blank" rel="noreferrer">Yiyang
+                            Zhao<sup>3,4</sup></a>
+                        <a href="https://scholar.google.com/citations?user=K-AjhSgAAAAJ" target="_blank"
+                            rel="noreferrer">Chang-Yu Hsieh<sup>3</sup></a>
+                        <a href="https://scholar.google.com/citations?user=BlSFT8UAAAAJ" target="_blank"
+                            rel="noreferrer">Chunbin Gu<sup>1,*</sup></a>
+                        <a href="https://appsrv.cse.cuhk.edu.hk/~pheng/index.php" target="_blank"
+                            rel="noreferrer">Pheng Ann Heng<sup>1</sup></a>
+                    </p>
+                    <p class="paper-affiliations">
+                        <span><sup>1</sup> The Chinese University of Hong Kong</span>
+                        <span><sup>2</sup> Duke University</span>
+                        <span><sup>3</sup> Zhejiang University</span>
+                        <span><sup>4</sup> Shanghai Innovation Institute</span>
+                    </p>
+                    <p class="paper-contact">
+                        <a href="mailto:jinghao.w@link.cuhk.edu.hk">jinghao.w@link.cuhk.edu.hk</a>
+                        <span><sup>*</sup> Correspondence:</span>
+                        <a href="mailto:gchb4science@gmail.com">gchb4science@gmail.com</a>
+                    </p>
+                    <p class="hero-deck">
+                        SubcellPert benchmarks perturbation-response prediction across 14 imaging datasets and eight baselines, extending virtual cell evaluation from gene counts to intracellular RNA organization.
+                    </p>
+
+                    <nav class="hero-actions" aria-label="Project resources">
+                        <span class="button button-outline" aria-disabled="true"><svg class="biorxiv-icon" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M7 4c5 2.1 5 13.9 10 16M17 4c-5 2.1-5 13.9-10 16M8.4 7h7.2M8.4 12h7.2M8.4 17h7.2" />
+                            </svg><span>Paper</span><small>Coming soon</small></span>
+                        <a class="button button-outline" href="https://github.com/king159/SubcellPert" target="_blank"
+                            rel="noreferrer"><svg class="github-icon" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M12 2.8a9.2 9.2 0 0 0-2.91 17.93c.46.08.63-.2.63-.44v-1.57c-2.57.56-3.11-1.09-3.11-1.09-.42-1.07-1.03-1.36-1.03-1.36-.84-.57.06-.56.06-.56.93.07 1.42.96 1.42.96.83 1.42 2.18 1.01 2.71.77.08-.6.33-1.01.59-1.24-2.05-.23-4.2-1.02-4.2-4.54 0-1 .36-1.81.96-2.45-.1-.23-.42-1.16.09-2.42 0 0 .78-.25 2.53.94A8.77 8.77 0 0 1 12 9.47c.79 0 1.59.11 2.33.34 1.75-1.19 2.53-.94 2.53-.94.51 1.26.19 2.19.09 2.42.6.64.96 1.45.96 2.45 0 3.53-2.15 4.3-4.2 4.53.33.29.63.85.63 1.72v1.3c0 .24.17.52.64.44A9.2 9.2 0 0 0 12 2.8Z" />
+                            </svg><span>Code</span><small>GitHub</small></a>
+                        <a class="button button-outline" href="https://huggingface.co/datasets/king159/SubcellPert"
+                            target="_blank" rel="noreferrer">Data <small>Hugging Face</small></a>
+                        <a class="button button-outline" href="#results">Explore results <span aria-hidden="true">↗</span></a>
+                    </nav>
+                </div>
+                <figure class="hero-art">
+                    <a href="img/waterhouse-boreas.jpg" target="_blank" rel="noreferrer"
+                        aria-label="View the full painting, Boreas by John William Waterhouse">
+                        <img src="img/waterhouse-boreas.jpg" width="853" height="1200" fetchpriority="high"
+                            alt="A woman wraps herself in wind-blown blue-grey drapery in Waterhouse’s Boreas." />
+                    </a>
+                    <figcaption>
+                        <a href="https://www.christies.com/lot/lot-1009871" target="_blank" rel="noreferrer">
+                            <cite>Boreas</cite>, 1903 · John William Waterhouse <span aria-hidden="true">↗</span>
+                        </a>
+                    </figcaption>
+                </figure>
+                <div class="stat-rail page-shell">
+                    <div class="stat-item">
+                        <span class="stat-value" data-count="14">14</span>
+                        <span class="stat-label">datasets</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value" data-count="13880723" data-format="compact">13.88M</span>
+                        <span class="stat-label">cells in prepared corpus</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value" data-count="3653986724" data-format="compact">3.65B</span>
+                        <span class="stat-label">retained RNA molecules</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value" data-count="8">8</span>
+                        <span class="stat-label">evaluated baselines</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value" data-count="608">608</span>
+                        <span class="stat-label">completed runs</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-editorial" id="overview">
+            <div class="page-shell editorial-grid">
+                <div class="section-heading">
+                    <div class="eyebrow"><span></span> The missing prediction object</div>
+                    <h2>A cell is more than a vector.</h2>
+                </div>
+                <div class="editorial-copy">
+                    <p class="lead-copy">
+                        Standard perturbation models predict one number per gene. Imaging-based
+                        spatial transcriptomics records something richer: the identity and
+                        intracellular coordinate of every detected RNA molecule.
+                    </p>
+                    <p>
+                        The target is an unpaired RNA population after an intervention or in a held-out cellular context.
+                    </p>
+                </div>
+            </div>
+
+            <div class="page-shell">
+                <figure class="rna-morph" data-rna-morph>
+                    <div class="rna-morph-heading">
+                        <div><span class="mono-label">FROM COUNTS TO COORDINATES</span>
+                            <h3>The same perturbation response. A new dimension.</h3>
+                        </div>
+                    </div>
+                    <div class="rna-morph-steps" aria-hidden="true">
+                        <span data-count-label>01 · Perturbation prediction<small>Gene abundance only</small></span>
+                        <span class="rna-morph-step-arrow">→</span>
+                        <span data-space-label>02 · Subcellular prediction<small>Gene abundance + RNA
+                                coordinates</small></span>
+                    </div>
+                    <svg viewBox="0 0 900 410" role="img" aria-labelledby="rna-morph-title rna-morph-desc">
+                        <title id="rna-morph-title">Source and perturbed gene-count charts becoming intracellular RNA
+                            patterns</title>
+                        <desc id="rna-morph-desc">A source profile and perturbed profile begin as gene-count dot bars.
+                            The dots move into two cells while an arrow labeled Perturbation connects the source cell to
+                            the perturbed cell. Each dot represents one RNA molecule and color indicates gene identity.
+                        </desc>
+                        <defs>
+                            <linearGradient id="morphSourceFill" x1="0" x2="1" y1="0" y2="1">
+                                <stop offset="0" stop-color="#f0efff" />
+                                <stop offset="1" stop-color="#e7f5ff" />
+                            </linearGradient>
+                            <linearGradient id="morphTargetFill" x1="0" x2="1" y1="0" y2="1">
+                                <stop offset="0" stop-color="#f7f1ff" />
+                                <stop offset="1" stop-color="#e8faf2" />
+                            </linearGradient>
+                            <filter id="morphShadow" x="-30%" y="-30%" width="160%" height="160%">
+                                <feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#2c255a"
+                                    flood-opacity=".11" />
+                            </filter>
+                            <marker id="morphArrowHead" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8"
+                                markerHeight="8" orient="auto-start-reverse">
+                                <path d="M 0 0 L 10 5 L 0 10 z" fill="#6654d9" />
+                            </marker>
+                        </defs>
+
+                        <g data-morph-axes fill="none" stroke="#d8d6e4" stroke-width="1.3">
+                            <path d="M92 72V316H358 M542 72V316H808" />
+                            <path d="M92 256H358M92 196H358M92 136H358M542 256H808M542 196H808M542 136H808"
+                                stroke-dasharray="3 7" opacity=".55" />
+                            <g fill="#68667c" stroke="none" font-family="Inter, sans-serif" font-size="12"
+                                text-anchor="middle">
+                                <text x="132" y="340">Gene A</text><text x="198" y="340">Gene B</text>
+                                <text x="264" y="340">Gene C</text><text x="330" y="340">Gene D</text>
+                                <text x="582" y="340">Gene A</text><text x="648" y="340">Gene B</text>
+                                <text x="714" y="340">Gene C</text><text x="780" y="340">Gene D</text>
+                                <text transform="translate(68 205) rotate(-90)">RNA count</text>
+                                <text transform="translate(518 205) rotate(-90)">RNA count</text>
+                                <text x="225" y="48" font-family="JetBrains Mono, monospace" font-size="10"
+                                    font-weight="600" letter-spacing="1.4">SOURCE</text>
+                                <text x="675" y="48" font-family="JetBrains Mono, monospace" font-size="10"
+                                    font-weight="600" letter-spacing="1.4">PERTURBED</text>
+                            </g>
+                        </g>
+
+                        <g filter="url(#morphShadow)" data-morph-source-cell opacity="0">
+                            <path
+                                d="M82 200C72 112 140 51 230 60C318 69 363 137 339 224C316 307 229 342 147 307C98 286 79 245 82 200Z"
+                                fill="url(#morphSourceFill)" stroke="#aaa0de" stroke-width="2" />
+                            <ellipse cx="220" cy="198" rx="48" ry="42" fill="#e2ddf7" stroke="#c5bce9"
+                                stroke-width="1.5" />
+                        </g>
+
+                        <g data-morph-arrow>
+                            <rect x="385" y="116" width="130" height="34" rx="17" fill="#fff" stroke="#ddd9f2" />
+                            <text x="450" y="138" text-anchor="middle" fill="#5543c4"
+                                font-family="JetBrains Mono, monospace" font-size="11"
+                                font-weight="600">PERTURBATION</text>
+                            <path d="M390 202H510" fill="none" stroke="#6654d9" stroke-width="3" stroke-dasharray="8 6"
+                                marker-end="url(#morphArrowHead)" />
+                        </g>
+
+                        <g filter="url(#morphShadow)" data-morph-target-cell opacity="0">
+                            <path
+                                d="M542 204C532 112 600 55 691 62C778 69 823 141 799 228C777 310 690 344 606 312C557 291 539 249 542 204Z"
+                                fill="url(#morphTargetFill)" stroke="#54a993" stroke-width="2" />
+                            <ellipse cx="680" cy="199" rx="47" ry="41" fill="#dcf1ea" stroke="#acd8cb"
+                                stroke-width="1.5" />
+                        </g>
+
+                        <g data-morph-source-dots></g>
+                        <g data-morph-target-dots></g>
+
+                        <g data-morph-cell-labels fill="#68667c" font-family="Inter, sans-serif" font-size="14"
+                            text-anchor="middle" opacity="0">
+                            <text x="220" y="382">Source cell · observed RNA coordinates</text>
+                            <text x="680" y="382">Perturbed cell · predicted RNA coordinates</text>
+                        </g>
+                    </svg>
+                    <figcaption>
+                        <div class="rna-morph-legend"><span><i style="--gene-color:#6957db"></i>Gene A</span><span><i
+                                    style="--gene-color:#18a999"></i>Gene B</span><span><i
+                                    style="--gene-color:#ef6f91"></i>Gene C</span><span><i
+                                    style="--gene-color:#d9a224"></i>Gene D</span></div>
+                        <p>One dot = one RNA molecule. Color marks gene identity; perturbation changes abundance and
+                            intracellular organization.</p>
+                        <small>Illustrative schematic · not evaluated model output</small>
+                    </figcaption>
+                </figure>
+            </div>
+
+        </section>
+
+        <section class="section benchmark-section" id="benchmark">
+            <div class="page-shell">
+                <div class="split-heading">
+                    <div>
+                        <div class="eyebrow"><span></span> The benchmark corpus</div>
+                        <h2>Benchmark</h2>
+                    </div>
+                    <p>
+                        Three datasets evaluate perturbation OOD; eleven evaluate cellular-context OOD.
+                        Each dataset retains its own gene panel and grouping metadata.
+                    </p>
+                </div>
+
+                <details class="curation-details">
+                    <summary>Dataset selection and diversity</summary>
+                    <figure class="selection-figure">
+                        <img src="img/dataset-selection.svg" alt="Dataset selection flow with organ and perturbation diversity" loading="lazy" />
+                        <figcaption>14 retained datasets: three Perturbation OOD and eleven Context OOD.
+                            Tissue slices count datasets; perturbation slices count dataset–type memberships.</figcaption>
+                    </figure>
+                </details>
+                <p class="corpus-note">Corpus prepared 24 Sep 2026: ≥50 cells per context–condition group.
+                    Dataset release: <a href="https://huggingface.co/datasets/king159/SubcellPert/tree/01bb72586bf7e04b47c023b956922bdf24beb70b"
+                        target="_blank" rel="noreferrer">population-min50-20260924 ↗</a>.</p>
+
+                <div class="filter-bar" role="group" aria-label="Filter datasets">
+                    <button type="button" class="is-active" data-filter="all" aria-pressed="true">All datasets
+                        <span>14</span></button>
+                    <button type="button" data-filter="perturbation" aria-pressed="false">Perturbation-OOD
+                        <span>3</span></button>
+                    <button type="button" data-filter="context" aria-pressed="false">Context-OOD <span>11</span></button>
+                </div>
+
+                <div class="dataset-grid" data-dataset-grid>
+                    <div class="dataset-group-heading" data-track-heading="perturbation">
+                        <span class="dataset-group-index">3 DATASETS</span>
+                        <div><strong>Perturbation-OOD</strong><p>Unseen intervention identities and registered combination stress tests.</p></div>
+                    </div>
+                    <article class="dataset-card" data-track="perturbation" data-dataset="perturbfish_astrocytes">
+                        <div class="dataset-top"><h3><span class="dataset-id">01</span>PF-Astro</h3><span class="dataset-tissue" title="Organ / tissue">Brain</span></div>
+                        <p>Brain-derived astrocyte culture; single-guide CRISPRi.</p>
+                        <dl><div><dt>RNA</dt><dd>10,670,839</dd></div><div><dt>Cells</dt><dd>11,454</dd></div><div><dt>Genes</dt><dd>485</dd></div></dl>
+                    </article>
+                    <article class="dataset-card" data-track="perturbation" data-dataset="gse246584_atm_radiation_xenium">
+                        <div class="dataset-top"><h3><span class="dataset-id">02</span>ATM-RT</h3><span class="dataset-tissue" title="Organ / tissue">Brain</span></div>
+                        <p>Diffuse midline glioma; ATM loss and focal radiotherapy.</p>
+                        <dl><div><dt>RNA</dt><dd>147,722,071</dd></div><div><dt>Cells</dt><dd>790,166</dd></div><div><dt>Genes</dt><dd>298</dd></div></dl>
+                    </article>
+                    <article class="dataset-card" data-track="perturbation" data-dataset="gse285341_ddx54_pd1_xenium">
+                        <div class="dataset-top"><h3><span class="dataset-id">03</span>Ddx54-PD1</h3><span class="dataset-tissue" title="Organ / tissue">Lung</span></div>
+                        <p>Lung-tumor model; Ddx54 knockdown and anti-PD-1 antibody.</p>
+                        <dl><div><dt>RNA</dt><dd>494,265,984</dd></div><div><dt>Cells</dt><dd>1,155,233</dd></div><div><dt>Genes</dt><dd>5,006</dd></div></dl>
+                    </article>
+                    <div class="dataset-group-heading" data-track-heading="context">
+                        <span class="dataset-group-index">11 DATASETS</span>
+                        <div><strong>Context-OOD</strong><p>Known responses evaluated in held-out cellular contexts.</p></div>
+                    </div>
+                    <article class="dataset-card" data-track="context" data-dataset="gse325253_lung_drug_xenium">
+                        <div class="dataset-top"><h3><span class="dataset-id">04</span>Lung-Drug</h3><span class="dataset-tissue" title="Organ / tissue">Lung</span></div>
+                        <p>Formal drug family only: AZD3965 and VB124 added after bleomycin.</p>
+                        <dl><div><dt>RNA</dt><dd>681,015,170</dd></div><div><dt>Cells</dt><dd>1,561,700</dd></div><div><dt>Genes</dt><dd>5,006</dd></div></dl>
+                    </article>
+                    <article class="dataset-card" data-track="context" data-dataset="merfish_sickness">
+                        <div class="dataset-top"><h3><span class="dataset-id">05</span>Sickness</h3><span class="dataset-tissue" title="Organ / tissue">Brain</span></div>
+                        <p>Hypothalamus; DSS chemical challenge and LPS/poly(I:C)/PLA2/STAg immune stimuli.</p>
+                        <dl><div><dt>RNA</dt><dd>1,101,298,121</dd></div><div><dt>Cells</dt><dd>1,765,443</dd></div><div><dt>Genes</dt><dd>941</dd></div></dl>
+                    </article>
+                    <article class="dataset-card" data-track="context" data-dataset="dss_colitis_merfish">
+                        <div class="dataset-top"><h3><span class="dataset-id">06</span>DSS-Colitis</h3><span class="dataset-tissue" title="Organ / tissue">Intestine</span></div>
+                        <p>Colon; DSS-induced colitis and recovery.</p>
+                        <dl><div><dt>RNA</dt><dd>119,553,365</dd></div><div><dt>Cells</dt><dd>1,439,542</dd></div><div><dt>Genes</dt><dd>940</dd></div></dl>
+                    </article>
+                    <article class="dataset-card" data-track="context" data-dataset="gse295862_adipose_weightloss_xenium">
+                        <div class="dataset-top"><h3><span class="dataset-id">07</span>Adipose</h3><span class="dataset-tissue" title="Organ / tissue">Adipose</span></div>
+                        <p>Subcutaneous adipose before and after bariatric-surgery-associated weight loss.</p>
+                        <dl><div><dt>RNA</dt><dd>1,907,755</dd></div><div><dt>Cells</dt><dd>13,972</dd></div><div><dt>Genes</dt><dd>477</dd></div></dl>
+                    </article>
+                    <article class="dataset-card" data-track="context" data-dataset="uc_vedolizumab_cosmx">
+                        <div class="dataset-top"><h3><span class="dataset-id">08</span>UC-VDZ</h3><span class="dataset-tissue" title="Organ / tissue">Intestine</span></div>
+                        <p>Colon; vedolizumab antibody treatment.</p>
+                        <dl><div><dt>RNA</dt><dd>19,552,710</dd></div><div><dt>Cells</dt><dd>80,562</dd></div><div><dt>Genes</dt><dd>1,000</dd></div></dl>
+                    </article>
+                    <article class="dataset-card" data-track="context" data-dataset="gse269719_kidney_iri_xenium">
+                        <div class="dataset-top"><h3><span class="dataset-id">09</span>Kidney-IRI</h3><span class="dataset-tissue" title="Organ / tissue">Kidney</span></div>
+                        <p>Kidney; surgical ischemia-reperfusion injury.</p>
+                        <dl><div><dt>RNA</dt><dd>168,519,194</dd></div><div><dt>Cells</dt><dd>1,374,915</dd></div><div><dt>Genes</dt><dd>300</dd></div></dl>
+                    </article>
+                    <article class="dataset-card" data-track="context" data-dataset="gut_microbiota_merfish">
+                        <div class="dataset-top"><h3><span class="dataset-id">10</span>Gut-Microbiota</h3><span class="dataset-tissue" title="Organ / tissue">Intestine</span></div>
+                        <p>Small-intestine and colon regions; SPF to germ-free condition.</p>
+                        <dl><div><dt>RNA</dt><dd>189,197,264</dd></div><div><dt>Cells</dt><dd>2,057,563</dd></div><div><dt>Genes</dt><dd>1,815</dd></div></dl>
+                    </article>
+                    <article class="dataset-card" data-track="context" data-dataset="gse280376_cardiac_repair_xenium">
+                        <div class="dataset-top"><h3><span class="dataset-id">11</span>Cardiac-MI</h3><span class="dataset-tissue" title="Organ / tissue">Heart</span></div>
+                        <p>Heart; myocardial infarction induced by surgical coronary ligation.</p>
+                        <dl><div><dt>RNA</dt><dd>61,134,068</dd></div><div><dt>Cells</dt><dd>225,023</dd></div><div><dt>Genes</dt><dd>475</dd></div></dl>
+                    </article>
+                    <article class="dataset-card" data-track="context" data-dataset="gse296517_breast_fus_cosmx">
+                        <div class="dataset-top"><h3><span class="dataset-id">12</span>Breast-FUS</h3><span class="dataset-tissue" title="Organ / tissue">Breast</span></div>
+                        <p>Breast cancer; focused ultrasound with or without gemcitabine.</p>
+                        <dl><div><dt>RNA</dt><dd>102,102,171</dd></div><div><dt>Cells</dt><dd>880,565</dd></div><div><dt>Genes</dt><dd>1,000</dd></div></dl>
+                    </article>
+                    <article class="dataset-card" data-track="context" data-dataset="gse296577_gbm_ohsv_xenium">
+                        <div class="dataset-top"><h3><span class="dataset-id">13</span>GBM-oHSV</h3><span class="dataset-tissue" title="Organ / tissue">Brain</span></div>
+                        <p>Glioblastoma; oncolytic HSV treatment-associated recurrence.</p>
+                        <dl><div><dt>RNA</dt><dd>520,974,197</dd></div><div><dt>Cells</dt><dd>2,401,940</dd></div><div><dt>Genes</dt><dd>480</dd></div></dl>
+                    </article>
+                    <article class="dataset-card" data-track="context" data-dataset="gse291460_spinal_ko_xenium">
+                        <div class="dataset-top"><h3><span class="dataset-id">14</span>Spinal-KO</h3><span class="dataset-tissue" title="Organ / tissue">Spinal cord</span></div>
+                        <p>Spinal cord; four developmental knockout responses.</p>
+                        <dl><div><dt>RNA</dt><dd>36,073,815</dd></div><div><dt>Cells</dt><dd>122,645</dd></div><div><dt>Genes</dt><dd>347</dd></div></dl>
+                    </article>
+                </div>
+                <div class="benchmark-evaluation" id="evaluation">
+                    <h3>Evaluation</h3>
+                    <div class="evaluation-pair">
+                        <article>
+                            <span class="mono-label">TARGET COUNTS GIVEN</span>
+                            <h4>Oracle</h4>
+                            <p><strong>Spatial W1 ↓</strong> measures RNA localization error
+                                with exact target counts supplied.</p>
+                        </article>
+                        <article>
+                            <span class="mono-label">COUNTS + COORDINATES PREDICTED</span>
+                            <h4>Joint</h4>
+                            <p><strong>MSE ↓</strong> and <strong>PCC-delta ↑</strong> measure abundance.
+                                <strong>Spatial W1 ↓</strong> measures localization on recovered genes,
+                                alongside <strong>gene coverage ↑</strong>.</p>
+                        </article>
+                    </div>
+                    <p class="benchmark-protocol">Eight baselines · 38 frozen split instances · 304 Oracle + 304 Joint runs.
+                        Foundation-model encoders are frozen; adapters train for five epochs.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section dataset-results-section" id="results">
+            <div class="page-shell">
+                <div class="split-heading">
+                    <div>
+                        <div class="eyebrow"><span></span> Every dataset · every baseline · every metric</div>
+                        <h2>Results</h2>
+                    </div>
+                    <p>608 runs across 14 datasets and eight baselines.
+                        Compare all-gene and top-100 DEG scores.</p>
+                </div>
+                <div class="result-controls" data-result-controls hidden>
+                    <label for="result-dataset">Dataset
+                        <select id="result-dataset" data-result-dataset>
+                            <!-- DATASET OPTIONS START -->
+<option value="pf-astro">PF-Astro</option>
+<option value="atm-rt">ATM-RT</option>
+<option value="ddx54-pd1">Ddx54-PD1</option>
+<option value="lung-drug">Lung-Drug</option>
+<option value="sickness">Sickness</option>
+<option value="dss-colitis">DSS-Colitis</option>
+<option value="adipose">Adipose</option>
+<option value="uc-vdz">UC-VDZ</option>
+<option value="kidney-iri">Kidney-IRI</option>
+<option value="gut-microbiota">Gut-Microbiota</option>
+<option value="cardiac-mi">Cardiac-MI</option>
+<option value="breast-fus">Breast-FUS</option>
+<option value="gbm-ohsv">GBM-oHSV</option>
+<option value="spinal-ko">Spinal-KO</option>
+<!-- DATASET OPTIONS END -->
+                        </select>
+                    </label>
+                    <label for="result-panel">Gene panel
+                        <select id="result-panel" data-result-panel>
+                            <option value="all_gene">All genes · primary</option>
+                            <option value="top_100_deg">Top-100 DEGs · supplementary</option>
+                        </select>
+                    </label>
+                    <a class="button button-outline" href="data/benchmark-results.csv" download>Download all scores ↓</a>
+                </div>
+                <p class="result-context" data-result-context aria-live="polite">PF-Astro · Perturbation OOD · All genes · 3 data splits</p>
+                <div class="metric-picker" data-metric-picker role="group" aria-label="Choose a metric to plot" hidden>
+                    <button type="button" data-result-metric="oracle_w1" aria-pressed="true">Oracle W1 <span>↓</span></button>
+                    <button type="button" data-result-metric="mse" aria-pressed="false">Joint MSE <span>↓</span></button>
+                    <button type="button" data-result-metric="pcc_delta" aria-pressed="false">PCC-delta <span>↑</span></button>
+                    <button type="button" data-result-metric="joint_w1" aria-pressed="false">Joint W1 <span>↓</span></button>
+                    <button type="button" data-result-metric="coverage" aria-pressed="false">Gene coverage <span>↑</span></button>
+                </div>
+                <figure class="score-chart" data-score-chart hidden>
+                    <div class="score-chart-heading">
+                        <h3 data-chart-title>Oracle spatial W1</h3>
+                        <span data-chart-direction>Lower is better</span>
+                    </div>
+                    <p class="chart-description" data-chart-description></p>
+                    <div class="score-bars" data-score-bars></div>
+                    <figcaption data-chart-caption></figcaption>
+                </figure>
+                <div class="score-table-wrap" tabindex="0" role="region" aria-label="All baseline metrics, scroll horizontally on small screens">
+                    <table class="score-table">
+                        <caption data-score-caption>PF-Astro · All genes · scores for all eight baselines</caption>
+                        <thead>
+                            <tr>
+                                <th scope="col">Baseline</th>
+                                <th scope="col">Oracle W1 ↓</th>
+                                <th scope="col">Joint W1 ↓<small>Recovered genes</small></th>
+                                <th scope="col">Coverage ↑</th>
+                                <th scope="col">Joint MSE ↓</th>
+                                <th scope="col">PCC-delta ↑</th>
+                            </tr>
+                        </thead>
+                        <tbody data-score-rows>
+                            <!-- RESULT ROWS START -->
+<tr><th scope="row">Resampling</th><td>0.251 <span class="score-sd">± 0.0081</span></td><td>0.254 <span class="score-sd">± 0.0082</span></td><td>99.79% <span class="score-sd">± 0.042 pp</span></td><td>0.00646 <span class="score-sd">± 0.00025</span></td><td>-0.00043 <span class="score-sd">± 0.032</span></td></tr>
+<tr><th scope="row">Gaussian</th><td>0.253 <span class="score-sd">± 0.0069</span></td><td>0.257 <span class="score-sd">± 0.0063</span></td><td>99.79% <span class="score-sd">± 0.042 pp</span></td><td>0.00834 <span class="score-sd">± 0.00054</span></td><td>0.033 <span class="score-sd">± 0.021</span></td></tr>
+<tr><th scope="row">Radial</th><td>0.298 <span class="score-sd">± 0.0025</span></td><td>0.267 <span class="score-sd">± 0.0069</span></td><td>99.79% <span class="score-sd">± 0.042 pp</span></td><td>0.00834 <span class="score-sd">± 0.00054</span></td><td>0.033 <span class="score-sd">± 0.021</span></td></tr>
+<tr><th scope="row">scGPT-spatial</th><td>0.249 <span class="score-sd">± 0.0084</span></td><td>0.263 <span class="score-sd">± 0.012</span></td><td>99.61% <span class="score-sd">± 0.29 pp</span></td><td>0.0109 <span class="score-sd">± 0.004</span></td><td>0.0347 <span class="score-sd">± 0.0059</span></td></tr>
+<tr><th scope="row">SpatialFormer</th><td>0.249 <span class="score-sd">± 0.0063</span></td><td>0.263 <span class="score-sd">± 0.0063</span></td><td>99.43% <span class="score-sd">± 0.17 pp</span></td><td>0.0109 <span class="score-sd">± 0.0015</span></td><td>0.0385 <span class="score-sd">± 0.016</span></td></tr>
+<tr><th scope="row">scGPT</th><td>0.249 <span class="score-sd">± 0.0063</span></td><td>0.267 <span class="score-sd">± 0.013</span></td><td>99.42% <span class="score-sd">± 0.26 pp</span></td><td>0.0133 <span class="score-sd">± 0.0032</span></td><td>0.0482 <span class="score-sd">± 0.022</span></td></tr>
+<tr><th scope="row">scFoundation</th><td>0.249 <span class="score-sd">± 0.0063</span></td><td>0.254 <span class="score-sd">± 0.0082</span></td><td>99.79% <span class="score-sd">± 0.042 pp</span></td><td>0.00646 <span class="score-sd">± 0.00025</span></td><td>-0.00043 <span class="score-sd">± 0.032</span></td></tr>
+<tr><th scope="row">STATE-SE</th><td>0.248 <span class="score-sd">± 0.0066</span></td><td>0.256 <span class="score-sd">± 0.01</span></td><td>99.67% <span class="score-sd">± 0.2 pp</span></td><td>0.00778 <span class="score-sd">± 0.0022</span></td><td>-0.00753 <span class="score-sd">± 0.02</span></td></tr>
+<!-- RESULT ROWS END -->
+                        </tbody>
+                    </table>
+                </div>
+                <noscript><p>Enable JavaScript to switch datasets and plot scores. The PF-Astro table is shown above;
+                    <a href="data/benchmark-results.csv" download>download all datasets and metrics as CSV</a>.</p></noscript>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="page-shell footer-grid">
+            <div class="footer-project">
+                <a class="brand brand-footer" href="#top">
+                    <svg class="brand-mark" viewBox="0 0 42 42" aria-hidden="true">
+                        <circle cx="21" cy="21" r="18" />
+                        <circle cx="14" cy="16" r="2.3" />
+                        <circle cx="25" cy="12" r="1.7" />
+                        <circle cx="28" cy="23" r="2.5" />
+                        <circle cx="17" cy="28" r="1.8" />
+                    </svg>
+                    <span>SubcellPert</span>
+                </a>
+                <p>Benchmarking Subcellular Resolution Perturbation Prediction.</p>
+            </div>
+            <div class="footer-authors">
+                <span class="footer-label">AUTHORS</span>
+                <p>
+                    <a href="https://personal-page.wjh.app/" target="_blank" rel="noreferrer">Jinghao Wang</a>,
+                    <a href="https://chq1155.github.io/" target="_blank" rel="noreferrer">Hanqun Cao</a>,
+                    <a href="https://icecreamartist.github.io/" target="_blank" rel="noreferrer">Xilin Dang</a>,
+                    <a href="https://scholar.google.com/citations?user=aUerEOMAAAAJ" target="_blank"
+                        rel="noreferrer">Tianhui Zhou</a>,
+                    <a href="https://yiyangzha0.github.io/" target="_blank" rel="noreferrer">Yiyang Zhao</a>,
+                    <a href="https://scholar.google.com/citations?user=K-AjhSgAAAAJ" target="_blank"
+                        rel="noreferrer">Chang-Yu Hsieh</a>,
+                    <a href="https://scholar.google.com/citations?user=BlSFT8UAAAAJ" target="_blank"
+                        rel="noreferrer">Chunbin Gu</a>,
+                    <a href="https://appsrv.cse.cuhk.edu.hk/~pheng/index.php" target="_blank" rel="noreferrer">Pheng Ann
+                        Heng</a>
+                </p>
+                <small>Chinese University of Hong Kong · Duke University · Zhejiang University · Shanghai Innovation Institute</small>
+            </div>
+            <div class="footer-links">
+                <span class="footer-label">PROJECT</span>
+                <a href="#overview">Overview</a><a href="#benchmark">Benchmark</a><a href="#results">Results</a><a
+                    href="https://github.com/king159/SubcellPert" target="_blank" rel="noreferrer">Code</a>
+            </div>
+        </div>
+        <div class="page-shell footer-bottom">
+            <span>© <span data-year>2026</span> SubcellPert authors</span>
+            <span>Built for transparent, molecule-level evaluation.</span>
+        </div>
+    </footer>
+
+    <dialog class="figure-dialog" aria-labelledby="figure-dialog-title" data-figure-dialog>
+        <button type="button" class="dialog-close" data-close-figure aria-label="Close figure">×</button>
+        <h2 class="visually-hidden" id="figure-dialog-title">SubcellPert benchmark overview</h2>
+        <img src="img/subcellpert-overview.svg" alt="Expanded SubcellPert benchmark overview" />
+        <p>SubcellPert benchmark overview: 14 active datasets, eight evaluated baselines, and two evaluation modes.
+        </p>
+    </dialog>
+
+    <div class="toast" role="status" aria-live="polite" data-toast>Copied to clipboard</div>
+</body>
+
+</html>
