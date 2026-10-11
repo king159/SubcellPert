@@ -9,8 +9,7 @@ RNA observations and pretrained model weights are separate downloads.
 Pin the full Hugging Face revision and use its matching code version. A code
 commit accompanied by `working_tree_modified: true` does not uniquely identify
 the source used to produce a bundle; it also needs the corresponding source
-snapshot. Changing the retained populations or split memberships changes the
-training inputs, even if the dataset names stay the same.
+snapshot.
 
 ## Bundle layout
 
@@ -19,6 +18,7 @@ training inputs, even if the dataset names stay the same.
 ├── README.md
 ├── manifest.json
 ├── checksums.sha256
+├── assets/teaser.png       # Dataset card illustration
 ├── catalog/datasets.parquet
 ├── datasets/<dataset_id>/
 │   └── population/...
@@ -35,8 +35,7 @@ training inputs, even if the dataset names stay the same.
 Keep the whole bundle together. The small Parquet catalog is a dataset inventory
 for browsing; it is not the training dataset. `manifest.json` identifies the
 included files, datasets, observation totals, and frozen benchmark inputs.
-Use the totals from the chosen snapshot: different filtering revisions can
-retain different numbers of cells and RNA events.
+Use the observation totals recorded in the chosen snapshot.
 
 ## Frozen split views
 

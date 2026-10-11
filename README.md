@@ -1,33 +1,70 @@
-<h1 align="center">🧬 SubcellPert</h1>
-<p align="center"><strong>Benchmarking Subcellular Perturbation Prediction</strong></p>
-<p align="center">Train and evaluate existing baselines on changes in RNA abundance and subcellular localization.</p>
+<h1 align="center">SubcellPert: Benchmarking Subcellular Perturbation Prediction</h1>
 
 <p align="center">
-  <a href="https://huggingface.co/datasets/king159/SubcellPert">🤗 Dataset repository</a> ·
-  <a href="docs/reproduction.md">Reproduction guide</a> ·
-  <a href="docs/pretrained_models.md">Pretrained models</a> ·
-  <a href="configs/README.md">Configurations</a>
+  <a href="https://personal-page.wjh.app/">Jinghao Wang</a><sup>1</sup>,
+  <a href="https://chq1155.github.io/">Hanqun Cao</a><sup>1</sup>,
+  <a href="https://icecreamartist.github.io/">Xilin Dang</a><sup>1</sup>,
+  <a href="https://scholar.google.com/citations?user=aUerEOMAAAAJ">Tianhui Zhou</a><sup>2</sup>,
+  <a href="https://yiyangzha0.github.io/">Yiyang Zhao</a><sup>3,4</sup>,
+  <a href="https://scholar.google.com/citations?user=K-AjhSgAAAAJ">Chang-Yu Hsieh</a><sup>3</sup>,
+  <a href="https://scholar.google.com/citations?user=BlSFT8UAAAAJ">Chunbin Gu</a><sup>1,✉</sup>,
+  <a href="https://appsrv.cse.cuhk.edu.hk/~pheng/index.php">Pheng Ann Heng</a><sup>1</sup>
 </p>
 
-## 🧬 About SubcellPert
+<p align="center">
+  <sup>1</sup> The Chinese University of Hong Kong &nbsp;
+  <sup>2</sup> Duke University<br>
+  <sup>3</sup> Zhejiang University &nbsp;
+  <sup>4</sup> Shanghai Innovation Institute<br>
+</p>
 
-SubcellPert studies how perturbations change both **how much RNA a cell contains**
-and **where that RNA is located**. This repository provides data loading, baseline
-adapters, training, validation, and evaluation for **14 datasets and eight baselines**.
+<div align="center">
+  <img src="https://img.shields.io/badge/Paper-Coming%20soon-lightgrey" alt="Paper: coming soon" height="20">
+  <a href="https://personal-page.wjh.app/SubcellPert/" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/Project-Page-1E90FF" alt="Project page" height="20"></a>
+  <a href="https://huggingface.co/datasets/king159/SubcellPert" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/Dataset-Hugging%20Face-FFD21E?logo=huggingface" alt="Dataset on Hugging Face" height="20"></a>
+</div>
 
-The benchmark has two independently fitted settings:
+> **TL;DR:** SubcellPert benchmarks perturbation-response prediction across 14 imaging datasets and eight baselines, extending virtual cell evaluation from gene counts to intracellular RNA organization.
 
-| Setting | Prediction task | Main evaluation |
-| --- | --- | --- |
-| **Joint** | Predict gene counts and RNA coordinates from source cells and a condition change | Expression MSE and PCC-delta |
-| **Oracle** | Predict RNA coordinates given target per-cell gene counts | Spatial W1 |
+## 📄 Abstract
 
-There are **224 run configurations**: 14 datasets × eight baselines × two settings.
-The frozen schedule contains 38 dataset/split instances and 608 planned fits.
-Most datasets have split seeds 1–3; ATM-RT and DDX54-PD1 have seed 1 only.
-These are data-split seeds, not an additional model-seed sweep.
+Perturbations change RNA abundance and intracellular organization, but gene-count
+predictors omit the positions needed to model spatial responses. SubcellPert
+introduces perturbation-response prediction at single-RNA-molecule resolution,
+with **14 imaging datasets, 13.88 million cells, and 3.65 billion RNA molecules**.
+Given source observations and a directed condition change, models generate target
+RNA populations in normalized two-dimensional coordinates.
 
-## 🗂️ Installation
+Two independently trained tasks separate abundance from localization: **Oracle**
+predicts coordinates given exact target counts; **Joint** predicts both. Eight
+baselines span source resampling, classical transport, and frozen foundation-model
+adapters. Perturbation and cellular-context holdouts evaluate abundance error,
+target-gene coverage, and conditional spatial error. This repository provides the
+data loading, baseline adapters, training, validation, and evaluation code.
+
+## 🗂️ Codebase Structure
+
+<details>
+<summary>Repository layout</summary>
+
+```text
+SubcellPert/
+├── benchmark/           # Frozen schedules and sampling protocol
+├── configs/
+│   ├── datasets/        # Dataset definitions
+│   ├── models/          # Foundation-model settings and weight checksums
+│   ├── oracle/          # Localization with target counts
+│   └── joint/           # Abundance and localization prediction
+├── docs/                # Reproduction and pretrained-model instructions
+├── release/             # Reference environment
+├── src/subcellpert/     # Data loading, baselines, training, and evaluation
+├── LICENSE
+└── pyproject.toml
+```
+
+</details>
+
+### 🛠️ Environment Setup
 
 Use **Linux and Python 3.12**. Dependencies, including the pinned PyTorch and
 torchvision versions, are specified in [pyproject.toml](pyproject.toml).
@@ -43,34 +80,24 @@ python -m pip install -e .
 python -m subcellpert.main --help
 ```
 
-`subcellpert-benchmark` is also available as an installed entrypoint.
 Data and pretrained weights are downloaded separately.
 
-## 🤗 Dataset
+### 💾 Data Preparation
 
-The dataset repository is [king159/SubcellPert](https://huggingface.co/datasets/king159/SubcellPert).
-
-> **Dataset status (2026-10-11):** The [population-min50 snapshot](https://huggingface.co/datasets/king159/SubcellPert/tree/74196fa91563138c2f1e72acc9f2bec6c0c637a6)
-> is uploaded and verified, with **14 datasets, 13,880,723 cells, and
-> 3,653,986,724 RNA events**. The repository remains private; authorized Hugging
-> Face login is required. This code release targets that dataset revision.
-
-The release tag is `population-min50-20260924`. The small Hugging Face catalog
-is an inventory, not the training dataset. Download the complete RNA observation,
-frozen split, task metadata, and intervention descriptor bundle. Pin its **full
-commit SHA** when reporting results. The manifest preserves historical code
-provenance, including a dirty-worktree flag; that commit alone does not identify
-an installable public code snapshot.
+The dataset repository is [HF king159/SubcellPert](https://huggingface.co/datasets/king159/SubcellPert).
 
 Authenticate with `hf auth login` or `HF_TOKEN`. Use a new, empty destination:
 the Hub downloader does not remove leftover files from older snapshots. On
 clusters without compute-node internet access, download on a networked login
 node to shared storage, then validate and run experiments in a compute allocation.
 
+<details open>
+<summary>Download the pinned dataset snapshot</summary>
+
 ```bash
 export SUBCELLPERT_CODE="$PWD"
 export SUBCELLPERT_ROOT="$PWD/data/subcellpert_population_min50_20260924"
-export SUBCELLPERT_DATA_REVISION="74196fa91563138c2f1e72acc9f2bec6c0c637a6"
+export SUBCELLPERT_DATA_REVISION="b6db87c2023de68344e2c4a4a8d45a03eb86fdb7"
 
 python - <<'PY'
 import os
@@ -87,22 +114,34 @@ snapshot_download(
 PY
 ```
 
+</details>
+
 `.gitattributes` is Hub repository metadata and is excluded from the download.
-The two upstream model weights that were outside the dataset inventory have
-been removed from this revision. Follow the
+Follow the
 [dataset validation instructions](src/subcellpert/data/RELEASE.md#validate-a-downloaded-snapshot)
 to check the inventory and content hashes. Keep the bundle together so its
 relative paths remain valid.
 
-Training inputs changed for Adipose, Cardiac-MI, GBM-oHSV, Gut-Microbiota,
-Sickness, Spinal-KO, and UC-VDZ. Historical model results and checkpoints were
-not recomputed for this release; use a compatible code checkout and new fits
-when reporting results for these inputs.
-
 See the [reproduction guide](docs/reproduction.md) for data-root setup and the
 [dataset format](src/subcellpert/data/RELEASE.md) for the bundle layout.
 
-## 🧠 Baselines
+## 🧬 SubcellPert
+
+### 📐 Evaluation Protocol
+
+The benchmark has two independently fitted settings:
+
+| Setting | Prediction task | Evaluation |
+| --- | --- | --- |
+| **Oracle** | Predict RNA coordinates given target per-cell gene counts | Spatial W1 |
+| **Joint** | Predict gene counts and RNA coordinates from source cells and a condition change | Expression MSE, PCC-delta, gene coverage, and conditional spatial W1 |
+
+There are **224 run configurations**: 14 datasets × eight baselines × two settings.
+The frozen schedule contains 38 dataset/split instances and 608 planned fits.
+Most datasets have split seeds 1–3; ATM-RT and DDX54-PD1 have seed 1 only.
+These are data-split seeds, not an additional model-seed sweep.
+
+### 🧪 Baselines
 
 | Baseline | Configuration name | Pretrained weights |
 | --- | --- | --- |
@@ -122,13 +161,13 @@ data live in separate directories, follow the
 [resource-path setup](docs/reproduction.md#data-and-model-resources) before
 running these baselines.
 
-## ☄️ Training and evaluation
+### 🚀 Training
 
 Run from the code repository root with `SUBCELLPERT_ROOT` pointing to the
 prepared data snapshot. Each command fits a baseline, performs validation
 where the frozen split provides it, and evaluates held-out responses.
 
-### Start with a smoke run
+#### 🔎 Start with a smoke run
 
 This small Oracle example uses a classical baseline and needs no pretrained weights:
 
@@ -144,7 +183,7 @@ python -m subcellpert.main \
 results. Use `--dry-run` to inspect the resolved configuration and selected jobs
 without training.
 
-### Run a full fit
+#### 🏋️ Run a full fit
 
 After the smoke run, remove `--smoke` and choose a fresh output directory:
 
@@ -183,7 +222,7 @@ optimizer batch. Scientific settings are defined in the YAML files.
 For multiple GPUs, resume details, and resource checks, see the
 [reproduction guide](docs/reproduction.md).
 
-## 📊 Validation and results
+### 📊 Validation and Results
 
 Foundation-model fits select checkpoints using the validation split. ATM-RT
 and DDX54-PD1 have no validation split and use the final epoch. Test responses
@@ -199,16 +238,3 @@ The all-gene panel is primary; the top-100 DEG panel is supplementary. Shared-ge
 spatial scores and target-gene coverage are diagnostics: a missing predicted
 gene does not have zero spatial error. Compare spatial scores only over matching
 gene support.
-
-## 📑 Citation and acknowledgements
-
-Public paper links and BibTeX will be added once the citation metadata is confirmed.
-Please also cite the original datasets and the baseline models used in your
-experiments. We thank their authors for providing the data, implementations,
-and pretrained weights that support this benchmark.
-
-## License
-
-Original SubcellPert code is released under the [MIT License](LICENSE).
-Third-party source code, pretrained weights, and datasets retain their
-respective terms and attribution requirements.

@@ -16,15 +16,15 @@ dependency installation.
 Use a complete dataset snapshot in a directory separate from the code. The
 [dataset repository](https://huggingface.co/datasets/king159/SubcellPert)
 remains private; authenticate with `hf auth login` or `HF_TOKEN` before download.
-The [verified snapshot](https://huggingface.co/datasets/king159/SubcellPert/tree/74196fa91563138c2f1e72acc9f2bec6c0c637a6) is
-`74196fa91563138c2f1e72acc9f2bec6c0c637a6`, tagged
-`population-min50-20260924`, with release ID
+The [verified snapshot](https://huggingface.co/datasets/king159/SubcellPert/tree/b6db87c2023de68344e2c4a4a8d45a03eb86fdb7) is
+`b6db87c2023de68344e2c4a4a8d45a03eb86fdb7`, with release ID
 `subcellpert_14datasets_population_min50_20260924`. It contains **13,880,723
 cells and 3,653,986,724 RNA events across 14 datasets**.
 
 The release contains 112 frozen views for 38 dataset/seed instances and three
-descriptor pairs. All 3,103 local payload files passed content-hash verification
-before upload; remote LFS SHA-256 / Git object IDs and sizes matched after upload.
+descriptor pairs. The snapshot contains 3,104 payload files, including the
+data card and teaser image. Its inventory and content hashes have been verified
+against remote LFS SHA-256 / Git object IDs and file sizes.
 This public code release targets that dataset revision. The manifest preserves
 historical code provenance and a modified-worktree flag, so its Git commit alone
 does not identify the complete source used for export.
@@ -37,7 +37,7 @@ validation and experiments in a compute allocation.
 ```bash
 export SUBCELLPERT_CODE="$PWD"
 export SUBCELLPERT_ROOT="$PWD/data/subcellpert_population_min50_20260924"
-export SUBCELLPERT_DATA_REVISION="74196fa91563138c2f1e72acc9f2bec6c0c637a6"
+export SUBCELLPERT_DATA_REVISION="b6db87c2023de68344e2c4a4a8d45a03eb86fdb7"
 
 python - <<'PY'
 import os
@@ -55,18 +55,13 @@ PY
 ```
 
 The download excludes `.gitattributes`, which is Hub repository metadata outside
-the benchmark inventory. The two upstream model weights outside the inventory
-were removed from this revision. The validator also excludes the client's local
+the benchmark inventory. The validator also excludes the client's local
 `.cache/huggingface/` download metadata; unexpected payload files still fail.
 Follow the [dataset validation instructions](../src/subcellpert/data/RELEASE.md#validate-a-downloaded-snapshot)
 to check the inventory, relative references, and optional content hashes.
 
 Keep the entire bundle together. See the
 [data release specification](../src/subcellpert/data/RELEASE.md) for its layout.
-The population support filter changes fitting inputs for Adipose, Cardiac-MI,
-GBM-oHSV, Gut-Microbiota, Sickness, Spinal-KO, and UC-VDZ. Historical results and
-checkpoints were not recomputed for this release. Do not mix this data revision
-with older checkpoints and assume the results remain comparable.
 
 For FM experiments, follow [pretrained models](pretrained_models.md) from the
 code repository root. Models and their upstream implementations must also be
