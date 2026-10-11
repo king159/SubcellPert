@@ -1,0 +1,124 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "subcellpert"
+version = "0.1.0"
+description = "Perturbation prediction for marked RNA molecule point patterns"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+  "numpy>=2.0,<2.5",
+  "polars>=1.20",
+  "pyarrow>=22",
+  "h5py>=3.12",
+  "scipy>=1.14",
+  "scikit-image>=0.25,<0.26",
+  "zipfile-deflate64==0.2.0",
+  "scikit-learn>=1.6",
+  "torch==2.14.0",
+  "tqdm>=4.67",
+  "pyyaml>=6.0",
+  "omegaconf>=2.3,<3",
+  # Data interchange and the official scGPT/scGPT-spatial embedding APIs.
+  "anndata>=0.11",
+  "scanpy>=1.11,<2",
+  "scib>=1.1.7,<1.2",
+  "pandas>=2.2",
+  "datasets>=2.20,<3",
+  # Resolve the S3 backend with datasets' fsspec constraint in the spatial environment.
+  "s3fs>=2024.6",
+  "einops>=0.8",
+  # Reproduction adapters and benchmark baselines.
+  "gpytorch>=1.14",
+  "pyro-ppl>=1.9",
+  "imageio>=2.37",
+  "torch-geometric==2.6.1",
+  "torchvision==0.29.0",
+  "pytorch-msssim>=1.0",
+  "umap-learn>=0.5",
+  "wandb>=0.19",
+  # The pinned scGPT/scGPT-spatial utils import get_ipython at module scope.
+  "ipython>=8.30",
+  "matplotlib>=3.10",
+  "pytorch-lightning>=2.5,<3",
+  # STATE-SE imports the Lightning namespace and GeomLoss from its native model.
+  "lightning>=2.5,<3",
+  "geomloss>=0.2.6,<0.3",
+  "safetensors>=0.4",
+  "transformers==4.57.3",
+  "peft>=0.8.2",
+  "communities>=3.0",
+  "rdata>=1.0",
+  "local-attention>=1.9,<2",
+]
+
+[project.optional-dependencies]
+dev = ["ruff>=0.9", "build>=1.2"]
+
+[project.scripts]
+subcellpert-benchmark = "subcellpert.main:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/subcellpert"]
+
+[tool.hatch.build.targets.sdist]
+include = ["/src/subcellpert", "/configs", "/benchmark", "/docs",
+           "/release/environment-reference.json", "/README.md", "/pyproject.toml", "/LICENSE"]
+
+[tool.ruff]
+target-version = "py312"
+line-length = 119
+
+[tool.ruff.lint]
+select = [
+    "E",  # pycodestyle errors
+    "F",  # Pyflakes
+    "I",  # isort
+    "W",  # pycodestyle warnings
+    "UP",  # pyupgrade
+    "FURB",  # refurb
+    "SIM",  # flake8-simplify
+    "S110",  # bandit's try-except-pass rule
+    "C4",  # flake8-comprehensions
+    "C901",  # McCabe complexity
+    "RUF013",  # Checks for the use of implicit Optional in type annotations when the default parameter value is None.
+    "PERF102",  # Checks for uses of dict.items() that discard either the key or the value when iterating over the dictionary.
+    "PLC1802",  # Checks for len calls on sequences in a boolean test context.
+    "PLC0208",  # Checks for iteration over a set literal where each element in the set is itself a literal value.
+    "PIE794",  # Checks for duplicate field definitions in classes.
+]
+ignore = [
+    "E501",  # Checks for lines that exceed the specified maximum character length.
+    "E741",  # Checks for the use of the characters 'l', 'O', or 'I' as variable names.
+    "SIM1",  # All SIM1XX rules
+    "SIM905",  # Checks for static str.split calls that can be replaced with list literals.
+    "UP015",  # Checks for redundant open mode arguments.
+    "UP031",  # Checks for printf-style string formatting, and offers to replace it with str.format calls.
+]
+extend-safe-fixes = [
+    "UP006",  # Checks for the use of generics that can be replaced with standard library variants based on PEP 585.
+]
+
+# Ignore import violations in all `__init__.py` files.
+[tool.ruff.lint.per-file-ignores]
+"__init__.py" = ["E402", "F401", "F403", "F811"]
+
+[tool.ruff.lint.isort]
+lines-after-imports = 2
+known-first-party = ["subcellpert"]
+
+[tool.ruff.format]
+# Like Black, use double quotes for strings.
+quote-style = "double"
+# Like Black, indent with spaces, rather than tabs.
+indent-style = "space"
+# Like Black, respect magic trailing commas.
+skip-magic-trailing-comma = false
+# Like Black, automatically detect the appropriate line ending.
+line-ending = "auto"
+
+[tool.ruff.lint.mccabe]
+max-complexity = 75

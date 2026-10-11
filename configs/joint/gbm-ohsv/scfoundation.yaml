@@ -1,0 +1,11 @@
+extends:
+  - ../../experiments/cell_joint.yaml
+  - ../../models/scfoundation.yaml
+  - ../../datasets/gbm-ohsv.yaml
+dataset: gbm-ohsv
+model:
+  name: scfoundation
+setting: joint
+seed: 1
+training:
+  batch_size: 256

@@ -1,0 +1,12 @@
+data:
+  dataset_id: gse296517_breast_fus_cosmx
+  species: Human
+  source_conditions:
+  - untreated
+  spatialformer:
+    tissue: Breast
+    assay: CosMx
+    condition_by_source:
+      untreated: Disease
+    token_mapping_note: Disease denotes the registered untreated clinical breast-lesion
+      source; it does not infer lesion subtype.

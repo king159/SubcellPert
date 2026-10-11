@@ -1,0 +1,13 @@
+extends:
+  - ../../experiments/cell_joint.yaml
+  - ../../models/state_se.yaml
+  - ../../datasets/ddx54-pd1.yaml
+dataset: ddx54-pd1
+model:
+  name: state_se
+setting: joint
+seed: 1
+training:
+  batch_size: 256
+foundation:
+  encoder_batch_size: 64  # Frozen encoder chunks only; optimizer batch remains 256.

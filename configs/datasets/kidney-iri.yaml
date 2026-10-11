@@ -1,0 +1,10 @@
+data:
+  dataset_id: gse269719_kidney_iri_xenium
+  species: Mouse
+  source_conditions:
+  - Sham
+  spatialformer:
+    tissue: Kidney
+    assay: Xenium
+    condition_by_source:
+      Sham: Healthy

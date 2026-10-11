@@ -1,0 +1,10 @@
+data:
+  dataset_id: dss_colitis_merfish
+  species: Mouse
+  source_conditions:
+  - D0
+  spatialformer:
+    tissue: Colon
+    assay: Merfish
+    condition_by_source:
+      D0: Healthy

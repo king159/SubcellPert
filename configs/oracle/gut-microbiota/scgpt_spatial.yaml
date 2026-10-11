@@ -1,0 +1,11 @@
+extends:
+  - ../../experiments/cell_oracle.yaml
+  - ../../models/scgpt_spatial.yaml
+  - ../../datasets/gut-microbiota.yaml
+dataset: gut-microbiota
+model:
+  name: scgpt_spatial
+setting: oracle
+seed: 1
+training:
+  batch_size: 256

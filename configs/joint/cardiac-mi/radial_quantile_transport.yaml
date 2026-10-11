@@ -1,0 +1,6 @@
+extends: ../../experiments/cell_joint.yaml
+dataset: cardiac-mi
+model:
+  name: radial_quantile_transport
+setting: joint
+seed: 1

@@ -1,0 +1,10 @@
+data:
+  dataset_id: gse285341_ddx54_pd1_xenium
+  species: Mouse
+  source_conditions:
+  - WT+isotype
+  spatialformer:
+    tissue: Lung
+    assay: Xenium
+    condition_by_source:
+      WT+isotype: Disease

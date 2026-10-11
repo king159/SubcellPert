@@ -1,0 +1,11 @@
+extends:
+  - ../../experiments/cell_joint.yaml
+  - ../../models/state_se.yaml
+  - ../../datasets/pf-astro.yaml
+dataset: pf-astro
+model:
+  name: state_se
+setting: joint
+seed: 1
+training:
+  batch_size: 256

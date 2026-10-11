@@ -1,0 +1,12 @@
+data:
+  dataset_id: gse295862_adipose_weightloss_xenium
+  species: Human
+  source_conditions:
+  - Obese
+  spatialformer:
+    tissue: Skin
+    assay: Xenium
+    condition_by_source:
+      Obese: Disease
+    token_mapping_note: Preserves the existing Skin proxy for adipose; no adipose
+      token exists.

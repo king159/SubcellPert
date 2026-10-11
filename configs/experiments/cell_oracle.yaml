@@ -1,0 +1,94 @@
+schema_version: 3
+experiment_id: cell_oracle
+training_protocol: scperturbench_scfoundation_cell_oracle
+evaluation_mode: oracle_count
+initialization: independent_from_joint_checkpoints
+sampling_contract: benchmark/sampling/scperturbench_scfoundation.yaml
+model:
+  architecture: gene_fm_gears_shared_spatial_v2
+  hidden_dimension: 512
+  gene_graph: training_source_coexpression
+  condition_graph: registered_descriptor_cosine
+  spatial_head: shared_count_conditioned_affine
+  input: complete_source_cell_counts_coordinates_gene_and_cell_ids
+  gene_axis_partitioned: false
+  source_donors_per_output_cell: 1
+  foundation_features: frozen_contextual_gene_states_with_availability
+  count_head: absent
+  count_policy: exact_target_per_cell_gene
+training:
+  epochs: 5
+  precision: bf16
+  batch_size: 256
+  accumulation_steps: 1
+  assignment_seed: 42
+  optimizer: Adam
+  learning_rate: 0.0005
+  weight_decay: 0.0005
+  scheduler_gamma: 0.5
+  gradient_clip_value: 1.0
+  objective: gears_gene_supervision_with_local_RNA_spatial_extension
+  direction_lambda: 0.1
+  expression_scale: raw_counts_log1p
+  spatial_loss: cell_gene_complete_RNA_moment_Fourier_L4
+  include_initialization_in_validation: true
+  checkpoint_selection: best_validation
+  development_access: train_only
+  test_based_selection: false
+  classical_fit: analytic_distribution_moments_from_complete_training_cells
+  classical_ridge: 10.0
+foundation:
+  encoder_batch_size: ${training.batch_size}
+  scfoundation_gene_context: assay
+inference:
+  batch_size: 256
+  generation_policy: matched_target_budget_before_generation_v1
+  target_inputs: coordinate_free_OracleCounts
+  source_sampling: uniform_cells_with_replacement_within_allowed_pool
+  source_assignment: one_donor_per_output_cell_all_genes
+  absent_source_gene: same_donor_all_RNA_prior
+evaluation:
+  schema: sealed_unpaired_complete_cell_oracle_evaluation
+  cell_cap_per_group: 2000
+  base_seed: 42
+  rna_subsampling: false
+  spatial_projections: 64
+  primary: cell_balanced_sliced_wasserstein
+  secondary_cell_metric: unpaired_cell_spatial_feature_sliced_wasserstein
+  gene_panels: [all_gene, top_100_deg]
+  unit_weighting: equal_biological_units_then_cells
+  counts: integrity_only
+  split_seeds: [1, 2, 3]
+
+validation:
+  split_manifest: benchmark/splits/cell_validation_dual_min50.json
+  metric: cell_balanced_spatial_swd
+  gene_panel: all_gene
+  cell_cap_per_response: 128
+  spatial_projections: 64
+  seed: 42
+  gradient_updates: false
+  test_used_for_selection: false
+  tie_break: earliest_epoch
+
+schedule:
+  split_manifest: benchmark/splits/cell_seed_schedule_dual_min50.json
+  split_seeds: [1, 2, 3]
+  seed_semantics: one_train_validation_test_partition_per_seed_and_fit_family
+  fit_family_policy: independent_source_target_families_v1
+  model_repeats_per_split: 1
+  fits_per_dataset_baseline: 3
+
+dataset_overrides:
+  lung-drug:
+    fit_families: [drug]
+    fits_per_dataset_baseline: 3
+  atm-rt:
+    split_seeds: [1]
+    validation_enabled: false
+    checkpoint_selection: final_epoch
+  ddx54-pd1:
+    split_seeds: [1]
+    validation_enabled: false
+    checkpoint_selection: final_epoch
+excluded_datasets: [l048-dmd, fn03-ra, l109-uv]

@@ -1,0 +1,6 @@
+extends: ../../experiments/cell_oracle.yaml
+dataset: uc-vdz
+model:
+  name: radial_quantile_transport
+setting: oracle
+seed: 1

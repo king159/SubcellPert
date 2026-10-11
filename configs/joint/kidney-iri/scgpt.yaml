@@ -1,0 +1,11 @@
+extends:
+  - ../../experiments/cell_joint.yaml
+  - ../../models/scgpt.yaml
+  - ../../datasets/kidney-iri.yaml
+dataset: kidney-iri
+model:
+  name: scgpt
+setting: joint
+seed: 1
+training:
+  batch_size: 256

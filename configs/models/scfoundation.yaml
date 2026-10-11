@@ -1,0 +1,6 @@
+foundation:
+  backbone: scfoundation
+  model_checkpoint: artifacts/upstream/scfoundation/models.ckpt
+  embedding_dimension: 512
+  encoder_max_length: 1200
+  scfoundation_gene_context: assay

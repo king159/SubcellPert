@@ -1,0 +1,10 @@
+data:
+  dataset_id: merfish_sickness
+  species: Mouse
+  source_conditions:
+  - PBS
+  spatialformer:
+    tissue: Brain
+    assay: Merfish
+    condition_by_source:
+      PBS: Healthy

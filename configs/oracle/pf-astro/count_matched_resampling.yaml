@@ -1,0 +1,6 @@
+extends: ../../experiments/cell_oracle.yaml
+dataset: pf-astro
+model:
+  name: count_matched_resampling
+setting: oracle
+seed: 1

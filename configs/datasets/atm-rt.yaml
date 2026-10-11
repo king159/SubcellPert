@@ -1,0 +1,10 @@
+data:
+  dataset_id: gse246584_atm_radiation_xenium
+  species: Mouse
+  source_conditions:
+  - ATM_intact
+  spatialformer:
+    tissue: Brain
+    assay: Xenium
+    condition_by_source:
+      ATM_intact: Disease

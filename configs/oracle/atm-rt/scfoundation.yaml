@@ -1,0 +1,11 @@
+extends:
+  - ../../experiments/cell_oracle.yaml
+  - ../../models/scfoundation.yaml
+  - ../../datasets/atm-rt.yaml
+dataset: atm-rt
+model:
+  name: scfoundation
+setting: oracle
+seed: 1
+training:
+  batch_size: 256

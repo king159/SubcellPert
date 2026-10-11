@@ -1,0 +1,11 @@
+extends:
+  - ../../experiments/cell_joint.yaml
+  - ../../models/spatialformer.yaml
+  - ../../datasets/kidney-iri.yaml
+dataset: kidney-iri
+model:
+  name: spatialformer
+setting: joint
+seed: 1
+training:
+  batch_size: 256

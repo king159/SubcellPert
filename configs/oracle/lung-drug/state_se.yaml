@@ -1,0 +1,14 @@
+extends:
+  - ../../experiments/cell_oracle.yaml
+  - ../../models/state_se.yaml
+  - ../../datasets/lung-drug.yaml
+dataset: lung-drug
+model:
+  name: state_se
+setting: oracle
+seed: 1
+training:
+  batch_size: 256
+  matmul_precision: high
+foundation:
+  encoder_batch_size: 64  # Frozen encoder chunks only; optimizer batch remains 256.

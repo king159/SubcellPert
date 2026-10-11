@@ -1,0 +1,11 @@
+extends:
+  - ../../experiments/cell_joint.yaml
+  - ../../models/scgpt_spatial.yaml
+  - ../../datasets/spinal-ko.yaml
+dataset: spinal-ko
+model:
+  name: scgpt_spatial
+setting: joint
+seed: 1
+training:
+  batch_size: 256

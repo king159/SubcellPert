@@ -1,0 +1,29 @@
+# Python environments and generated package files
+.venv*/
+uv.lock
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+/build/
+/dist/
+
+# Credentials and local editor state
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+/.vscode/
+/.idea/
+
+# Downloaded observations, upstream models, and generated run outputs
+/data/
+/datasets/
+/artifacts/
+/external/
+/outputs/
+/results/
+/logs/
+*.log

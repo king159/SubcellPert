@@ -1,0 +1,11 @@
+extends:
+  - ../../experiments/cell_oracle.yaml
+  - ../../models/state_se.yaml
+  - ../../datasets/adipose.yaml
+dataset: adipose
+model:
+  name: state_se
+setting: oracle
+seed: 1
+training:
+  batch_size: 256

@@ -1,0 +1,11 @@
+extends:
+  - ../../experiments/cell_joint.yaml
+  - ../../models/scgpt.yaml
+  - ../../datasets/breast-fus.yaml
+dataset: breast-fus
+model:
+  name: scgpt
+setting: joint
+seed: 1
+training:
+  batch_size: 256

@@ -1,0 +1,4875 @@
+{
+  "fit_family_policy": "independent_source_target_families_v1",
+  "formal_fits": 608,
+  "jobs": [
+    {
+      "baseline": "count_matched_resampling",
+      "dataset": "spinal-ko",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "oracle_count",
+      "seed": 1
+    },
+    {
+      "baseline": "gaussian_affine_transport",
+      "dataset": "spinal-ko",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "oracle_count",
+      "seed": 1
+    },
+    {
+      "baseline": "radial_quantile_transport",
+      "dataset": "spinal-ko",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "oracle_count",
+      "seed": 1
+    },
+    {
+      "baseline": "scgpt_spatial",
+      "dataset": "spinal-ko",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "oracle_count",
+      "seed": 1
+    },
+    {
+      "baseline": "spatialformer",
+      "dataset": "spinal-ko",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "oracle_count",
+      "seed": 1
+    },
+    {
+      "baseline": "scgpt",
+      "dataset": "spinal-ko",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "oracle_count",
+      "seed": 1
+    },
+    {
+      "baseline": "scfoundation",
+      "dataset": "spinal-ko",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "oracle_count",
+      "seed": 1
+    },
+    {
+      "baseline": "state_se",
+      "dataset": "spinal-ko",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "oracle_count",
+      "seed": 1
+    },
+    {
+      "baseline": "count_matched_resampling",
+      "dataset": "spinal-ko",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "oracle_count",
+      "seed": 2
+    },
+    {
+      "baseline": "gaussian_affine_transport",
+      "dataset": "spinal-ko",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "oracle_count",
+      "seed": 2
+    },
+    {
+      "baseline": "radial_quantile_transport",
+      "dataset": "spinal-ko",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "oracle_count",
+      "seed": 2
+    },
+    {
+      "baseline": "scgpt_spatial",
+      "dataset": "spinal-ko",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "oracle_count",
+      "seed": 2
+    },
+    {
+      "baseline": "spatialformer",
+      "dataset": "spinal-ko",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "oracle_count",
+      "seed": 2
+    },
+    {
+      "baseline": "scgpt",
+      "dataset": "spinal-ko",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "oracle_count",
+      "seed": 2
+    },
+    {
+      "baseline": "scfoundation",
+      "dataset": "spinal-ko",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "oracle_count",
+      "seed": 2
+    },
+    {
+      "baseline": "state_se",
+      "dataset": "spinal-ko",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "oracle_count",
+      "seed": 2
+    },
+    {
+      "baseline": "count_matched_resampling",
+      "dataset": "spinal-ko",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "oracle_count",
+      "seed": 3
+    },
+    {
+      "baseline": "gaussian_affine_transport",
+      "dataset": "spinal-ko",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "oracle_count",
+      "seed": 3
+    },
+    {
+      "baseline": "radial_quantile_transport",
+      "dataset": "spinal-ko",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "oracle_count",
+      "seed": 3
+    },
+    {
+      "baseline": "scgpt_spatial",
+      "dataset": "spinal-ko",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "oracle_count",
+      "seed": 3
+    },
+    {
+      "baseline": "spatialformer",
+      "dataset": "spinal-ko",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "oracle_count",
+      "seed": 3
+    },
+    {
+      "baseline": "scgpt",
+      "dataset": "spinal-ko",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "oracle_count",
+      "seed": 3
+    },
+    {
+      "baseline": "scfoundation",
+      "dataset": "spinal-ko",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "oracle_count",
+      "seed": 3
+    },
+    {
+      "baseline": "state_se",
+      "dataset": "spinal-ko",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "oracle_count",
+      "seed": 3
+    },
+    {
+      "baseline": "count_matched_resampling",
+      "dataset": "gbm-ohsv",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "oracle_count",
+      "seed": 1
+    },
+    {
+      "baseline": "gaussian_affine_transport",
+      "dataset": "gbm-ohsv",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "oracle_count",
+      "seed": 1
+    },
+    {
+      "baseline": "radial_quantile_transport",
+      "dataset": "gbm-ohsv",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "oracle_count",
+      "seed": 1
+    },
+    {
+      "baseline": "scgpt_spatial",
+      "dataset": "gbm-ohsv",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "oracle_count",
+      "seed": 1
+    },
+    {
+      "baseline": "spatialformer",
+      "dataset": "gbm-ohsv",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "oracle_count",
+      "seed": 1
+    },
+    {
+      "baseline": "scgpt",
+      "dataset": "gbm-ohsv",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "oracle_count",
+      "seed": 1
+    },
+    {
+      "baseline": "scfoundation",
+      "dataset": "gbm-ohsv",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "oracle_count",
+      "seed": 1
+    },
+    {
+      "baseline": "state_se",
+      "dataset": "gbm-ohsv",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "oracle_count",
+      "seed": 1
+    },
+    {
+      "baseline": "count_matched_resampling",
+      "dataset": "gbm-ohsv",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "oracle_count",
+      "seed": 2
+    },
+    {
+      "baseline": "gaussian_affine_transport",
+      "dataset": "gbm-ohsv",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "oracle_count",
+      "seed": 2
+    },
+    {
+      "baseline": "radial_quantile_transport",
+      "dataset": "gbm-ohsv",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "oracle_count",
+      "seed": 2
+    },
+    {
+      "baseline": "scgpt_spatial",
+      "dataset": "gbm-ohsv",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "oracle_count",
+      "seed": 2
+    },
+    {
+      "baseline": "spatialformer",
+      "dataset": "gbm-ohsv",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "oracle_count",
+      "seed": 2
+    },
+    {
+      "baseline": "scgpt",
+      "dataset": "gbm-ohsv",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "oracle_count",
+      "seed": 2
+    },
+    {
+      "baseline": "scfoundation",
+      "dataset": "gbm-ohsv",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "oracle_count",
+      "seed": 2
+    },
+    {
+      "baseline": "state_se",
+      "dataset": "gbm-ohsv",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "oracle_count",
+      "seed": 2
+    },
+    {
+      "baseline": "count_matched_resampling",
+      "dataset": "gbm-ohsv",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "oracle_count",
+      "seed": 3
+    },
+    {
+      "baseline": "gaussian_affine_transport",
+      "dataset": "gbm-ohsv",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "oracle_count",
+      "seed": 3
+    },
+    {
+      "baseline": "radial_quantile_transport",
+      "dataset": "gbm-ohsv",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "oracle_count",
+      "seed": 3
+    },
+    {
+      "baseline": "scgpt_spatial",
+      "dataset": "gbm-ohsv",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "oracle_count",
+      "seed": 3
+    },
+    {
+      "baseline": "spatialformer",
+      "dataset": "gbm-ohsv",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "oracle_count",
+      "seed": 3
+    },
+    {
+      "baseline": "scgpt",
+      "dataset": "gbm-ohsv",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "oracle_count",
+      "seed": 3
+    },
+    {
+      "baseline": "scfoundation",
+      "dataset": "gbm-ohsv",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "oracle_count",
+      "seed": 3
+    },
+    {
+      "baseline": "state_se",
+      "dataset": "gbm-ohsv",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "oracle_count",
+      "seed": 3
+    },
+    {
+      "baseline": "count_matched_resampling",
+      "dataset": "breast-fus",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "oracle_count",
+      "seed": 1
+    },
+    {
+      "baseline": "gaussian_affine_transport",
+      "dataset": "breast-fus",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "oracle_count",
+      "seed": 1
+    },
+    {
+      "baseline": "radial_quantile_transport",
+      "dataset": "breast-fus",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "oracle_count",
+      "seed": 1
+    },
+    {
+      "baseline": "scgpt_spatial",
+      "dataset": "breast-fus",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "oracle_count",
+      "seed": 1
+    },
+    {
+      "baseline": "spatialformer",
+      "dataset": "breast-fus",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "oracle_count",
+      "seed": 1
+    },
+    {
+      "baseline": "scgpt",
+      "dataset": "breast-fus",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "oracle_count",
+      "seed": 1
+    },
+    {
+      "baseline": "scfoundation",
+      "dataset": "breast-fus",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "oracle_count",
+      "seed": 1
+    },
+    {
+      "baseline": "state_se",
+      "dataset": "breast-fus",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "oracle_count",
+      "seed": 1
+    },
+    {
+      "baseline": "count_matched_resampling",
+      "dataset": "breast-fus",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "oracle_count",
+      "seed": 2
+    },
+    {
+      "baseline": "gaussian_affine_transport",
+      "dataset": "breast-fus",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "oracle_count",
+      "seed": 2
+    },
+    {
+      "baseline": "radial_quantile_transport",
+      "dataset": "breast-fus",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "oracle_count",
+      "seed": 2
+    },
+    {
+      "baseline": "scgpt_spatial",
+      "dataset": "breast-fus",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "oracle_count",
+      "seed": 2
+    },
+    {
+      "baseline": "spatialformer",
+      "dataset": "breast-fus",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "oracle_count",
+      "seed": 2
+    },
+    {
+      "baseline": "scgpt",
+      "dataset": "breast-fus",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "oracle_count",
+      "seed": 2
+    },
+    {
+      "baseline": "scfoundation",
+      "dataset": "breast-fus",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "oracle_count",
+      "seed": 2
+    },
+    {
+      "baseline": "state_se",
+      "dataset": "breast-fus",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "oracle_count",
+      "seed": 2
+    },
+    {
+      "baseline": "count_matched_resampling",
+      "dataset": "breast-fus",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "oracle_count",
+      "seed": 3
+    },
+    {
+      "baseline": "gaussian_affine_transport",
+      "dataset": "breast-fus",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "oracle_count",
+      "seed": 3
+    },
+    {
+      "baseline": "radial_quantile_transport",
+      "dataset": "breast-fus",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "oracle_count",
+      "seed": 3
+    },
+    {
+      "baseline": "scgpt_spatial",
+      "dataset": "breast-fus",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "oracle_count",
+      "seed": 3
+    },
+    {
+      "baseline": "spatialformer",
+      "dataset": "breast-fus",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "oracle_count",
+      "seed": 3
+    },
+    {
+      "baseline": "scgpt",
+      "dataset": "breast-fus",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "oracle_count",
+      "seed": 3
+    },
+    {
+      "baseline": "scfoundation",
+      "dataset": "breast-fus",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "oracle_count",
+      "seed": 3
+    },
+    {
+      "baseline": "state_se",
+      "dataset": "breast-fus",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "oracle_count",
+      "seed": 3
+    },
+    {
+      "baseline": "count_matched_resampling",
+      "dataset": "gut-microbiota",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "oracle_count",
+      "seed": 1
+    },
+    {
+      "baseline": "gaussian_affine_transport",
+      "dataset": "gut-microbiota",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "oracle_count",
+      "seed": 1
+    },
+    {
+      "baseline": "radial_quantile_transport",
+      "dataset": "gut-microbiota",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "oracle_count",
+      "seed": 1
+    },
+    {
+      "baseline": "scgpt_spatial",
+      "dataset": "gut-microbiota",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "oracle_count",
+      "seed": 1
+    },
+    {
+      "baseline": "spatialformer",
+      "dataset": "gut-microbiota",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "oracle_count",
+      "seed": 1
+    },
+    {
+      "baseline": "scgpt",
+      "dataset": "gut-microbiota",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "oracle_count",
+      "seed": 1
+    },
+    {
+      "baseline": "scfoundation",
+      "dataset": "gut-microbiota",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "oracle_count",
+      "seed": 1
+    },
+    {
+      "baseline": "state_se",
+      "dataset": "gut-microbiota",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "oracle_count",
+      "seed": 1
+    },
+    {
+      "baseline": "count_matched_resampling",
+      "dataset": "gut-microbiota",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "oracle_count",
+      "seed": 2
+    },
+    {
+      "baseline": "gaussian_affine_transport",
+      "dataset": "gut-microbiota",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "oracle_count",
+      "seed": 2
+    },
+    {
+      "baseline": "radial_quantile_transport",
+      "dataset": "gut-microbiota",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "oracle_count",
+      "seed": 2
+    },
+    {
+      "baseline": "scgpt_spatial",
+      "dataset": "gut-microbiota",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "oracle_count",
+      "seed": 2
+    },
+    {
+      "baseline": "spatialformer",
+      "dataset": "gut-microbiota",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "oracle_count",
+      "seed": 2
+    },
+    {
+      "baseline": "scgpt",
+      "dataset": "gut-microbiota",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "oracle_count",
+      "seed": 2
+    },
+    {
+      "baseline": "scfoundation",
+      "dataset": "gut-microbiota",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "oracle_count",
+      "seed": 2
+    },
+    {
+      "baseline": "state_se",
+      "dataset": "gut-microbiota",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "oracle_count",
+      "seed": 2
+    },
+    {
+      "baseline": "count_matched_resampling",
+      "dataset": "gut-microbiota",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "oracle_count",
+      "seed": 3
+    },
+    {
+      "baseline": "gaussian_affine_transport",
+      "dataset": "gut-microbiota",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "oracle_count",
+      "seed": 3
+    },
+    {
+      "baseline": "radial_quantile_transport",
+      "dataset": "gut-microbiota",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "oracle_count",
+      "seed": 3
+    },
+    {
+      "baseline": "scgpt_spatial",
+      "dataset": "gut-microbiota",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "oracle_count",
+      "seed": 3
+    },
+    {
+      "baseline": "spatialformer",
+      "dataset": "gut-microbiota",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "oracle_count",
+      "seed": 3
+    },
+    {
+      "baseline": "scgpt",
+      "dataset": "gut-microbiota",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "oracle_count",
+      "seed": 3
+    },
+    {
+      "baseline": "scfoundation",
+      "dataset": "gut-microbiota",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "oracle_count",
+      "seed": 3
+    },
+    {
+      "baseline": "state_se",
+      "dataset": "gut-microbiota",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "oracle_count",
+      "seed": 3
+    },
+    {
+      "baseline": "count_matched_resampling",
+      "dataset": "cardiac-mi",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "oracle_count",
+      "seed": 1
+    },
+    {
+      "baseline": "gaussian_affine_transport",
+      "dataset": "cardiac-mi",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "oracle_count",
+      "seed": 1
+    },
+    {
+      "baseline": "radial_quantile_transport",
+      "dataset": "cardiac-mi",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "oracle_count",
+      "seed": 1
+    },
+    {
+      "baseline": "scgpt_spatial",
+      "dataset": "cardiac-mi",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "oracle_count",
+      "seed": 1
+    },
+    {
+      "baseline": "spatialformer",
+      "dataset": "cardiac-mi",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "oracle_count",
+      "seed": 1
+    },
+    {
+      "baseline": "scgpt",
+      "dataset": "cardiac-mi",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "oracle_count",
+      "seed": 1
+    },
+    {
+      "baseline": "scfoundation",
+      "dataset": "cardiac-mi",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "oracle_count",
+      "seed": 1
+    },
+    {
+      "baseline": "state_se",
+      "dataset": "cardiac-mi",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "oracle_count",
+      "seed": 1
+    },
+    {
+      "baseline": "count_matched_resampling",
+      "dataset": "cardiac-mi",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "oracle_count",
+      "seed": 2
+    },
+    {
+      "baseline": "gaussian_affine_transport",
+      "dataset": "cardiac-mi",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "oracle_count",
+      "seed": 2
+    },
+    {
+      "baseline": "radial_quantile_transport",
+      "dataset": "cardiac-mi",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "oracle_count",
+      "seed": 2
+    },
+    {
+      "baseline": "scgpt_spatial",
+      "dataset": "cardiac-mi",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "oracle_count",
+      "seed": 2
+    },
+    {
+      "baseline": "spatialformer",
+      "dataset": "cardiac-mi",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "oracle_count",
+      "seed": 2
+    },
+    {
+      "baseline": "scgpt",
+      "dataset": "cardiac-mi",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "oracle_count",
+      "seed": 2
+    },
+    {
+      "baseline": "scfoundation",
+      "dataset": "cardiac-mi",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "oracle_count",
+      "seed": 2
+    },
+    {
+      "baseline": "state_se",
+      "dataset": "cardiac-mi",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "oracle_count",
+      "seed": 2
+    },
+    {
+      "baseline": "count_matched_resampling",
+      "dataset": "cardiac-mi",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "oracle_count",
+      "seed": 3
+    },
+    {
+      "baseline": "gaussian_affine_transport",
+      "dataset": "cardiac-mi",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "oracle_count",
+      "seed": 3
+    },
+    {
+      "baseline": "radial_quantile_transport",
+      "dataset": "cardiac-mi",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "oracle_count",
+      "seed": 3
+    },
+    {
+      "baseline": "scgpt_spatial",
+      "dataset": "cardiac-mi",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "oracle_count",
+      "seed": 3
+    },
+    {
+      "baseline": "spatialformer",
+      "dataset": "cardiac-mi",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "oracle_count",
+      "seed": 3
+    },
+    {
+      "baseline": "scgpt",
+      "dataset": "cardiac-mi",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "oracle_count",
+      "seed": 3
+    },
+    {
+      "baseline": "scfoundation",
+      "dataset": "cardiac-mi",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "oracle_count",
+      "seed": 3
+    },
+    {
+      "baseline": "state_se",
+      "dataset": "cardiac-mi",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "oracle_count",
+      "seed": 3
+    },
+    {
+      "baseline": "count_matched_resampling",
+      "dataset": "kidney-iri",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "oracle_count",
+      "seed": 1
+    },
+    {
+      "baseline": "gaussian_affine_transport",
+      "dataset": "kidney-iri",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "oracle_count",
+      "seed": 1
+    },
+    {
+      "baseline": "radial_quantile_transport",
+      "dataset": "kidney-iri",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "oracle_count",
+      "seed": 1
+    },
+    {
+      "baseline": "scgpt_spatial",
+      "dataset": "kidney-iri",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "oracle_count",
+      "seed": 1
+    },
+    {
+      "baseline": "spatialformer",
+      "dataset": "kidney-iri",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "oracle_count",
+      "seed": 1
+    },
+    {
+      "baseline": "scgpt",
+      "dataset": "kidney-iri",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "oracle_count",
+      "seed": 1
+    },
+    {
+      "baseline": "scfoundation",
+      "dataset": "kidney-iri",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "oracle_count",
+      "seed": 1
+    },
+    {
+      "baseline": "state_se",
+      "dataset": "kidney-iri",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "oracle_count",
+      "seed": 1
+    },
+    {
+      "baseline": "count_matched_resampling",
+      "dataset": "kidney-iri",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "oracle_count",
+      "seed": 2
+    },
+    {
+      "baseline": "gaussian_affine_transport",
+      "dataset": "kidney-iri",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "oracle_count",
+      "seed": 2
+    },
+    {
+      "baseline": "radial_quantile_transport",
+      "dataset": "kidney-iri",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "oracle_count",
+      "seed": 2
+    },
+    {
+      "baseline": "scgpt_spatial",
+      "dataset": "kidney-iri",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "oracle_count",
+      "seed": 2
+    },
+    {
+      "baseline": "spatialformer",
+      "dataset": "kidney-iri",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "oracle_count",
+      "seed": 2
+    },
+    {
+      "baseline": "scgpt",
+      "dataset": "kidney-iri",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "oracle_count",
+      "seed": 2
+    },
+    {
+      "baseline": "scfoundation",
+      "dataset": "kidney-iri",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "oracle_count",
+      "seed": 2
+    },
+    {
+      "baseline": "state_se",
+      "dataset": "kidney-iri",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "oracle_count",
+      "seed": 2
+    },
+    {
+      "baseline": "count_matched_resampling",
+      "dataset": "kidney-iri",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "oracle_count",
+      "seed": 3
+    },
+    {
+      "baseline": "gaussian_affine_transport",
+      "dataset": "kidney-iri",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "oracle_count",
+      "seed": 3
+    },
+    {
+      "baseline": "radial_quantile_transport",
+      "dataset": "kidney-iri",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "oracle_count",
+      "seed": 3
+    },
+    {
+      "baseline": "scgpt_spatial",
+      "dataset": "kidney-iri",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "oracle_count",
+      "seed": 3
+    },
+    {
+      "baseline": "spatialformer",
+      "dataset": "kidney-iri",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "oracle_count",
+      "seed": 3
+    },
+    {
+      "baseline": "scgpt",
+      "dataset": "kidney-iri",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "oracle_count",
+      "seed": 3
+    },
+    {
+      "baseline": "scfoundation",
+      "dataset": "kidney-iri",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "oracle_count",
+      "seed": 3
+    },
+    {
+      "baseline": "state_se",
+      "dataset": "kidney-iri",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "oracle_count",
+      "seed": 3
+    },
+    {
+      "baseline": "count_matched_resampling",
+      "dataset": "pf-astro",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "oracle_count",
+      "seed": 1
+    },
+    {
+      "baseline": "gaussian_affine_transport",
+      "dataset": "pf-astro",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "oracle_count",
+      "seed": 1
+    },
+    {
+      "baseline": "radial_quantile_transport",
+      "dataset": "pf-astro",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "oracle_count",
+      "seed": 1
+    },
+    {
+      "baseline": "scgpt_spatial",
+      "dataset": "pf-astro",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "oracle_count",
+      "seed": 1
+    },
+    {
+      "baseline": "spatialformer",
+      "dataset": "pf-astro",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "oracle_count",
+      "seed": 1
+    },
+    {
+      "baseline": "scgpt",
+      "dataset": "pf-astro",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "oracle_count",
+      "seed": 1
+    },
+    {
+      "baseline": "scfoundation",
+      "dataset": "pf-astro",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "oracle_count",
+      "seed": 1
+    },
+    {
+      "baseline": "state_se",
+      "dataset": "pf-astro",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "oracle_count",
+      "seed": 1
+    },
+    {
+      "baseline": "count_matched_resampling",
+      "dataset": "pf-astro",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "oracle_count",
+      "seed": 2
+    },
+    {
+      "baseline": "gaussian_affine_transport",
+      "dataset": "pf-astro",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "oracle_count",
+      "seed": 2
+    },
+    {
+      "baseline": "radial_quantile_transport",
+      "dataset": "pf-astro",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "oracle_count",
+      "seed": 2
+    },
+    {
+      "baseline": "scgpt_spatial",
+      "dataset": "pf-astro",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "oracle_count",
+      "seed": 2
+    },
+    {
+      "baseline": "spatialformer",
+      "dataset": "pf-astro",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "oracle_count",
+      "seed": 2
+    },
+    {
+      "baseline": "scgpt",
+      "dataset": "pf-astro",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "oracle_count",
+      "seed": 2
+    },
+    {
+      "baseline": "scfoundation",
+      "dataset": "pf-astro",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "oracle_count",
+      "seed": 2
+    },
+    {
+      "baseline": "state_se",
+      "dataset": "pf-astro",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "oracle_count",
+      "seed": 2
+    },
+    {
+      "baseline": "count_matched_resampling",
+      "dataset": "pf-astro",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "oracle_count",
+      "seed": 3
+    },
+    {
+      "baseline": "gaussian_affine_transport",
+      "dataset": "pf-astro",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "oracle_count",
+      "seed": 3
+    },
+    {
+      "baseline": "radial_quantile_transport",
+      "dataset": "pf-astro",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "oracle_count",
+      "seed": 3
+    },
+    {
+      "baseline": "scgpt_spatial",
+      "dataset": "pf-astro",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "oracle_count",
+      "seed": 3
+    },
+    {
+      "baseline": "spatialformer",
+      "dataset": "pf-astro",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "oracle_count",
+      "seed": 3
+    },
+    {
+      "baseline": "scgpt",
+      "dataset": "pf-astro",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "oracle_count",
+      "seed": 3
+    },
+    {
+      "baseline": "scfoundation",
+      "dataset": "pf-astro",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "oracle_count",
+      "seed": 3
+    },
+    {
+      "baseline": "state_se",
+      "dataset": "pf-astro",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "oracle_count",
+      "seed": 3
+    },
+    {
+      "baseline": "count_matched_resampling",
+      "dataset": "lung-drug",
+      "fit_family": "drug",
+      "fit_group": "seed1",
+      "mode": "oracle_count",
+      "seed": 1
+    },
+    {
+      "baseline": "gaussian_affine_transport",
+      "dataset": "lung-drug",
+      "fit_family": "drug",
+      "fit_group": "seed1",
+      "mode": "oracle_count",
+      "seed": 1
+    },
+    {
+      "baseline": "radial_quantile_transport",
+      "dataset": "lung-drug",
+      "fit_family": "drug",
+      "fit_group": "seed1",
+      "mode": "oracle_count",
+      "seed": 1
+    },
+    {
+      "baseline": "scgpt_spatial",
+      "dataset": "lung-drug",
+      "fit_family": "drug",
+      "fit_group": "seed1",
+      "mode": "oracle_count",
+      "seed": 1
+    },
+    {
+      "baseline": "spatialformer",
+      "dataset": "lung-drug",
+      "fit_family": "drug",
+      "fit_group": "seed1",
+      "mode": "oracle_count",
+      "seed": 1
+    },
+    {
+      "baseline": "scgpt",
+      "dataset": "lung-drug",
+      "fit_family": "drug",
+      "fit_group": "seed1",
+      "mode": "oracle_count",
+      "seed": 1
+    },
+    {
+      "baseline": "scfoundation",
+      "dataset": "lung-drug",
+      "fit_family": "drug",
+      "fit_group": "seed1",
+      "mode": "oracle_count",
+      "seed": 1
+    },
+    {
+      "baseline": "state_se",
+      "dataset": "lung-drug",
+      "fit_family": "drug",
+      "fit_group": "seed1",
+      "mode": "oracle_count",
+      "seed": 1
+    },
+    {
+      "baseline": "count_matched_resampling",
+      "dataset": "lung-drug",
+      "fit_family": "drug",
+      "fit_group": "seed2",
+      "mode": "oracle_count",
+      "seed": 2
+    },
+    {
+      "baseline": "gaussian_affine_transport",
+      "dataset": "lung-drug",
+      "fit_family": "drug",
+      "fit_group": "seed2",
+      "mode": "oracle_count",
+      "seed": 2
+    },
+    {
+      "baseline": "radial_quantile_transport",
+      "dataset": "lung-drug",
+      "fit_family": "drug",
+      "fit_group": "seed2",
+      "mode": "oracle_count",
+      "seed": 2
+    },
+    {
+      "baseline": "scgpt_spatial",
+      "dataset": "lung-drug",
+      "fit_family": "drug",
+      "fit_group": "seed2",
+      "mode": "oracle_count",
+      "seed": 2
+    },
+    {
+      "baseline": "spatialformer",
+      "dataset": "lung-drug",
+      "fit_family": "drug",
+      "fit_group": "seed2",
+      "mode": "oracle_count",
+      "seed": 2
+    },
+    {
+      "baseline": "scgpt",
+      "dataset": "lung-drug",
+      "fit_family": "drug",
+      "fit_group": "seed2",
+      "mode": "oracle_count",
+      "seed": 2
+    },
+    {
+      "baseline": "scfoundation",
+      "dataset": "lung-drug",
+      "fit_family": "drug",
+      "fit_group": "seed2",
+      "mode": "oracle_count",
+      "seed": 2
+    },
+    {
+      "baseline": "state_se",
+      "dataset": "lung-drug",
+      "fit_family": "drug",
+      "fit_group": "seed2",
+      "mode": "oracle_count",
+      "seed": 2
+    },
+    {
+      "baseline": "count_matched_resampling",
+      "dataset": "lung-drug",
+      "fit_family": "drug",
+      "fit_group": "seed3",
+      "mode": "oracle_count",
+      "seed": 3
+    },
+    {
+      "baseline": "gaussian_affine_transport",
+      "dataset": "lung-drug",
+      "fit_family": "drug",
+      "fit_group": "seed3",
+      "mode": "oracle_count",
+      "seed": 3
+    },
+    {
+      "baseline": "radial_quantile_transport",
+      "dataset": "lung-drug",
+      "fit_family": "drug",
+      "fit_group": "seed3",
+      "mode": "oracle_count",
+      "seed": 3
+    },
+    {
+      "baseline": "scgpt_spatial",
+      "dataset": "lung-drug",
+      "fit_family": "drug",
+      "fit_group": "seed3",
+      "mode": "oracle_count",
+      "seed": 3
+    },
+    {
+      "baseline": "spatialformer",
+      "dataset": "lung-drug",
+      "fit_family": "drug",
+      "fit_group": "seed3",
+      "mode": "oracle_count",
+      "seed": 3
+    },
+    {
+      "baseline": "scgpt",
+      "dataset": "lung-drug",
+      "fit_family": "drug",
+      "fit_group": "seed3",
+      "mode": "oracle_count",
+      "seed": 3
+    },
+    {
+      "baseline": "scfoundation",
+      "dataset": "lung-drug",
+      "fit_family": "drug",
+      "fit_group": "seed3",
+      "mode": "oracle_count",
+      "seed": 3
+    },
+    {
+      "baseline": "state_se",
+      "dataset": "lung-drug",
+      "fit_family": "drug",
+      "fit_group": "seed3",
+      "mode": "oracle_count",
+      "seed": 3
+    },
+    {
+      "baseline": "count_matched_resampling",
+      "dataset": "sickness",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "oracle_count",
+      "seed": 1
+    },
+    {
+      "baseline": "gaussian_affine_transport",
+      "dataset": "sickness",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "oracle_count",
+      "seed": 1
+    },
+    {
+      "baseline": "radial_quantile_transport",
+      "dataset": "sickness",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "oracle_count",
+      "seed": 1
+    },
+    {
+      "baseline": "scgpt_spatial",
+      "dataset": "sickness",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "oracle_count",
+      "seed": 1
+    },
+    {
+      "baseline": "spatialformer",
+      "dataset": "sickness",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "oracle_count",
+      "seed": 1
+    },
+    {
+      "baseline": "scgpt",
+      "dataset": "sickness",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "oracle_count",
+      "seed": 1
+    },
+    {
+      "baseline": "scfoundation",
+      "dataset": "sickness",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "oracle_count",
+      "seed": 1
+    },
+    {
+      "baseline": "state_se",
+      "dataset": "sickness",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "oracle_count",
+      "seed": 1
+    },
+    {
+      "baseline": "count_matched_resampling",
+      "dataset": "sickness",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "oracle_count",
+      "seed": 2
+    },
+    {
+      "baseline": "gaussian_affine_transport",
+      "dataset": "sickness",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "oracle_count",
+      "seed": 2
+    },
+    {
+      "baseline": "radial_quantile_transport",
+      "dataset": "sickness",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "oracle_count",
+      "seed": 2
+    },
+    {
+      "baseline": "scgpt_spatial",
+      "dataset": "sickness",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "oracle_count",
+      "seed": 2
+    },
+    {
+      "baseline": "spatialformer",
+      "dataset": "sickness",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "oracle_count",
+      "seed": 2
+    },
+    {
+      "baseline": "scgpt",
+      "dataset": "sickness",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "oracle_count",
+      "seed": 2
+    },
+    {
+      "baseline": "scfoundation",
+      "dataset": "sickness",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "oracle_count",
+      "seed": 2
+    },
+    {
+      "baseline": "state_se",
+      "dataset": "sickness",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "oracle_count",
+      "seed": 2
+    },
+    {
+      "baseline": "count_matched_resampling",
+      "dataset": "sickness",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "oracle_count",
+      "seed": 3
+    },
+    {
+      "baseline": "gaussian_affine_transport",
+      "dataset": "sickness",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "oracle_count",
+      "seed": 3
+    },
+    {
+      "baseline": "radial_quantile_transport",
+      "dataset": "sickness",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "oracle_count",
+      "seed": 3
+    },
+    {
+      "baseline": "scgpt_spatial",
+      "dataset": "sickness",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "oracle_count",
+      "seed": 3
+    },
+    {
+      "baseline": "spatialformer",
+      "dataset": "sickness",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "oracle_count",
+      "seed": 3
+    },
+    {
+      "baseline": "scgpt",
+      "dataset": "sickness",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "oracle_count",
+      "seed": 3
+    },
+    {
+      "baseline": "scfoundation",
+      "dataset": "sickness",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "oracle_count",
+      "seed": 3
+    },
+    {
+      "baseline": "state_se",
+      "dataset": "sickness",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "oracle_count",
+      "seed": 3
+    },
+    {
+      "baseline": "count_matched_resampling",
+      "dataset": "dss-colitis",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "oracle_count",
+      "seed": 1
+    },
+    {
+      "baseline": "gaussian_affine_transport",
+      "dataset": "dss-colitis",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "oracle_count",
+      "seed": 1
+    },
+    {
+      "baseline": "radial_quantile_transport",
+      "dataset": "dss-colitis",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "oracle_count",
+      "seed": 1
+    },
+    {
+      "baseline": "scgpt_spatial",
+      "dataset": "dss-colitis",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "oracle_count",
+      "seed": 1
+    },
+    {
+      "baseline": "spatialformer",
+      "dataset": "dss-colitis",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "oracle_count",
+      "seed": 1
+    },
+    {
+      "baseline": "scgpt",
+      "dataset": "dss-colitis",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "oracle_count",
+      "seed": 1
+    },
+    {
+      "baseline": "scfoundation",
+      "dataset": "dss-colitis",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "oracle_count",
+      "seed": 1
+    },
+    {
+      "baseline": "state_se",
+      "dataset": "dss-colitis",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "oracle_count",
+      "seed": 1
+    },
+    {
+      "baseline": "count_matched_resampling",
+      "dataset": "dss-colitis",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "oracle_count",
+      "seed": 2
+    },
+    {
+      "baseline": "gaussian_affine_transport",
+      "dataset": "dss-colitis",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "oracle_count",
+      "seed": 2
+    },
+    {
+      "baseline": "radial_quantile_transport",
+      "dataset": "dss-colitis",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "oracle_count",
+      "seed": 2
+    },
+    {
+      "baseline": "scgpt_spatial",
+      "dataset": "dss-colitis",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "oracle_count",
+      "seed": 2
+    },
+    {
+      "baseline": "spatialformer",
+      "dataset": "dss-colitis",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "oracle_count",
+      "seed": 2
+    },
+    {
+      "baseline": "scgpt",
+      "dataset": "dss-colitis",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "oracle_count",
+      "seed": 2
+    },
+    {
+      "baseline": "scfoundation",
+      "dataset": "dss-colitis",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "oracle_count",
+      "seed": 2
+    },
+    {
+      "baseline": "state_se",
+      "dataset": "dss-colitis",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "oracle_count",
+      "seed": 2
+    },
+    {
+      "baseline": "count_matched_resampling",
+      "dataset": "dss-colitis",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "oracle_count",
+      "seed": 3
+    },
+    {
+      "baseline": "gaussian_affine_transport",
+      "dataset": "dss-colitis",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "oracle_count",
+      "seed": 3
+    },
+    {
+      "baseline": "radial_quantile_transport",
+      "dataset": "dss-colitis",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "oracle_count",
+      "seed": 3
+    },
+    {
+      "baseline": "scgpt_spatial",
+      "dataset": "dss-colitis",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "oracle_count",
+      "seed": 3
+    },
+    {
+      "baseline": "spatialformer",
+      "dataset": "dss-colitis",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "oracle_count",
+      "seed": 3
+    },
+    {
+      "baseline": "scgpt",
+      "dataset": "dss-colitis",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "oracle_count",
+      "seed": 3
+    },
+    {
+      "baseline": "scfoundation",
+      "dataset": "dss-colitis",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "oracle_count",
+      "seed": 3
+    },
+    {
+      "baseline": "state_se",
+      "dataset": "dss-colitis",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "oracle_count",
+      "seed": 3
+    },
+    {
+      "baseline": "count_matched_resampling",
+      "dataset": "atm-rt",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "oracle_count",
+      "seed": 1
+    },
+    {
+      "baseline": "gaussian_affine_transport",
+      "dataset": "atm-rt",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "oracle_count",
+      "seed": 1
+    },
+    {
+      "baseline": "radial_quantile_transport",
+      "dataset": "atm-rt",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "oracle_count",
+      "seed": 1
+    },
+    {
+      "baseline": "scgpt_spatial",
+      "dataset": "atm-rt",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "oracle_count",
+      "seed": 1
+    },
+    {
+      "baseline": "spatialformer",
+      "dataset": "atm-rt",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "oracle_count",
+      "seed": 1
+    },
+    {
+      "baseline": "scgpt",
+      "dataset": "atm-rt",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "oracle_count",
+      "seed": 1
+    },
+    {
+      "baseline": "scfoundation",
+      "dataset": "atm-rt",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "oracle_count",
+      "seed": 1
+    },
+    {
+      "baseline": "state_se",
+      "dataset": "atm-rt",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "oracle_count",
+      "seed": 1
+    },
+    {
+      "baseline": "count_matched_resampling",
+      "dataset": "ddx54-pd1",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "oracle_count",
+      "seed": 1
+    },
+    {
+      "baseline": "gaussian_affine_transport",
+      "dataset": "ddx54-pd1",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "oracle_count",
+      "seed": 1
+    },
+    {
+      "baseline": "radial_quantile_transport",
+      "dataset": "ddx54-pd1",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "oracle_count",
+      "seed": 1
+    },
+    {
+      "baseline": "scgpt_spatial",
+      "dataset": "ddx54-pd1",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "oracle_count",
+      "seed": 1
+    },
+    {
+      "baseline": "spatialformer",
+      "dataset": "ddx54-pd1",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "oracle_count",
+      "seed": 1
+    },
+    {
+      "baseline": "scgpt",
+      "dataset": "ddx54-pd1",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "oracle_count",
+      "seed": 1
+    },
+    {
+      "baseline": "scfoundation",
+      "dataset": "ddx54-pd1",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "oracle_count",
+      "seed": 1
+    },
+    {
+      "baseline": "state_se",
+      "dataset": "ddx54-pd1",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "oracle_count",
+      "seed": 1
+    },
+    {
+      "baseline": "count_matched_resampling",
+      "dataset": "adipose",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "oracle_count",
+      "seed": 1
+    },
+    {
+      "baseline": "gaussian_affine_transport",
+      "dataset": "adipose",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "oracle_count",
+      "seed": 1
+    },
+    {
+      "baseline": "radial_quantile_transport",
+      "dataset": "adipose",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "oracle_count",
+      "seed": 1
+    },
+    {
+      "baseline": "scgpt_spatial",
+      "dataset": "adipose",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "oracle_count",
+      "seed": 1
+    },
+    {
+      "baseline": "spatialformer",
+      "dataset": "adipose",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "oracle_count",
+      "seed": 1
+    },
+    {
+      "baseline": "scgpt",
+      "dataset": "adipose",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "oracle_count",
+      "seed": 1
+    },
+    {
+      "baseline": "scfoundation",
+      "dataset": "adipose",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "oracle_count",
+      "seed": 1
+    },
+    {
+      "baseline": "state_se",
+      "dataset": "adipose",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "oracle_count",
+      "seed": 1
+    },
+    {
+      "baseline": "count_matched_resampling",
+      "dataset": "adipose",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "oracle_count",
+      "seed": 2
+    },
+    {
+      "baseline": "gaussian_affine_transport",
+      "dataset": "adipose",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "oracle_count",
+      "seed": 2
+    },
+    {
+      "baseline": "radial_quantile_transport",
+      "dataset": "adipose",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "oracle_count",
+      "seed": 2
+    },
+    {
+      "baseline": "scgpt_spatial",
+      "dataset": "adipose",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "oracle_count",
+      "seed": 2
+    },
+    {
+      "baseline": "spatialformer",
+      "dataset": "adipose",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "oracle_count",
+      "seed": 2
+    },
+    {
+      "baseline": "scgpt",
+      "dataset": "adipose",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "oracle_count",
+      "seed": 2
+    },
+    {
+      "baseline": "scfoundation",
+      "dataset": "adipose",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "oracle_count",
+      "seed": 2
+    },
+    {
+      "baseline": "state_se",
+      "dataset": "adipose",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "oracle_count",
+      "seed": 2
+    },
+    {
+      "baseline": "count_matched_resampling",
+      "dataset": "adipose",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "oracle_count",
+      "seed": 3
+    },
+    {
+      "baseline": "gaussian_affine_transport",
+      "dataset": "adipose",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "oracle_count",
+      "seed": 3
+    },
+    {
+      "baseline": "radial_quantile_transport",
+      "dataset": "adipose",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "oracle_count",
+      "seed": 3
+    },
+    {
+      "baseline": "scgpt_spatial",
+      "dataset": "adipose",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "oracle_count",
+      "seed": 3
+    },
+    {
+      "baseline": "spatialformer",
+      "dataset": "adipose",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "oracle_count",
+      "seed": 3
+    },
+    {
+      "baseline": "scgpt",
+      "dataset": "adipose",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "oracle_count",
+      "seed": 3
+    },
+    {
+      "baseline": "scfoundation",
+      "dataset": "adipose",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "oracle_count",
+      "seed": 3
+    },
+    {
+      "baseline": "state_se",
+      "dataset": "adipose",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "oracle_count",
+      "seed": 3
+    },
+    {
+      "baseline": "count_matched_resampling",
+      "dataset": "uc-vdz",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "oracle_count",
+      "seed": 1
+    },
+    {
+      "baseline": "gaussian_affine_transport",
+      "dataset": "uc-vdz",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "oracle_count",
+      "seed": 1
+    },
+    {
+      "baseline": "radial_quantile_transport",
+      "dataset": "uc-vdz",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "oracle_count",
+      "seed": 1
+    },
+    {
+      "baseline": "scgpt_spatial",
+      "dataset": "uc-vdz",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "oracle_count",
+      "seed": 1
+    },
+    {
+      "baseline": "spatialformer",
+      "dataset": "uc-vdz",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "oracle_count",
+      "seed": 1
+    },
+    {
+      "baseline": "scgpt",
+      "dataset": "uc-vdz",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "oracle_count",
+      "seed": 1
+    },
+    {
+      "baseline": "scfoundation",
+      "dataset": "uc-vdz",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "oracle_count",
+      "seed": 1
+    },
+    {
+      "baseline": "state_se",
+      "dataset": "uc-vdz",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "oracle_count",
+      "seed": 1
+    },
+    {
+      "baseline": "count_matched_resampling",
+      "dataset": "uc-vdz",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "oracle_count",
+      "seed": 2
+    },
+    {
+      "baseline": "gaussian_affine_transport",
+      "dataset": "uc-vdz",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "oracle_count",
+      "seed": 2
+    },
+    {
+      "baseline": "radial_quantile_transport",
+      "dataset": "uc-vdz",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "oracle_count",
+      "seed": 2
+    },
+    {
+      "baseline": "scgpt_spatial",
+      "dataset": "uc-vdz",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "oracle_count",
+      "seed": 2
+    },
+    {
+      "baseline": "spatialformer",
+      "dataset": "uc-vdz",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "oracle_count",
+      "seed": 2
+    },
+    {
+      "baseline": "scgpt",
+      "dataset": "uc-vdz",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "oracle_count",
+      "seed": 2
+    },
+    {
+      "baseline": "scfoundation",
+      "dataset": "uc-vdz",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "oracle_count",
+      "seed": 2
+    },
+    {
+      "baseline": "state_se",
+      "dataset": "uc-vdz",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "oracle_count",
+      "seed": 2
+    },
+    {
+      "baseline": "count_matched_resampling",
+      "dataset": "uc-vdz",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "oracle_count",
+      "seed": 3
+    },
+    {
+      "baseline": "gaussian_affine_transport",
+      "dataset": "uc-vdz",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "oracle_count",
+      "seed": 3
+    },
+    {
+      "baseline": "radial_quantile_transport",
+      "dataset": "uc-vdz",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "oracle_count",
+      "seed": 3
+    },
+    {
+      "baseline": "scgpt_spatial",
+      "dataset": "uc-vdz",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "oracle_count",
+      "seed": 3
+    },
+    {
+      "baseline": "spatialformer",
+      "dataset": "uc-vdz",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "oracle_count",
+      "seed": 3
+    },
+    {
+      "baseline": "scgpt",
+      "dataset": "uc-vdz",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "oracle_count",
+      "seed": 3
+    },
+    {
+      "baseline": "scfoundation",
+      "dataset": "uc-vdz",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "oracle_count",
+      "seed": 3
+    },
+    {
+      "baseline": "state_se",
+      "dataset": "uc-vdz",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "oracle_count",
+      "seed": 3
+    },
+    {
+      "baseline": "count_matched_resampling",
+      "dataset": "spinal-ko",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "joint",
+      "seed": 1
+    },
+    {
+      "baseline": "gaussian_affine_transport",
+      "dataset": "spinal-ko",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "joint",
+      "seed": 1
+    },
+    {
+      "baseline": "radial_quantile_transport",
+      "dataset": "spinal-ko",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "joint",
+      "seed": 1
+    },
+    {
+      "baseline": "scgpt_spatial",
+      "dataset": "spinal-ko",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "joint",
+      "seed": 1
+    },
+    {
+      "baseline": "spatialformer",
+      "dataset": "spinal-ko",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "joint",
+      "seed": 1
+    },
+    {
+      "baseline": "scgpt",
+      "dataset": "spinal-ko",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "joint",
+      "seed": 1
+    },
+    {
+      "baseline": "scfoundation",
+      "dataset": "spinal-ko",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "joint",
+      "seed": 1
+    },
+    {
+      "baseline": "state_se",
+      "dataset": "spinal-ko",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "joint",
+      "seed": 1
+    },
+    {
+      "baseline": "count_matched_resampling",
+      "dataset": "spinal-ko",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "joint",
+      "seed": 2
+    },
+    {
+      "baseline": "gaussian_affine_transport",
+      "dataset": "spinal-ko",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "joint",
+      "seed": 2
+    },
+    {
+      "baseline": "radial_quantile_transport",
+      "dataset": "spinal-ko",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "joint",
+      "seed": 2
+    },
+    {
+      "baseline": "scgpt_spatial",
+      "dataset": "spinal-ko",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "joint",
+      "seed": 2
+    },
+    {
+      "baseline": "spatialformer",
+      "dataset": "spinal-ko",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "joint",
+      "seed": 2
+    },
+    {
+      "baseline": "scgpt",
+      "dataset": "spinal-ko",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "joint",
+      "seed": 2
+    },
+    {
+      "baseline": "scfoundation",
+      "dataset": "spinal-ko",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "joint",
+      "seed": 2
+    },
+    {
+      "baseline": "state_se",
+      "dataset": "spinal-ko",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "joint",
+      "seed": 2
+    },
+    {
+      "baseline": "count_matched_resampling",
+      "dataset": "spinal-ko",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "joint",
+      "seed": 3
+    },
+    {
+      "baseline": "gaussian_affine_transport",
+      "dataset": "spinal-ko",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "joint",
+      "seed": 3
+    },
+    {
+      "baseline": "radial_quantile_transport",
+      "dataset": "spinal-ko",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "joint",
+      "seed": 3
+    },
+    {
+      "baseline": "scgpt_spatial",
+      "dataset": "spinal-ko",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "joint",
+      "seed": 3
+    },
+    {
+      "baseline": "spatialformer",
+      "dataset": "spinal-ko",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "joint",
+      "seed": 3
+    },
+    {
+      "baseline": "scgpt",
+      "dataset": "spinal-ko",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "joint",
+      "seed": 3
+    },
+    {
+      "baseline": "scfoundation",
+      "dataset": "spinal-ko",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "joint",
+      "seed": 3
+    },
+    {
+      "baseline": "state_se",
+      "dataset": "spinal-ko",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "joint",
+      "seed": 3
+    },
+    {
+      "baseline": "count_matched_resampling",
+      "dataset": "gbm-ohsv",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "joint",
+      "seed": 1
+    },
+    {
+      "baseline": "gaussian_affine_transport",
+      "dataset": "gbm-ohsv",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "joint",
+      "seed": 1
+    },
+    {
+      "baseline": "radial_quantile_transport",
+      "dataset": "gbm-ohsv",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "joint",
+      "seed": 1
+    },
+    {
+      "baseline": "scgpt_spatial",
+      "dataset": "gbm-ohsv",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "joint",
+      "seed": 1
+    },
+    {
+      "baseline": "spatialformer",
+      "dataset": "gbm-ohsv",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "joint",
+      "seed": 1
+    },
+    {
+      "baseline": "scgpt",
+      "dataset": "gbm-ohsv",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "joint",
+      "seed": 1
+    },
+    {
+      "baseline": "scfoundation",
+      "dataset": "gbm-ohsv",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "joint",
+      "seed": 1
+    },
+    {
+      "baseline": "state_se",
+      "dataset": "gbm-ohsv",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "joint",
+      "seed": 1
+    },
+    {
+      "baseline": "count_matched_resampling",
+      "dataset": "gbm-ohsv",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "joint",
+      "seed": 2
+    },
+    {
+      "baseline": "gaussian_affine_transport",
+      "dataset": "gbm-ohsv",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "joint",
+      "seed": 2
+    },
+    {
+      "baseline": "radial_quantile_transport",
+      "dataset": "gbm-ohsv",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "joint",
+      "seed": 2
+    },
+    {
+      "baseline": "scgpt_spatial",
+      "dataset": "gbm-ohsv",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "joint",
+      "seed": 2
+    },
+    {
+      "baseline": "spatialformer",
+      "dataset": "gbm-ohsv",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "joint",
+      "seed": 2
+    },
+    {
+      "baseline": "scgpt",
+      "dataset": "gbm-ohsv",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "joint",
+      "seed": 2
+    },
+    {
+      "baseline": "scfoundation",
+      "dataset": "gbm-ohsv",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "joint",
+      "seed": 2
+    },
+    {
+      "baseline": "state_se",
+      "dataset": "gbm-ohsv",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "joint",
+      "seed": 2
+    },
+    {
+      "baseline": "count_matched_resampling",
+      "dataset": "gbm-ohsv",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "joint",
+      "seed": 3
+    },
+    {
+      "baseline": "gaussian_affine_transport",
+      "dataset": "gbm-ohsv",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "joint",
+      "seed": 3
+    },
+    {
+      "baseline": "radial_quantile_transport",
+      "dataset": "gbm-ohsv",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "joint",
+      "seed": 3
+    },
+    {
+      "baseline": "scgpt_spatial",
+      "dataset": "gbm-ohsv",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "joint",
+      "seed": 3
+    },
+    {
+      "baseline": "spatialformer",
+      "dataset": "gbm-ohsv",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "joint",
+      "seed": 3
+    },
+    {
+      "baseline": "scgpt",
+      "dataset": "gbm-ohsv",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "joint",
+      "seed": 3
+    },
+    {
+      "baseline": "scfoundation",
+      "dataset": "gbm-ohsv",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "joint",
+      "seed": 3
+    },
+    {
+      "baseline": "state_se",
+      "dataset": "gbm-ohsv",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "joint",
+      "seed": 3
+    },
+    {
+      "baseline": "count_matched_resampling",
+      "dataset": "breast-fus",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "joint",
+      "seed": 1
+    },
+    {
+      "baseline": "gaussian_affine_transport",
+      "dataset": "breast-fus",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "joint",
+      "seed": 1
+    },
+    {
+      "baseline": "radial_quantile_transport",
+      "dataset": "breast-fus",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "joint",
+      "seed": 1
+    },
+    {
+      "baseline": "scgpt_spatial",
+      "dataset": "breast-fus",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "joint",
+      "seed": 1
+    },
+    {
+      "baseline": "spatialformer",
+      "dataset": "breast-fus",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "joint",
+      "seed": 1
+    },
+    {
+      "baseline": "scgpt",
+      "dataset": "breast-fus",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "joint",
+      "seed": 1
+    },
+    {
+      "baseline": "scfoundation",
+      "dataset": "breast-fus",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "joint",
+      "seed": 1
+    },
+    {
+      "baseline": "state_se",
+      "dataset": "breast-fus",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "joint",
+      "seed": 1
+    },
+    {
+      "baseline": "count_matched_resampling",
+      "dataset": "breast-fus",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "joint",
+      "seed": 2
+    },
+    {
+      "baseline": "gaussian_affine_transport",
+      "dataset": "breast-fus",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "joint",
+      "seed": 2
+    },
+    {
+      "baseline": "radial_quantile_transport",
+      "dataset": "breast-fus",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "joint",
+      "seed": 2
+    },
+    {
+      "baseline": "scgpt_spatial",
+      "dataset": "breast-fus",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "joint",
+      "seed": 2
+    },
+    {
+      "baseline": "spatialformer",
+      "dataset": "breast-fus",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "joint",
+      "seed": 2
+    },
+    {
+      "baseline": "scgpt",
+      "dataset": "breast-fus",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "joint",
+      "seed": 2
+    },
+    {
+      "baseline": "scfoundation",
+      "dataset": "breast-fus",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "joint",
+      "seed": 2
+    },
+    {
+      "baseline": "state_se",
+      "dataset": "breast-fus",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "joint",
+      "seed": 2
+    },
+    {
+      "baseline": "count_matched_resampling",
+      "dataset": "breast-fus",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "joint",
+      "seed": 3
+    },
+    {
+      "baseline": "gaussian_affine_transport",
+      "dataset": "breast-fus",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "joint",
+      "seed": 3
+    },
+    {
+      "baseline": "radial_quantile_transport",
+      "dataset": "breast-fus",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "joint",
+      "seed": 3
+    },
+    {
+      "baseline": "scgpt_spatial",
+      "dataset": "breast-fus",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "joint",
+      "seed": 3
+    },
+    {
+      "baseline": "spatialformer",
+      "dataset": "breast-fus",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "joint",
+      "seed": 3
+    },
+    {
+      "baseline": "scgpt",
+      "dataset": "breast-fus",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "joint",
+      "seed": 3
+    },
+    {
+      "baseline": "scfoundation",
+      "dataset": "breast-fus",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "joint",
+      "seed": 3
+    },
+    {
+      "baseline": "state_se",
+      "dataset": "breast-fus",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "joint",
+      "seed": 3
+    },
+    {
+      "baseline": "count_matched_resampling",
+      "dataset": "gut-microbiota",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "joint",
+      "seed": 1
+    },
+    {
+      "baseline": "gaussian_affine_transport",
+      "dataset": "gut-microbiota",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "joint",
+      "seed": 1
+    },
+    {
+      "baseline": "radial_quantile_transport",
+      "dataset": "gut-microbiota",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "joint",
+      "seed": 1
+    },
+    {
+      "baseline": "scgpt_spatial",
+      "dataset": "gut-microbiota",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "joint",
+      "seed": 1
+    },
+    {
+      "baseline": "spatialformer",
+      "dataset": "gut-microbiota",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "joint",
+      "seed": 1
+    },
+    {
+      "baseline": "scgpt",
+      "dataset": "gut-microbiota",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "joint",
+      "seed": 1
+    },
+    {
+      "baseline": "scfoundation",
+      "dataset": "gut-microbiota",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "joint",
+      "seed": 1
+    },
+    {
+      "baseline": "state_se",
+      "dataset": "gut-microbiota",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "joint",
+      "seed": 1
+    },
+    {
+      "baseline": "count_matched_resampling",
+      "dataset": "gut-microbiota",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "joint",
+      "seed": 2
+    },
+    {
+      "baseline": "gaussian_affine_transport",
+      "dataset": "gut-microbiota",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "joint",
+      "seed": 2
+    },
+    {
+      "baseline": "radial_quantile_transport",
+      "dataset": "gut-microbiota",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "joint",
+      "seed": 2
+    },
+    {
+      "baseline": "scgpt_spatial",
+      "dataset": "gut-microbiota",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "joint",
+      "seed": 2
+    },
+    {
+      "baseline": "spatialformer",
+      "dataset": "gut-microbiota",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "joint",
+      "seed": 2
+    },
+    {
+      "baseline": "scgpt",
+      "dataset": "gut-microbiota",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "joint",
+      "seed": 2
+    },
+    {
+      "baseline": "scfoundation",
+      "dataset": "gut-microbiota",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "joint",
+      "seed": 2
+    },
+    {
+      "baseline": "state_se",
+      "dataset": "gut-microbiota",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "joint",
+      "seed": 2
+    },
+    {
+      "baseline": "count_matched_resampling",
+      "dataset": "gut-microbiota",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "joint",
+      "seed": 3
+    },
+    {
+      "baseline": "gaussian_affine_transport",
+      "dataset": "gut-microbiota",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "joint",
+      "seed": 3
+    },
+    {
+      "baseline": "radial_quantile_transport",
+      "dataset": "gut-microbiota",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "joint",
+      "seed": 3
+    },
+    {
+      "baseline": "scgpt_spatial",
+      "dataset": "gut-microbiota",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "joint",
+      "seed": 3
+    },
+    {
+      "baseline": "spatialformer",
+      "dataset": "gut-microbiota",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "joint",
+      "seed": 3
+    },
+    {
+      "baseline": "scgpt",
+      "dataset": "gut-microbiota",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "joint",
+      "seed": 3
+    },
+    {
+      "baseline": "scfoundation",
+      "dataset": "gut-microbiota",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "joint",
+      "seed": 3
+    },
+    {
+      "baseline": "state_se",
+      "dataset": "gut-microbiota",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "joint",
+      "seed": 3
+    },
+    {
+      "baseline": "count_matched_resampling",
+      "dataset": "cardiac-mi",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "joint",
+      "seed": 1
+    },
+    {
+      "baseline": "gaussian_affine_transport",
+      "dataset": "cardiac-mi",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "joint",
+      "seed": 1
+    },
+    {
+      "baseline": "radial_quantile_transport",
+      "dataset": "cardiac-mi",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "joint",
+      "seed": 1
+    },
+    {
+      "baseline": "scgpt_spatial",
+      "dataset": "cardiac-mi",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "joint",
+      "seed": 1
+    },
+    {
+      "baseline": "spatialformer",
+      "dataset": "cardiac-mi",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "joint",
+      "seed": 1
+    },
+    {
+      "baseline": "scgpt",
+      "dataset": "cardiac-mi",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "joint",
+      "seed": 1
+    },
+    {
+      "baseline": "scfoundation",
+      "dataset": "cardiac-mi",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "joint",
+      "seed": 1
+    },
+    {
+      "baseline": "state_se",
+      "dataset": "cardiac-mi",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "joint",
+      "seed": 1
+    },
+    {
+      "baseline": "count_matched_resampling",
+      "dataset": "cardiac-mi",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "joint",
+      "seed": 2
+    },
+    {
+      "baseline": "gaussian_affine_transport",
+      "dataset": "cardiac-mi",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "joint",
+      "seed": 2
+    },
+    {
+      "baseline": "radial_quantile_transport",
+      "dataset": "cardiac-mi",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "joint",
+      "seed": 2
+    },
+    {
+      "baseline": "scgpt_spatial",
+      "dataset": "cardiac-mi",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "joint",
+      "seed": 2
+    },
+    {
+      "baseline": "spatialformer",
+      "dataset": "cardiac-mi",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "joint",
+      "seed": 2
+    },
+    {
+      "baseline": "scgpt",
+      "dataset": "cardiac-mi",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "joint",
+      "seed": 2
+    },
+    {
+      "baseline": "scfoundation",
+      "dataset": "cardiac-mi",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "joint",
+      "seed": 2
+    },
+    {
+      "baseline": "state_se",
+      "dataset": "cardiac-mi",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "joint",
+      "seed": 2
+    },
+    {
+      "baseline": "count_matched_resampling",
+      "dataset": "cardiac-mi",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "joint",
+      "seed": 3
+    },
+    {
+      "baseline": "gaussian_affine_transport",
+      "dataset": "cardiac-mi",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "joint",
+      "seed": 3
+    },
+    {
+      "baseline": "radial_quantile_transport",
+      "dataset": "cardiac-mi",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "joint",
+      "seed": 3
+    },
+    {
+      "baseline": "scgpt_spatial",
+      "dataset": "cardiac-mi",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "joint",
+      "seed": 3
+    },
+    {
+      "baseline": "spatialformer",
+      "dataset": "cardiac-mi",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "joint",
+      "seed": 3
+    },
+    {
+      "baseline": "scgpt",
+      "dataset": "cardiac-mi",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "joint",
+      "seed": 3
+    },
+    {
+      "baseline": "scfoundation",
+      "dataset": "cardiac-mi",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "joint",
+      "seed": 3
+    },
+    {
+      "baseline": "state_se",
+      "dataset": "cardiac-mi",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "joint",
+      "seed": 3
+    },
+    {
+      "baseline": "count_matched_resampling",
+      "dataset": "kidney-iri",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "joint",
+      "seed": 1
+    },
+    {
+      "baseline": "gaussian_affine_transport",
+      "dataset": "kidney-iri",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "joint",
+      "seed": 1
+    },
+    {
+      "baseline": "radial_quantile_transport",
+      "dataset": "kidney-iri",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "joint",
+      "seed": 1
+    },
+    {
+      "baseline": "scgpt_spatial",
+      "dataset": "kidney-iri",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "joint",
+      "seed": 1
+    },
+    {
+      "baseline": "spatialformer",
+      "dataset": "kidney-iri",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "joint",
+      "seed": 1
+    },
+    {
+      "baseline": "scgpt",
+      "dataset": "kidney-iri",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "joint",
+      "seed": 1
+    },
+    {
+      "baseline": "scfoundation",
+      "dataset": "kidney-iri",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "joint",
+      "seed": 1
+    },
+    {
+      "baseline": "state_se",
+      "dataset": "kidney-iri",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "joint",
+      "seed": 1
+    },
+    {
+      "baseline": "count_matched_resampling",
+      "dataset": "kidney-iri",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "joint",
+      "seed": 2
+    },
+    {
+      "baseline": "gaussian_affine_transport",
+      "dataset": "kidney-iri",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "joint",
+      "seed": 2
+    },
+    {
+      "baseline": "radial_quantile_transport",
+      "dataset": "kidney-iri",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "joint",
+      "seed": 2
+    },
+    {
+      "baseline": "scgpt_spatial",
+      "dataset": "kidney-iri",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "joint",
+      "seed": 2
+    },
+    {
+      "baseline": "spatialformer",
+      "dataset": "kidney-iri",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "joint",
+      "seed": 2
+    },
+    {
+      "baseline": "scgpt",
+      "dataset": "kidney-iri",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "joint",
+      "seed": 2
+    },
+    {
+      "baseline": "scfoundation",
+      "dataset": "kidney-iri",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "joint",
+      "seed": 2
+    },
+    {
+      "baseline": "state_se",
+      "dataset": "kidney-iri",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "joint",
+      "seed": 2
+    },
+    {
+      "baseline": "count_matched_resampling",
+      "dataset": "kidney-iri",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "joint",
+      "seed": 3
+    },
+    {
+      "baseline": "gaussian_affine_transport",
+      "dataset": "kidney-iri",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "joint",
+      "seed": 3
+    },
+    {
+      "baseline": "radial_quantile_transport",
+      "dataset": "kidney-iri",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "joint",
+      "seed": 3
+    },
+    {
+      "baseline": "scgpt_spatial",
+      "dataset": "kidney-iri",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "joint",
+      "seed": 3
+    },
+    {
+      "baseline": "spatialformer",
+      "dataset": "kidney-iri",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "joint",
+      "seed": 3
+    },
+    {
+      "baseline": "scgpt",
+      "dataset": "kidney-iri",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "joint",
+      "seed": 3
+    },
+    {
+      "baseline": "scfoundation",
+      "dataset": "kidney-iri",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "joint",
+      "seed": 3
+    },
+    {
+      "baseline": "state_se",
+      "dataset": "kidney-iri",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "joint",
+      "seed": 3
+    },
+    {
+      "baseline": "count_matched_resampling",
+      "dataset": "pf-astro",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "joint",
+      "seed": 1
+    },
+    {
+      "baseline": "gaussian_affine_transport",
+      "dataset": "pf-astro",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "joint",
+      "seed": 1
+    },
+    {
+      "baseline": "radial_quantile_transport",
+      "dataset": "pf-astro",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "joint",
+      "seed": 1
+    },
+    {
+      "baseline": "scgpt_spatial",
+      "dataset": "pf-astro",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "joint",
+      "seed": 1
+    },
+    {
+      "baseline": "spatialformer",
+      "dataset": "pf-astro",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "joint",
+      "seed": 1
+    },
+    {
+      "baseline": "scgpt",
+      "dataset": "pf-astro",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "joint",
+      "seed": 1
+    },
+    {
+      "baseline": "scfoundation",
+      "dataset": "pf-astro",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "joint",
+      "seed": 1
+    },
+    {
+      "baseline": "state_se",
+      "dataset": "pf-astro",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "joint",
+      "seed": 1
+    },
+    {
+      "baseline": "count_matched_resampling",
+      "dataset": "pf-astro",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "joint",
+      "seed": 2
+    },
+    {
+      "baseline": "gaussian_affine_transport",
+      "dataset": "pf-astro",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "joint",
+      "seed": 2
+    },
+    {
+      "baseline": "radial_quantile_transport",
+      "dataset": "pf-astro",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "joint",
+      "seed": 2
+    },
+    {
+      "baseline": "scgpt_spatial",
+      "dataset": "pf-astro",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "joint",
+      "seed": 2
+    },
+    {
+      "baseline": "spatialformer",
+      "dataset": "pf-astro",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "joint",
+      "seed": 2
+    },
+    {
+      "baseline": "scgpt",
+      "dataset": "pf-astro",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "joint",
+      "seed": 2
+    },
+    {
+      "baseline": "scfoundation",
+      "dataset": "pf-astro",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "joint",
+      "seed": 2
+    },
+    {
+      "baseline": "state_se",
+      "dataset": "pf-astro",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "joint",
+      "seed": 2
+    },
+    {
+      "baseline": "count_matched_resampling",
+      "dataset": "pf-astro",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "joint",
+      "seed": 3
+    },
+    {
+      "baseline": "gaussian_affine_transport",
+      "dataset": "pf-astro",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "joint",
+      "seed": 3
+    },
+    {
+      "baseline": "radial_quantile_transport",
+      "dataset": "pf-astro",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "joint",
+      "seed": 3
+    },
+    {
+      "baseline": "scgpt_spatial",
+      "dataset": "pf-astro",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "joint",
+      "seed": 3
+    },
+    {
+      "baseline": "spatialformer",
+      "dataset": "pf-astro",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "joint",
+      "seed": 3
+    },
+    {
+      "baseline": "scgpt",
+      "dataset": "pf-astro",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "joint",
+      "seed": 3
+    },
+    {
+      "baseline": "scfoundation",
+      "dataset": "pf-astro",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "joint",
+      "seed": 3
+    },
+    {
+      "baseline": "state_se",
+      "dataset": "pf-astro",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "joint",
+      "seed": 3
+    },
+    {
+      "baseline": "count_matched_resampling",
+      "dataset": "lung-drug",
+      "fit_family": "drug",
+      "fit_group": "seed1",
+      "mode": "joint",
+      "seed": 1
+    },
+    {
+      "baseline": "gaussian_affine_transport",
+      "dataset": "lung-drug",
+      "fit_family": "drug",
+      "fit_group": "seed1",
+      "mode": "joint",
+      "seed": 1
+    },
+    {
+      "baseline": "radial_quantile_transport",
+      "dataset": "lung-drug",
+      "fit_family": "drug",
+      "fit_group": "seed1",
+      "mode": "joint",
+      "seed": 1
+    },
+    {
+      "baseline": "scgpt_spatial",
+      "dataset": "lung-drug",
+      "fit_family": "drug",
+      "fit_group": "seed1",
+      "mode": "joint",
+      "seed": 1
+    },
+    {
+      "baseline": "spatialformer",
+      "dataset": "lung-drug",
+      "fit_family": "drug",
+      "fit_group": "seed1",
+      "mode": "joint",
+      "seed": 1
+    },
+    {
+      "baseline": "scgpt",
+      "dataset": "lung-drug",
+      "fit_family": "drug",
+      "fit_group": "seed1",
+      "mode": "joint",
+      "seed": 1
+    },
+    {
+      "baseline": "scfoundation",
+      "dataset": "lung-drug",
+      "fit_family": "drug",
+      "fit_group": "seed1",
+      "mode": "joint",
+      "seed": 1
+    },
+    {
+      "baseline": "state_se",
+      "dataset": "lung-drug",
+      "fit_family": "drug",
+      "fit_group": "seed1",
+      "mode": "joint",
+      "seed": 1
+    },
+    {
+      "baseline": "count_matched_resampling",
+      "dataset": "lung-drug",
+      "fit_family": "drug",
+      "fit_group": "seed2",
+      "mode": "joint",
+      "seed": 2
+    },
+    {
+      "baseline": "gaussian_affine_transport",
+      "dataset": "lung-drug",
+      "fit_family": "drug",
+      "fit_group": "seed2",
+      "mode": "joint",
+      "seed": 2
+    },
+    {
+      "baseline": "radial_quantile_transport",
+      "dataset": "lung-drug",
+      "fit_family": "drug",
+      "fit_group": "seed2",
+      "mode": "joint",
+      "seed": 2
+    },
+    {
+      "baseline": "scgpt_spatial",
+      "dataset": "lung-drug",
+      "fit_family": "drug",
+      "fit_group": "seed2",
+      "mode": "joint",
+      "seed": 2
+    },
+    {
+      "baseline": "spatialformer",
+      "dataset": "lung-drug",
+      "fit_family": "drug",
+      "fit_group": "seed2",
+      "mode": "joint",
+      "seed": 2
+    },
+    {
+      "baseline": "scgpt",
+      "dataset": "lung-drug",
+      "fit_family": "drug",
+      "fit_group": "seed2",
+      "mode": "joint",
+      "seed": 2
+    },
+    {
+      "baseline": "scfoundation",
+      "dataset": "lung-drug",
+      "fit_family": "drug",
+      "fit_group": "seed2",
+      "mode": "joint",
+      "seed": 2
+    },
+    {
+      "baseline": "state_se",
+      "dataset": "lung-drug",
+      "fit_family": "drug",
+      "fit_group": "seed2",
+      "mode": "joint",
+      "seed": 2
+    },
+    {
+      "baseline": "count_matched_resampling",
+      "dataset": "lung-drug",
+      "fit_family": "drug",
+      "fit_group": "seed3",
+      "mode": "joint",
+      "seed": 3
+    },
+    {
+      "baseline": "gaussian_affine_transport",
+      "dataset": "lung-drug",
+      "fit_family": "drug",
+      "fit_group": "seed3",
+      "mode": "joint",
+      "seed": 3
+    },
+    {
+      "baseline": "radial_quantile_transport",
+      "dataset": "lung-drug",
+      "fit_family": "drug",
+      "fit_group": "seed3",
+      "mode": "joint",
+      "seed": 3
+    },
+    {
+      "baseline": "scgpt_spatial",
+      "dataset": "lung-drug",
+      "fit_family": "drug",
+      "fit_group": "seed3",
+      "mode": "joint",
+      "seed": 3
+    },
+    {
+      "baseline": "spatialformer",
+      "dataset": "lung-drug",
+      "fit_family": "drug",
+      "fit_group": "seed3",
+      "mode": "joint",
+      "seed": 3
+    },
+    {
+      "baseline": "scgpt",
+      "dataset": "lung-drug",
+      "fit_family": "drug",
+      "fit_group": "seed3",
+      "mode": "joint",
+      "seed": 3
+    },
+    {
+      "baseline": "scfoundation",
+      "dataset": "lung-drug",
+      "fit_family": "drug",
+      "fit_group": "seed3",
+      "mode": "joint",
+      "seed": 3
+    },
+    {
+      "baseline": "state_se",
+      "dataset": "lung-drug",
+      "fit_family": "drug",
+      "fit_group": "seed3",
+      "mode": "joint",
+      "seed": 3
+    },
+    {
+      "baseline": "count_matched_resampling",
+      "dataset": "sickness",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "joint",
+      "seed": 1
+    },
+    {
+      "baseline": "gaussian_affine_transport",
+      "dataset": "sickness",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "joint",
+      "seed": 1
+    },
+    {
+      "baseline": "radial_quantile_transport",
+      "dataset": "sickness",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "joint",
+      "seed": 1
+    },
+    {
+      "baseline": "scgpt_spatial",
+      "dataset": "sickness",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "joint",
+      "seed": 1
+    },
+    {
+      "baseline": "spatialformer",
+      "dataset": "sickness",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "joint",
+      "seed": 1
+    },
+    {
+      "baseline": "scgpt",
+      "dataset": "sickness",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "joint",
+      "seed": 1
+    },
+    {
+      "baseline": "scfoundation",
+      "dataset": "sickness",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "joint",
+      "seed": 1
+    },
+    {
+      "baseline": "state_se",
+      "dataset": "sickness",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "joint",
+      "seed": 1
+    },
+    {
+      "baseline": "count_matched_resampling",
+      "dataset": "sickness",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "joint",
+      "seed": 2
+    },
+    {
+      "baseline": "gaussian_affine_transport",
+      "dataset": "sickness",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "joint",
+      "seed": 2
+    },
+    {
+      "baseline": "radial_quantile_transport",
+      "dataset": "sickness",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "joint",
+      "seed": 2
+    },
+    {
+      "baseline": "scgpt_spatial",
+      "dataset": "sickness",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "joint",
+      "seed": 2
+    },
+    {
+      "baseline": "spatialformer",
+      "dataset": "sickness",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "joint",
+      "seed": 2
+    },
+    {
+      "baseline": "scgpt",
+      "dataset": "sickness",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "joint",
+      "seed": 2
+    },
+    {
+      "baseline": "scfoundation",
+      "dataset": "sickness",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "joint",
+      "seed": 2
+    },
+    {
+      "baseline": "state_se",
+      "dataset": "sickness",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "joint",
+      "seed": 2
+    },
+    {
+      "baseline": "count_matched_resampling",
+      "dataset": "sickness",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "joint",
+      "seed": 3
+    },
+    {
+      "baseline": "gaussian_affine_transport",
+      "dataset": "sickness",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "joint",
+      "seed": 3
+    },
+    {
+      "baseline": "radial_quantile_transport",
+      "dataset": "sickness",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "joint",
+      "seed": 3
+    },
+    {
+      "baseline": "scgpt_spatial",
+      "dataset": "sickness",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "joint",
+      "seed": 3
+    },
+    {
+      "baseline": "spatialformer",
+      "dataset": "sickness",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "joint",
+      "seed": 3
+    },
+    {
+      "baseline": "scgpt",
+      "dataset": "sickness",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "joint",
+      "seed": 3
+    },
+    {
+      "baseline": "scfoundation",
+      "dataset": "sickness",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "joint",
+      "seed": 3
+    },
+    {
+      "baseline": "state_se",
+      "dataset": "sickness",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "joint",
+      "seed": 3
+    },
+    {
+      "baseline": "count_matched_resampling",
+      "dataset": "dss-colitis",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "joint",
+      "seed": 1
+    },
+    {
+      "baseline": "gaussian_affine_transport",
+      "dataset": "dss-colitis",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "joint",
+      "seed": 1
+    },
+    {
+      "baseline": "radial_quantile_transport",
+      "dataset": "dss-colitis",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "joint",
+      "seed": 1
+    },
+    {
+      "baseline": "scgpt_spatial",
+      "dataset": "dss-colitis",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "joint",
+      "seed": 1
+    },
+    {
+      "baseline": "spatialformer",
+      "dataset": "dss-colitis",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "joint",
+      "seed": 1
+    },
+    {
+      "baseline": "scgpt",
+      "dataset": "dss-colitis",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "joint",
+      "seed": 1
+    },
+    {
+      "baseline": "scfoundation",
+      "dataset": "dss-colitis",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "joint",
+      "seed": 1
+    },
+    {
+      "baseline": "state_se",
+      "dataset": "dss-colitis",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "joint",
+      "seed": 1
+    },
+    {
+      "baseline": "count_matched_resampling",
+      "dataset": "dss-colitis",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "joint",
+      "seed": 2
+    },
+    {
+      "baseline": "gaussian_affine_transport",
+      "dataset": "dss-colitis",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "joint",
+      "seed": 2
+    },
+    {
+      "baseline": "radial_quantile_transport",
+      "dataset": "dss-colitis",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "joint",
+      "seed": 2
+    },
+    {
+      "baseline": "scgpt_spatial",
+      "dataset": "dss-colitis",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "joint",
+      "seed": 2
+    },
+    {
+      "baseline": "spatialformer",
+      "dataset": "dss-colitis",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "joint",
+      "seed": 2
+    },
+    {
+      "baseline": "scgpt",
+      "dataset": "dss-colitis",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "joint",
+      "seed": 2
+    },
+    {
+      "baseline": "scfoundation",
+      "dataset": "dss-colitis",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "joint",
+      "seed": 2
+    },
+    {
+      "baseline": "state_se",
+      "dataset": "dss-colitis",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "joint",
+      "seed": 2
+    },
+    {
+      "baseline": "count_matched_resampling",
+      "dataset": "dss-colitis",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "joint",
+      "seed": 3
+    },
+    {
+      "baseline": "gaussian_affine_transport",
+      "dataset": "dss-colitis",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "joint",
+      "seed": 3
+    },
+    {
+      "baseline": "radial_quantile_transport",
+      "dataset": "dss-colitis",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "joint",
+      "seed": 3
+    },
+    {
+      "baseline": "scgpt_spatial",
+      "dataset": "dss-colitis",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "joint",
+      "seed": 3
+    },
+    {
+      "baseline": "spatialformer",
+      "dataset": "dss-colitis",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "joint",
+      "seed": 3
+    },
+    {
+      "baseline": "scgpt",
+      "dataset": "dss-colitis",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "joint",
+      "seed": 3
+    },
+    {
+      "baseline": "scfoundation",
+      "dataset": "dss-colitis",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "joint",
+      "seed": 3
+    },
+    {
+      "baseline": "state_se",
+      "dataset": "dss-colitis",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "joint",
+      "seed": 3
+    },
+    {
+      "baseline": "count_matched_resampling",
+      "dataset": "atm-rt",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "joint",
+      "seed": 1
+    },
+    {
+      "baseline": "gaussian_affine_transport",
+      "dataset": "atm-rt",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "joint",
+      "seed": 1
+    },
+    {
+      "baseline": "radial_quantile_transport",
+      "dataset": "atm-rt",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "joint",
+      "seed": 1
+    },
+    {
+      "baseline": "scgpt_spatial",
+      "dataset": "atm-rt",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "joint",
+      "seed": 1
+    },
+    {
+      "baseline": "spatialformer",
+      "dataset": "atm-rt",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "joint",
+      "seed": 1
+    },
+    {
+      "baseline": "scgpt",
+      "dataset": "atm-rt",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "joint",
+      "seed": 1
+    },
+    {
+      "baseline": "scfoundation",
+      "dataset": "atm-rt",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "joint",
+      "seed": 1
+    },
+    {
+      "baseline": "state_se",
+      "dataset": "atm-rt",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "joint",
+      "seed": 1
+    },
+    {
+      "baseline": "count_matched_resampling",
+      "dataset": "ddx54-pd1",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "joint",
+      "seed": 1
+    },
+    {
+      "baseline": "gaussian_affine_transport",
+      "dataset": "ddx54-pd1",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "joint",
+      "seed": 1
+    },
+    {
+      "baseline": "radial_quantile_transport",
+      "dataset": "ddx54-pd1",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "joint",
+      "seed": 1
+    },
+    {
+      "baseline": "scgpt_spatial",
+      "dataset": "ddx54-pd1",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "joint",
+      "seed": 1
+    },
+    {
+      "baseline": "spatialformer",
+      "dataset": "ddx54-pd1",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "joint",
+      "seed": 1
+    },
+    {
+      "baseline": "scgpt",
+      "dataset": "ddx54-pd1",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "joint",
+      "seed": 1
+    },
+    {
+      "baseline": "scfoundation",
+      "dataset": "ddx54-pd1",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "joint",
+      "seed": 1
+    },
+    {
+      "baseline": "state_se",
+      "dataset": "ddx54-pd1",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "joint",
+      "seed": 1
+    },
+    {
+      "baseline": "count_matched_resampling",
+      "dataset": "adipose",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "joint",
+      "seed": 1
+    },
+    {
+      "baseline": "gaussian_affine_transport",
+      "dataset": "adipose",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "joint",
+      "seed": 1
+    },
+    {
+      "baseline": "radial_quantile_transport",
+      "dataset": "adipose",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "joint",
+      "seed": 1
+    },
+    {
+      "baseline": "scgpt_spatial",
+      "dataset": "adipose",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "joint",
+      "seed": 1
+    },
+    {
+      "baseline": "spatialformer",
+      "dataset": "adipose",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "joint",
+      "seed": 1
+    },
+    {
+      "baseline": "scgpt",
+      "dataset": "adipose",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "joint",
+      "seed": 1
+    },
+    {
+      "baseline": "scfoundation",
+      "dataset": "adipose",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "joint",
+      "seed": 1
+    },
+    {
+      "baseline": "state_se",
+      "dataset": "adipose",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "joint",
+      "seed": 1
+    },
+    {
+      "baseline": "count_matched_resampling",
+      "dataset": "adipose",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "joint",
+      "seed": 2
+    },
+    {
+      "baseline": "gaussian_affine_transport",
+      "dataset": "adipose",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "joint",
+      "seed": 2
+    },
+    {
+      "baseline": "radial_quantile_transport",
+      "dataset": "adipose",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "joint",
+      "seed": 2
+    },
+    {
+      "baseline": "scgpt_spatial",
+      "dataset": "adipose",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "joint",
+      "seed": 2
+    },
+    {
+      "baseline": "spatialformer",
+      "dataset": "adipose",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "joint",
+      "seed": 2
+    },
+    {
+      "baseline": "scgpt",
+      "dataset": "adipose",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "joint",
+      "seed": 2
+    },
+    {
+      "baseline": "scfoundation",
+      "dataset": "adipose",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "joint",
+      "seed": 2
+    },
+    {
+      "baseline": "state_se",
+      "dataset": "adipose",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "joint",
+      "seed": 2
+    },
+    {
+      "baseline": "count_matched_resampling",
+      "dataset": "adipose",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "joint",
+      "seed": 3
+    },
+    {
+      "baseline": "gaussian_affine_transport",
+      "dataset": "adipose",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "joint",
+      "seed": 3
+    },
+    {
+      "baseline": "radial_quantile_transport",
+      "dataset": "adipose",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "joint",
+      "seed": 3
+    },
+    {
+      "baseline": "scgpt_spatial",
+      "dataset": "adipose",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "joint",
+      "seed": 3
+    },
+    {
+      "baseline": "spatialformer",
+      "dataset": "adipose",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "joint",
+      "seed": 3
+    },
+    {
+      "baseline": "scgpt",
+      "dataset": "adipose",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "joint",
+      "seed": 3
+    },
+    {
+      "baseline": "scfoundation",
+      "dataset": "adipose",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "joint",
+      "seed": 3
+    },
+    {
+      "baseline": "state_se",
+      "dataset": "adipose",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "joint",
+      "seed": 3
+    },
+    {
+      "baseline": "count_matched_resampling",
+      "dataset": "uc-vdz",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "joint",
+      "seed": 1
+    },
+    {
+      "baseline": "gaussian_affine_transport",
+      "dataset": "uc-vdz",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "joint",
+      "seed": 1
+    },
+    {
+      "baseline": "radial_quantile_transport",
+      "dataset": "uc-vdz",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "joint",
+      "seed": 1
+    },
+    {
+      "baseline": "scgpt_spatial",
+      "dataset": "uc-vdz",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "joint",
+      "seed": 1
+    },
+    {
+      "baseline": "spatialformer",
+      "dataset": "uc-vdz",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "joint",
+      "seed": 1
+    },
+    {
+      "baseline": "scgpt",
+      "dataset": "uc-vdz",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "joint",
+      "seed": 1
+    },
+    {
+      "baseline": "scfoundation",
+      "dataset": "uc-vdz",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "joint",
+      "seed": 1
+    },
+    {
+      "baseline": "state_se",
+      "dataset": "uc-vdz",
+      "fit_family": "default",
+      "fit_group": "seed1",
+      "mode": "joint",
+      "seed": 1
+    },
+    {
+      "baseline": "count_matched_resampling",
+      "dataset": "uc-vdz",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "joint",
+      "seed": 2
+    },
+    {
+      "baseline": "gaussian_affine_transport",
+      "dataset": "uc-vdz",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "joint",
+      "seed": 2
+    },
+    {
+      "baseline": "radial_quantile_transport",
+      "dataset": "uc-vdz",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "joint",
+      "seed": 2
+    },
+    {
+      "baseline": "scgpt_spatial",
+      "dataset": "uc-vdz",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "joint",
+      "seed": 2
+    },
+    {
+      "baseline": "spatialformer",
+      "dataset": "uc-vdz",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "joint",
+      "seed": 2
+    },
+    {
+      "baseline": "scgpt",
+      "dataset": "uc-vdz",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "joint",
+      "seed": 2
+    },
+    {
+      "baseline": "scfoundation",
+      "dataset": "uc-vdz",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "joint",
+      "seed": 2
+    },
+    {
+      "baseline": "state_se",
+      "dataset": "uc-vdz",
+      "fit_family": "default",
+      "fit_group": "seed2",
+      "mode": "joint",
+      "seed": 2
+    },
+    {
+      "baseline": "count_matched_resampling",
+      "dataset": "uc-vdz",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "joint",
+      "seed": 3
+    },
+    {
+      "baseline": "gaussian_affine_transport",
+      "dataset": "uc-vdz",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "joint",
+      "seed": 3
+    },
+    {
+      "baseline": "radial_quantile_transport",
+      "dataset": "uc-vdz",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "joint",
+      "seed": 3
+    },
+    {
+      "baseline": "scgpt_spatial",
+      "dataset": "uc-vdz",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "joint",
+      "seed": 3
+    },
+    {
+      "baseline": "spatialformer",
+      "dataset": "uc-vdz",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "joint",
+      "seed": 3
+    },
+    {
+      "baseline": "scgpt",
+      "dataset": "uc-vdz",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "joint",
+      "seed": 3
+    },
+    {
+      "baseline": "scfoundation",
+      "dataset": "uc-vdz",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "joint",
+      "seed": 3
+    },
+    {
+      "baseline": "state_se",
+      "dataset": "uc-vdz",
+      "fit_family": "default",
+      "fit_group": "seed3",
+      "mode": "joint",
+      "seed": 3
+    }
+  ],
+  "model_repeats_per_split": 1,
+  "pending_protocol_decisions": {},
+  "split_manifest": "benchmark/splits/cell_seed_schedule_dual_min50.json",
+  "status": "planned",
+  "validation_manifest": "benchmark/splits/cell_validation_dual_min50.json"
+}

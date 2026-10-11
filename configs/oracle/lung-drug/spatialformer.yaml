@@ -1,0 +1,12 @@
+extends:
+  - ../../experiments/cell_oracle.yaml
+  - ../../models/spatialformer.yaml
+  - ../../datasets/lung-drug.yaml
+dataset: lung-drug
+model:
+  name: spatialformer
+setting: oracle
+seed: 1
+training:
+  batch_size: 256
+  matmul_precision: high

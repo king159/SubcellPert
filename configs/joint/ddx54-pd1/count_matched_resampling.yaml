@@ -1,0 +1,6 @@
+extends: ../../experiments/cell_joint.yaml
+dataset: ddx54-pd1
+model:
+  name: count_matched_resampling
+setting: joint
+seed: 1

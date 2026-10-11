@@ -1,0 +1,11 @@
+extends:
+  - ../../experiments/cell_oracle.yaml
+  - ../../models/spatialformer.yaml
+  - ../../datasets/spinal-ko.yaml
+dataset: spinal-ko
+model:
+  name: spatialformer
+setting: oracle
+seed: 1
+training:
+  batch_size: 256

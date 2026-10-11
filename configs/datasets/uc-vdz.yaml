@@ -1,0 +1,12 @@
+data:
+  dataset_id: uc_vedolizumab_cosmx
+  species: Human
+  source_conditions:
+  - PRE_VDZ_Non-responder
+  - PRE_VDZ_Responder
+  spatialformer:
+    tissue: Colon
+    assay: CosMx
+    condition_by_source:
+      PRE_VDZ_Non-responder: Disease
+      PRE_VDZ_Responder: Disease

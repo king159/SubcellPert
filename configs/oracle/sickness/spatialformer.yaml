@@ -1,0 +1,11 @@
+extends:
+  - ../../experiments/cell_oracle.yaml
+  - ../../models/spatialformer.yaml
+  - ../../datasets/sickness.yaml
+dataset: sickness
+model:
+  name: spatialformer
+setting: oracle
+seed: 1
+training:
+  batch_size: 256

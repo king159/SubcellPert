@@ -1,0 +1,200 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux",
+  "machine": "x86_64",
+  "torch_cuda_build": "13.0",
+  "direct_runtime_dependencies": [
+    {
+      "requirement": "numpy>=2.0,<2.5",
+      "installed": "2.4.6",
+      "satisfied": true
+    },
+    {
+      "requirement": "polars>=1.20",
+      "installed": "1.44.2",
+      "satisfied": true
+    },
+    {
+      "requirement": "pyarrow>=22",
+      "installed": "25.0.1",
+      "satisfied": true
+    },
+    {
+      "requirement": "h5py>=3.12",
+      "installed": "3.16.0",
+      "satisfied": true
+    },
+    {
+      "requirement": "scipy>=1.14",
+      "installed": "1.18.1",
+      "satisfied": true
+    },
+    {
+      "requirement": "scikit-image>=0.25,<0.26",
+      "installed": "0.25.2",
+      "satisfied": true
+    },
+    {
+      "requirement": "zipfile-deflate64==0.2.0",
+      "installed": "0.2.0",
+      "satisfied": true
+    },
+    {
+      "requirement": "scikit-learn>=1.6",
+      "installed": "1.9.1",
+      "satisfied": true
+    },
+    {
+      "requirement": "torch==2.14.0",
+      "installed": "2.14.0",
+      "satisfied": true
+    },
+    {
+      "requirement": "tqdm>=4.67",
+      "installed": "4.70.1",
+      "satisfied": true
+    },
+    {
+      "requirement": "pyyaml>=6.0",
+      "installed": "6.0.3",
+      "satisfied": true
+    },
+    {
+      "requirement": "omegaconf>=2.3,<3",
+      "installed": "2.3.1",
+      "satisfied": true
+    },
+    {
+      "requirement": "anndata>=0.11",
+      "installed": "0.13.3.post0",
+      "satisfied": true
+    },
+    {
+      "requirement": "scanpy>=1.11,<2",
+      "installed": "1.12.4",
+      "satisfied": true
+    },
+    {
+      "requirement": "scib>=1.1.7,<1.2",
+      "installed": "1.1.7",
+      "satisfied": true
+    },
+    {
+      "requirement": "pandas>=2.2",
+      "installed": "3.0.5",
+      "satisfied": true
+    },
+    {
+      "requirement": "datasets>=2.20,<3",
+      "installed": "2.21.0",
+      "satisfied": true
+    },
+    {
+      "requirement": "s3fs>=2024.6",
+      "installed": "2024.6.1",
+      "satisfied": true
+    },
+    {
+      "requirement": "einops>=0.8",
+      "installed": "0.8.2",
+      "satisfied": true
+    },
+    {
+      "requirement": "gpytorch>=1.14",
+      "installed": "1.15.2",
+      "satisfied": true
+    },
+    {
+      "requirement": "pyro-ppl>=1.9",
+      "installed": "1.9.1",
+      "satisfied": true
+    },
+    {
+      "requirement": "imageio>=2.37",
+      "installed": "2.37.4",
+      "satisfied": true
+    },
+    {
+      "requirement": "torch-geometric==2.6.1",
+      "installed": "2.6.1",
+      "satisfied": true
+    },
+    {
+      "requirement": "torchvision==0.29.0",
+      "installed": "0.29.0",
+      "satisfied": true
+    },
+    {
+      "requirement": "pytorch-msssim>=1.0",
+      "installed": "1.0.0",
+      "satisfied": true
+    },
+    {
+      "requirement": "umap-learn>=0.5",
+      "installed": "0.5.12",
+      "satisfied": true
+    },
+    {
+      "requirement": "wandb>=0.19",
+      "installed": "0.30.0",
+      "satisfied": true
+    },
+    {
+      "requirement": "ipython>=8.30",
+      "installed": "9.17.1",
+      "satisfied": true
+    },
+    {
+      "requirement": "matplotlib>=3.10",
+      "installed": "3.11.2",
+      "satisfied": true
+    },
+    {
+      "requirement": "pytorch-lightning>=2.5,<3",
+      "installed": "2.6.6",
+      "satisfied": true
+    },
+    {
+      "requirement": "lightning>=2.5,<3",
+      "installed": "2.6.6",
+      "satisfied": true
+    },
+    {
+      "requirement": "geomloss>=0.2.6,<0.3",
+      "installed": "0.2.6",
+      "satisfied": true
+    },
+    {
+      "requirement": "safetensors>=0.4",
+      "installed": "0.8.0",
+      "satisfied": true
+    },
+    {
+      "requirement": "transformers==4.57.3",
+      "installed": "4.57.3",
+      "satisfied": true
+    },
+    {
+      "requirement": "peft>=0.8.2",
+      "installed": "0.21.0",
+      "satisfied": true
+    },
+    {
+      "requirement": "communities>=3.0",
+      "installed": "3.0.0",
+      "satisfied": true
+    },
+    {
+      "requirement": "rdata>=1.0",
+      "installed": "1.1.0",
+      "satisfied": true
+    },
+    {
+      "requirement": "local-attention>=1.9,<2",
+      "installed": "1.11.2",
+      "satisfied": true
+    }
+  ],
+  "all_constraints_satisfied": true,
+  "scope": "Installed reference environment used for compute-node validation; not a resolver lock or fresh-install verification."
+}

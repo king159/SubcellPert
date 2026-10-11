@@ -1,0 +1,6 @@
+extends: ../../experiments/cell_oracle.yaml
+dataset: sickness
+model:
+  name: gaussian_affine_transport
+setting: oracle
+seed: 1

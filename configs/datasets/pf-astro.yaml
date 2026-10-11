@@ -1,0 +1,12 @@
+data:
+  dataset_id: perturbfish_astrocytes
+  species: Human
+  source_conditions:
+  - ctrl
+  spatialformer:
+    tissue: Brain
+    assay: Merfish
+    condition_by_source:
+      ctrl: Healthy
+    token_mapping_note: Perturb-FISH uses the existing Merfish assay token; no Perturb-FISH
+      token exists.

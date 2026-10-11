@@ -1,0 +1,11 @@
+extends:
+  - ../../experiments/cell_joint.yaml
+  - ../../models/state_se.yaml
+  - ../../datasets/atm-rt.yaml
+dataset: atm-rt
+model:
+  name: state_se
+setting: joint
+seed: 1
+training:
+  batch_size: 256

@@ -1,0 +1,6 @@
+extends: ../../experiments/cell_oracle.yaml
+dataset: ddx54-pd1
+model:
+  name: count_matched_resampling
+setting: oracle
+seed: 1

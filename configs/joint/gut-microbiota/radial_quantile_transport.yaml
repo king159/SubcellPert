@@ -1,0 +1,6 @@
+extends: ../../experiments/cell_joint.yaml
+dataset: gut-microbiota
+model:
+  name: radial_quantile_transport
+setting: joint
+seed: 1

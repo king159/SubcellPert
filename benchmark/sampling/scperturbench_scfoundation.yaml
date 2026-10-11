@@ -1,0 +1,33 @@
+schema_version: 1
+sampling_id: scperturbench_scfoundation_fixed_control_per_cell
+status: selected_by_user
+reference:
+  benchmark: bm2-lab/scPerturBench
+  benchmark_commit: 6e24e7a9827e55d4567d2139427be9af0d1e7a6c
+  benchmark_script: Perturbation_generalization/Genetic/myscFoundation.py
+  dependency: biomap-research/scFoundation
+  dependency_commit: 397631c495eddf9ad6644fc00c6ea8139e651245
+  dependency_script: GEARS/gears/pertdata.py
+  container_dependency_version_verified: false
+training:
+  source_samples_per_target_cell: 1
+  source_sampling: uniform_cells_with_replacement
+  source_assignment: cached_once_before_training
+  assignment_seed: 42
+  assignment_shared_across_model_seeds: true
+  controls: self_input_target_identity_examples
+  reference_batch_size: 2
+  batch_size_policy: configured_global_batch_then_fixed
+  batch_size_override_authorized: true
+  shuffle: true
+  shuffle_scope: all_training_cell_examples
+  drop_last: true
+  epochs: 5
+  accumulation_steps: 1
+  learning_rate: 0.0005
+spatial_extension:
+  input: complete_cell_counts_and_all_RNA_coordinates
+  source_pool: inherit_frozen_benchmark_access_constraints
+  biological_cell_pairing: false
+  loss: unpaired_cell_distribution_within_condition
+  sampling_sensitivity_experiments: false

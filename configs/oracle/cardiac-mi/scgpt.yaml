@@ -1,0 +1,11 @@
+extends:
+  - ../../experiments/cell_oracle.yaml
+  - ../../models/scgpt.yaml
+  - ../../datasets/cardiac-mi.yaml
+dataset: cardiac-mi
+model:
+  name: scgpt
+setting: oracle
+seed: 1
+training:
+  batch_size: 256

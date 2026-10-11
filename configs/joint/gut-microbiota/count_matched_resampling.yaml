@@ -1,0 +1,6 @@
+extends: ../../experiments/cell_joint.yaml
+dataset: gut-microbiota
+model:
+  name: count_matched_resampling
+setting: joint
+seed: 1

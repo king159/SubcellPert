@@ -1,0 +1,5 @@
+foundation:
+  backbone: scgpt
+  model_directory: artifacts/upstream/scgpt-human
+  embedding_dimension: 512
+  encoder_max_length: 1200

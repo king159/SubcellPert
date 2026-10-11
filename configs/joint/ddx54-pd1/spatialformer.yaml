@@ -1,0 +1,11 @@
+extends:
+  - ../../experiments/cell_joint.yaml
+  - ../../models/spatialformer.yaml
+  - ../../datasets/ddx54-pd1.yaml
+dataset: ddx54-pd1
+model:
+  name: spatialformer
+setting: joint
+seed: 1
+training:
+  batch_size: 256

@@ -1,0 +1,10 @@
+data:
+  dataset_id: gse325253_lung_drug_xenium
+  species: Mouse
+  source_conditions:
+  - Bleomycin
+  spatialformer:
+    tissue: Lung
+    assay: Xenium
+    condition_by_source:
+      Bleomycin: Disease

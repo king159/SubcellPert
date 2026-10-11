@@ -1,0 +1,10 @@
+data:
+  dataset_id: gse280376_cardiac_repair_xenium
+  species: Mouse
+  source_conditions:
+  - sham
+  spatialformer:
+    tissue: Heart
+    assay: Xenium
+    condition_by_source:
+      sham: Healthy

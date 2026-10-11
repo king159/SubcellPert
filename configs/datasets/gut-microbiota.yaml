@@ -1,0 +1,18 @@
+data:
+  dataset_id: gut_microbiota_merfish
+  species: Mouse
+  source_conditions:
+  - ce_WT
+  - dcol_WT
+  - ile_WT
+  - pcol_WT
+  spatialformer:
+    tissue: Colon
+    assay: Merfish
+    condition_by_source:
+      ce_WT: Healthy
+      dcol_WT: Healthy
+      ile_WT: Healthy
+      pcol_WT: Healthy
+    token_mapping_note: Colon is a shared gut proxy including ileum and cecum; those
+      regions have no separate pretrained tokens.

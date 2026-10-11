@@ -1,0 +1,11 @@
+extends:
+  - ../../experiments/cell_joint.yaml
+  - ../../models/scgpt.yaml
+  - ../../datasets/gut-microbiota.yaml
+dataset: gut-microbiota
+model:
+  name: scgpt
+setting: joint
+seed: 1
+training:
+  batch_size: 256

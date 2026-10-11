@@ -1,0 +1,10 @@
+data:
+  dataset_id: gse296577_gbm_ohsv_xenium
+  species: Human
+  source_conditions:
+  - pre
+  spatialformer:
+    tissue: Brain
+    assay: Xenium
+    condition_by_source:
+      pre: Disease

@@ -1,0 +1,6 @@
+extends: ../../experiments/cell_oracle.yaml
+dataset: adipose
+model:
+  name: count_matched_resampling
+setting: oracle
+seed: 1

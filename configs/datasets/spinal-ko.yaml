@@ -1,0 +1,14 @@
+data:
+  dataset_id: gse291460_spinal_ko_xenium
+  species: Mouse
+  source_conditions:
+  - Brach_control
+  - Thor_control
+  spatialformer:
+    tissue: Brain
+    assay: Xenium
+    condition_by_source:
+      Brach_control: Healthy
+      Thor_control: Healthy
+    token_mapping_note: Brain is an explicit nervous-system proxy; no spinal-cord
+      token exists.
