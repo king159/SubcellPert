@@ -64,18 +64,18 @@ Keep the entire bundle together. See the
 [data release specification](../src/subcellpert/data/RELEASE.md) for its layout.
 
 For FM experiments, follow [pretrained models](pretrained_models.md) from the
-code repository root. Models and their upstream implementations must also be
-visible relative to the benchmark root. For a new downloaded root:
+code repository root. Model implementations are part of the installed package.
+The complete `weights/` directory, including each model's vocabulary and
+configuration beside its checkpoint, must be visible relative to the benchmark
+root. For a new downloaded root:
 
 ```bash
-mkdir -p "$SUBCELLPERT_ROOT/artifacts"
-ln -s "$SUBCELLPERT_CODE/external" "$SUBCELLPERT_ROOT/external"
-ln -s "$SUBCELLPERT_CODE/artifacts/upstream" "$SUBCELLPERT_ROOT/artifacts/upstream"
+ln -s "$SUBCELLPERT_CODE/weights" "$SUBCELLPERT_ROOT/weights"
 ```
 
-Create these links only if the destination paths do not exist. They are local
-runtime conveniences, not part of the portable dataset release. A classical
-run needs neither pretrained weights nor these links.
+Create this link only if the destination path does not exist. It is a local
+runtime convenience, not part of the portable dataset release. A classical
+run needs neither pretrained weights nor this link.
 
 Use `--dry-run` with the selected FM configuration to check its resource paths.
 A smoke run exercises encoding and evaluation with the prepared environment

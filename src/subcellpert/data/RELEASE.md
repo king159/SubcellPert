@@ -77,7 +77,7 @@ task and split metadata.
 
 These descriptors are separate from the cellular foundation-model encoders.
 See [pretrained models](../../../docs/pretrained_models.md) for the five encoders'
-upstream implementations, checkpoints, and resource checksums.
+integrated implementations, checkpoint downloads, and resource checksums.
 
 ## Validate a downloaded snapshot
 

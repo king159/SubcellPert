@@ -1,20 +1,175 @@
-"""state_se baseline: source encoder/analytic transport and joint/oracle prediction."""
+"""STATE-SE network and benchmark adapter. Derived code: THIRD_PARTY_LICENSES.md."""
 
 from __future__ import annotations
 
 import csv
 import json
-import sys
+import math
 from collections import defaultdict
 from pathlib import Path
 
 import numpy as np
 import torch
+from torch import Tensor, nn
+from torch.nn import functional as F
 
 from subcellpert.models.shared import Baseline, GearsCellJointModel, GearsCellOracleModel
 
 
 STATE_FEATURE_POLICY = "state_se_gene_tokens_deterministic_source_only_v1"
+
+
+class FlashTransformerEncoderLayer(nn.Module):
+    def __init__(self, d_model, nhead, dim_feedforward, dropout=0.1):
+        """
+        Initializes the encoder layer.
+        Args:
+            d_model (int): model dimension.
+            nhead (int): number of attention heads.
+            dim_feedforward (int): dimension of the feed-forward network.
+            dropout (float): dropout probability.
+        """
+        super().__init__()
+        torch.backends.cuda.enable_flash_sdp(True)
+        self.d_model = d_model
+        self.nhead = nhead
+        self.dropout = dropout
+        self.qkv_proj = nn.Linear(d_model, d_model * 3)
+        self.out_proj = nn.Linear(d_model, d_model)
+        self.norm1 = nn.LayerNorm(d_model)
+        self.norm2 = nn.LayerNorm(d_model)
+        self.dropout_layer = nn.Dropout(dropout)
+        self.linear1 = nn.Linear(d_model, dim_feedforward)
+        self.linear2 = nn.Linear(dim_feedforward, d_model)
+
+    def forward(self, src, src_mask=None, src_key_padding_mask=None):
+        """
+        Args:
+            src: Tensor of shape (batch_size, seq_len, d_model)
+            src_mask: (optional) attention mask.
+            src_key_padding_mask: (optional) padding mask.
+        Returns:
+            Tensor of shape (batch_size, seq_len, d_model)
+        """
+        residual = src
+        qkv = self.qkv_proj(src)
+        q, k, v = torch.chunk(qkv, 3, dim=-1)
+        head_dim = self.d_model // self.nhead
+        q = q.view(src.size(0), src.size(1), self.nhead, head_dim).transpose(1, 2)
+        k = k.view(src.size(0), src.size(1), self.nhead, head_dim).transpose(1, 2)
+        v = v.view(src.size(0), src.size(1), self.nhead, head_dim).transpose(1, 2)
+        attn_output = F.scaled_dot_product_attention(q, k, v, dropout_p=self.dropout, is_causal=False)
+        attn_output = attn_output.transpose(1, 2).contiguous().view(src.size(0), src.size(1), self.d_model)
+        attn_output = self.out_proj(attn_output)
+        src = self.norm1(residual + self.dropout_layer(attn_output))
+        residual2 = src
+        ff_output = self.linear2(self.dropout_layer(F.gelu(self.linear1(src))))
+        src = self.norm2(residual2 + self.dropout_layer(ff_output))
+        return src
+
+
+class FlashTransformerEncoder(nn.Module):
+    def __init__(self, layers):
+        """
+        A simple encoder that applies a stack of FlashTransformerEncoderLayer instances.
+        Args:
+            layers (list[nn.Module]): list of FlashTransformerEncoderLayer instances.
+        """
+        super().__init__()
+        self.layers = nn.ModuleList(layers)
+
+    def forward(self, src, src_mask=None, src_key_padding_mask=None):
+        """
+        Applies each encoder layer in sequence.
+        Args:
+            src: Tensor of shape (B, T, d_model)
+            src_mask: (optional) attention mask.
+            src_key_padding_mask: (optional) padding mask.
+        Returns:
+            Tensor of shape (B, T, d_model)
+        """
+        mask = src_key_padding_mask if src_key_padding_mask is not None else src_mask
+        output = src
+        for layer in self.layers:
+            output = layer(output, src_mask=mask, src_key_padding_mask=mask)
+        return output
+
+
+class SkipBlock(nn.Module):
+    def __init__(self, in_features):
+        """
+        Given input X of size in_features
+        - out = layernorm(x + MLP(MLP(X))
+
+        """
+        super().__init__()
+        self.dim = in_features
+        self.intermediate_dense = nn.Linear(in_features, in_features * 2, bias=True)
+        self.dense = nn.Linear(in_features * 2, in_features, bias=True)
+        self.activation = nn.ReLU()
+        self.layer_norm = nn.LayerNorm(in_features)
+
+    def forward(self, x):
+        residual = x
+        x = self.intermediate_dense(x)
+        x = self.activation(x)
+        x = self.dense(x)
+        x = self.layer_norm(x + residual)
+        return x
+
+
+class StateEmbeddingModel(nn.Module):
+    """STATE-SE inference network; derived under CC-BY-NC-SA-4.0.
+
+    Keep the protein/count encoders, Transformer and gene-state decoder; omit
+    downstream binary/dataset classifiers and the upstream training framework.
+    """
+
+    def __init__(self, token_dim, d_model, nhead, d_hid, nlayers, output_dim, dropout=0.0, compiled=False, cfg=None):
+        super().__init__()
+        if compiled:
+            raise ValueError("Compile the complete frozen adapter after loading its checkpoint")
+        self.d_model = d_model
+        self.cls_token = nn.Parameter(torch.randn(1, token_dim))
+        self.encoder = nn.Sequential(nn.Linear(token_dim, d_model), nn.LayerNorm(d_model), nn.SiLU())
+        self.transformer_encoder = FlashTransformerEncoder(
+            [FlashTransformerEncoderLayer(d_model, nhead, d_hid, dropout) for _ in range(nlayers)]
+        )
+        self.decoder = nn.Sequential(SkipBlock(d_model), nn.Linear(d_model, output_dim))
+        if cfg.model.counts:
+            self.bin_encoder = nn.Embedding(10, d_model)
+            self.count_encoder = nn.Sequential(nn.Linear(1, 512), nn.LeakyReLU(), nn.Linear(512, 10))
+        self.dataset_token = (
+            nn.Parameter(torch.randn(1, token_dim)) if cfg.model.get("dataset_correction", False) else None
+        )
+
+    def forward(self, src: Tensor, mask: Tensor, counts=None, dataset_nums=None):
+        """
+        Args:
+            src: Tensor, shape [batch_size, seq_len, ntoken]
+        Returns:
+            output Tensor of shape [batch_size, seq_len, ntoken]
+        """
+        src = self.encoder(src) * math.sqrt(self.d_model)
+        if counts is not None:
+            counts = counts.unsqueeze(-1)
+            bin_weights = self.count_encoder(counts)
+            bin_weights = F.softmax(bin_weights, dim=-1)
+            bin_indices = torch.arange(10, device=src.device)
+            bin_embeddings = self.bin_encoder(bin_indices)
+            count_emb = torch.matmul(bin_weights, bin_embeddings)
+            if self.dataset_token is not None:
+                dataset_count_emb = torch.zeros(count_emb.size(0), 1, count_emb.size(2), device=src.device)
+                count_emb = torch.cat((count_emb, dataset_count_emb), dim=1)
+            src = src + count_emb
+        output = self.transformer_encoder(src, src_key_padding_mask=None)
+        gene_output = self.decoder(output)
+        embedding = gene_output[:, 0, :]
+        embedding = nn.functional.normalize(embedding, dim=1)
+        dataset_emb = None
+        if self.dataset_token is not None:
+            dataset_emb = gene_output[:, -1, :]
+        return (gene_output, embedding, dataset_emb)
 
 
 class StateSEGeneEncoder:
@@ -23,8 +178,6 @@ class StateSEGeneEncoder:
         from safetensors.torch import load_file
 
         root = Path(root)
-        sys.path.insert(0, str(root / "external/state/src"))
-        from state.emb.nn.model import StateEmbeddingModel
 
         if metadata.get("state_feature_policy") != STATE_FEATURE_POLICY:
             raise ValueError("Missing explicit STATE-SE inference/mapping policy")
@@ -43,12 +196,9 @@ class StateSEGeneEncoder:
             cfg=cfg,
         )
         weights = load_file(str(directory / "model.safetensors"))
-        if "pe_embedding.weight" in weights:
-            self.model.pe_embedding = torch.nn.Embedding.from_pretrained(weights["pe_embedding.weight"])
-        for name in self.model.state_dict():
-            if name not in weights and name.startswith("gene_embedding_layer."):
-                weights[name] = weights["encoder." + name.removeprefix("gene_embedding_layer.")]
-        self.model.load_state_dict(weights, strict=True)
+        unused = ("pe_embedding.", "gene_embedding_layer.", "binary_decoder.", "dataset_embedder.", "dataset_encoder.")
+        active = {key: value for key, value in weights.items() if not key.startswith(unused)}
+        self.model.load_state_dict(active, strict=True)
         del weights
         self.device = torch.device(device)
         self.dtype = torch.bfloat16 if self.device.type == "cuda" else torch.float32

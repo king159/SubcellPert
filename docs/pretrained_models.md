@@ -1,6 +1,25 @@
 # Pretrained models
 
-The five FM baselines use separately downloaded pretrained assets in `artifacts/upstream/`.
+The five FM networks are implemented directly in `src/subcellpert/models/`.
+Keep each model's pretrained weights and auxiliary files in its own directory:
+
+```text
+weights/
+├── scgpt-human/                       # best_model.pt, args.json, vocab.json
+├── scgpt-spatial/scGPT_spatial_v1/     # weights, vocabulary, normalization
+├── scfoundation/                     # models.ckpt, gene index
+├── spatialformer/                    # checkpoint, gene embeddings, config/, tokenizer/, data/
+└── state-se/                         # weights, protein embeddings, config, homology, assets.json
+```
+
+No upstream checkout or model package is required. The `weights/` directory is
+ignored by Git and is not included in Python distributions. The commands below
+prepare checkpoint files and the small resources needed by each encoder.
+For a separate dataset root, link the complete `weights/` directory as described
+in [reproduction.md](reproduction.md#data-and-model-resources).
+Source revisions and original license texts are in
+[third-party notices](../THIRD_PARTY_LICENSES.md).
+
 Run these commands from the code repository root with your environment active.
 Use fresh destinations; keep existing checkpoints used by other experiments.
 These pointers and revisions are the recorded benchmark resources, not a claim
@@ -12,24 +31,17 @@ that all remote downloads were revalidated during code cleanup.
 Open the official
 [whole-human folder](https://drive.google.com/drive/folders/1oWh_-ZRdhtoGQ2Fw24HP41FgLoomVo-y)
 and download `best_model.pt`, `args.json`, and `vocab.json` into
-`artifacts/upstream/scgpt-human/`. Keep the three files from the same checkpoint
+`weights/scgpt-human/`. Keep the three files from the same checkpoint
 folder. Alternatively, with `gdown` installed in your active environment:
 
 ```bash
 python -m gdown --folder \
   'https://drive.google.com/drive/folders/1oWh_-ZRdhtoGQ2Fw24HP41FgLoomVo-y' \
-  -O artifacts/upstream/scgpt-human
+  -O weights/scgpt-human
 ```
 
 The files must be directly inside `scgpt-human/`, without an extra nested
 download-directory level.
-
-For a fresh setup, obtain the upstream implementation at the revision used here:
-
-```bash
-git clone https://github.com/bowang-lab/scGPT.git external/scGPT
-git -C external/scGPT checkout cebd6fae655b9c585a4807daa3ac31bb764f06b4
-```
 
 </details>
 
@@ -40,26 +52,19 @@ The [official repository](https://github.com/bowang-lab/scGPT-spatial) links the
 V1 archive. Download and extract it from the project root:
 
 ```bash
-mkdir -p artifacts/upstream/scgpt-spatial
+mkdir -p weights/scgpt-spatial
 model_download_dir="$(mktemp -d)"
 curl --fail --location --retry 3 \
   'https://ndownloader.figshare.com/files/52163879' \
   --output "$model_download_dir/scGPT_spatial_v1.zip"
-unzip "$model_download_dir/scGPT_spatial_v1.zip" -d artifacts/upstream/scgpt-spatial
+unzip "$model_download_dir/scGPT_spatial_v1.zip" -d weights/scgpt-spatial
 ```
 
 The final directory must be
-`artifacts/upstream/scgpt-spatial/scGPT_spatial_v1/`, containing `best_model.pt`,
+`weights/scgpt-spatial/scGPT_spatial_v1/`, containing `best_model.pt`,
 `args.json`, `vocab.json`, `batch_mapping_dict.json`, and `all_dict_mean_std.csv`.
 Preserve this archive subdirectory; the YAML points to it. The archive's Figshare MD5 is
 `470d40fb77535afc2b4e7cffc0d665ef`.
-
-For a fresh setup, obtain the upstream implementation at the revision used here:
-
-```bash
-git clone https://github.com/bowang-lab/scGPT-spatial.git external/scGPT-spatial
-git -C external/scGPT-spatial checkout f9442d777ba47cd3dcac8253833a233ff5bf7262
-```
 
 </details>
 
@@ -71,18 +76,18 @@ Follow the download pointer in the official repository's
 At the time these instructions were checked, it points to this
 [BioMap SharePoint folder](https://hopebio2020.sharepoint.com/:f:/s/PublicSharedfiles/IgBlEJ72TBE5Q76AmgXbgjXiAR69fzcrgzqgUYdSThPLrqk).
 Download `models.ckpt` and put it at
-`artifacts/upstream/scfoundation/models.ckpt`.
+`weights/scfoundation/models.ckpt`.
 
 Our current file is 1,432,587,886 bytes, with SHA-256
 `9f40bf324d3d0084c4b288d06f5af4fddd12206e2a3f022551d12e89e33a0ea9`.
-The adapter loads its `gene` entry. It also needs the source repository's
-`model/` implementation and `OS_scRNA_gene_index.19264.tsv`.
-
-For a fresh setup, obtain the upstream implementation at the revision used here:
+The adapter loads its `gene` entry. Download its fixed 19,264-gene index beside
+the checkpoint:
 
 ```bash
-git clone https://github.com/biomap-research/scFoundation.git external/scFoundation
-git -C external/scFoundation checkout 397631c495eddf9ad6644fc00c6ea8139e651245
+mkdir -p weights/scfoundation
+curl --fail --location --retry 3 \
+  'https://raw.githubusercontent.com/biomap-research/scFoundation/397631c495eddf9ad6644fc00c6ea8139e651245/OS_scRNA_gene_index.19264.tsv' \
+  --output weights/scfoundation/OS_scRNA_gene_index.19264.tsv
 ```
 
 </details>
@@ -96,29 +101,45 @@ Download the exact file below; the paired checkpoint has a similar filename
 but different weights.
 
 ```bash
-mkdir -p artifacts/upstream/spatialformer
+mkdir -p weights/spatialformer
 curl --fail --location --retry 3 \
   'https://ndownloader.figshare.com/files/61331527' \
-  --output 'artifacts/upstream/spatialformer/stepstep=0176000-traintrain_total_loss=-2.7789-valval_total_loss=0.0000.ckpt'
+  --output 'weights/spatialformer/stepstep=0176000-traintrain_total_loss=-2.7789-valval_total_loss=0.0000.ckpt'
 ```
 
 Its expected size is 720,940,445 bytes; Figshare MD5 is
-`fb2c33044244bf21a962e106951769f5`. The adapter also reads these files from
-`external/Spatialformer/spatialformer/`:
-
-- `config/_config_train_large_pair.json`
-- `tokenizer/tokenv5.json`
-- `data/gene_median.pkl`
-- `spatial_embeddings/xenium_5k_pandavid_gene_embeddings.pkl`
-
-The configuration filename is the one used by the current adapter; the
-checkpoint selection above identifies the actual pretrained weights.
-
-For a fresh setup, obtain the upstream implementation at the revision used here:
+`fb2c33044244bf21a962e106951769f5`. Prepare the tokenizer, gene medians and
+pretrained gene embeddings in the same model directory:
 
 ```bash
-git clone https://github.com/TerminatorJ/Spatialformer.git external/Spatialformer
-git -C external/Spatialformer checkout f02e7776e8a99c9abdc5fe5572a1a20369faf159
+mkdir -p weights/spatialformer/{config,tokenizer,data}
+spatialformer_source='https://raw.githubusercontent.com/TerminatorJ/Spatialformer/f02e7776e8a99c9abdc5fe5572a1a20369faf159/spatialformer'
+curl --fail --location --retry 3 \
+  "$spatialformer_source/tokenizer/tokenv5.json" \
+  --output weights/spatialformer/tokenizer/tokenv5.json
+curl --fail --location --retry 3 \
+  "$spatialformer_source/data/gene_median.pkl" \
+  --output weights/spatialformer/data/gene_median.pkl
+curl --fail --location --retry 3 \
+  "$spatialformer_source/spatial_embeddings/xenium_5k_pandavid_gene_embeddings.pkl" \
+  --output weights/spatialformer/xenium_5k_pandavid_gene_embeddings.pkl
+```
+
+Write the inference configuration used by this checkpoint. Only the network
+settings consumed by the integrated encoder are needed:
+
+```bash
+cat > weights/spatialformer/config/_config_train_large_pair.json <<'JSON'
+{
+  "dim_model": 512,
+  "nheads": 64,
+  "nlayers": 10,
+  "n_tokens": 6061,
+  "n_atokens": 4,
+  "spatial_embedding": true,
+  "spatial_embedding_freeze": false
+}
+JSON
 ```
 
 </details>
@@ -134,11 +155,11 @@ hf download arcinstitute/SE-600M \
   model.safetensors protein_embeddings.pt config.yaml \
   LICENSE.md MODEL_LICENSE.md MODEL_ACCEPTABLE_USE_POLICY.md \
   --revision 5a9a80f44f7ce32ce57059933ef0d735d7c10ce5 \
-  --local-dir artifacts/upstream/state-se
+  --local-dir weights/state-se
 
 curl --fail --location \
   https://www.informatics.jax.org/downloads/reports/HOM_MouseHumanSequence.rpt \
-  --output artifacts/upstream/state-se/HOM_MouseHumanSequence.rpt
+  --output weights/state-se/HOM_MouseHumanSequence.rpt
 ```
 
 The second command retrieves the mouse/human mapping report from
@@ -147,11 +168,35 @@ The report changes over time: compare it with the recorded checksum to identify
 the mapping version used in our runs. The large `se600m_epoch*.ckpt` training
 snapshots are not needed for this encoder.
 
-For a fresh setup, obtain the upstream implementation at the revision used here:
+Create the local asset identity file from the downloaded files. This records
+the actual mapping report and weight hashes used by the encoder:
 
 ```bash
-git clone https://github.com/arcinstitute/state.git external/state
-git -C external/state checkout 9bbfe78a434a55205e4de834e1ea99f85f7a3add
+python - <<'PYTHON'
+import hashlib
+import json
+from pathlib import Path
+
+directory = Path("weights/state-se")
+names = [
+    "model.safetensors", "protein_embeddings.pt", "config.yaml",
+    "LICENSE.md", "MODEL_LICENSE.md", "MODEL_ACCEPTABLE_USE_POLICY.md",
+    "HOM_MouseHumanSequence.rpt",
+]
+hashes = {}
+for name in names:
+    with (directory / name).open("rb") as stream:
+        hashes[name] = hashlib.file_digest(stream, "sha256").hexdigest()
+report = {
+    "model_revision": "5a9a80f44f7ce32ce57059933ef0d735d7c10ce5",
+    "source_revision": "9bbfe78a434a55205e4de834e1ea99f85f7a3add",
+    "sha256": hashes,
+    "homology_source": "https://www.informatics.jax.org/downloads/reports/HOM_MouseHumanSequence.rpt",
+    "purpose": "STATE-SE frozen gene features; not native STATE-ST",
+    "training_checkpoints_downloaded": False,
+}
+(directory / "assets.json").write_text(json.dumps(report, indent=2) + "\n")
+PYTHON
 ```
 
 </details>

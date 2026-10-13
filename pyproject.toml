@@ -7,7 +7,8 @@ name = "subcellpert"
 version = "0.1.0"
 description = "Perturbation prediction for marked RNA molecule point patterns"
 readme = "README.md"
-license = "MIT"
+license = "MIT AND Apache-2.0 AND CC-BY-NC-SA-4.0"
+license-files = ["LICENSE", "THIRD_PARTY_LICENSES.md"]
 requires-python = ">=3.12,<3.13"
 dependencies = [
   "numpy>=2.0,<2.5",
@@ -22,7 +23,7 @@ dependencies = [
   "tqdm>=4.67",
   "pyyaml>=6.0",
   "omegaconf>=2.3,<3",
-  # Data interchange and the official scGPT/scGPT-spatial embedding APIs.
+  # Data interchange and scientific analysis dependencies.
   "anndata>=0.11",
   "scanpy>=1.11,<2",
   "scib>=1.1.7,<1.2",
@@ -40,11 +41,11 @@ dependencies = [
   "pytorch-msssim>=1.0",
   "umap-learn>=0.5",
   "wandb>=0.19",
-  # The pinned scGPT/scGPT-spatial utils import get_ipython at module scope.
+  # Notebook and model tooling retained from the validation environment.
   "ipython>=8.30",
   "matplotlib>=3.10",
   "pytorch-lightning>=2.5,<3",
-  # STATE-SE imports the Lightning namespace and GeomLoss from its native model.
+  # Integrated inference itself uses plain PyTorch.
   "lightning>=2.5,<3",
   "geomloss>=0.2.6,<0.3",
   "safetensors>=0.4",
@@ -66,7 +67,7 @@ packages = ["src/subcellpert"]
 
 [tool.hatch.build.targets.sdist]
 include = ["/src/subcellpert", "/configs", "/benchmark", "/docs",
-           "/release/environment-reference.json", "/README.md", "/pyproject.toml", "/LICENSE"]
+           "/release/environment-reference.json", "/README.md", "/pyproject.toml", "/LICENSE", "/THIRD_PARTY_LICENSES.md"]
 
 [tool.ruff]
 target-version = "py312"

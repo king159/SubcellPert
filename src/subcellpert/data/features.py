@@ -95,9 +95,9 @@ def foundation_metadata_from_config(root, spec, backbone, configuration):
             )
         ]
     elif backbone == "scfoundation":
-        required = [location, root / "external/scFoundation/OS_scRNA_gene_index.19264.tsv"]
+        required = [location, location.parent / "OS_scRNA_gene_index.19264.tsv"]
     else:
-        package = root / "external/Spatialformer/spatialformer"
+        package = location.parent
         required = [
             location,
             *(
@@ -106,9 +106,9 @@ def foundation_metadata_from_config(root, spec, backbone, configuration):
                     "config/_config_train_large_pair.json",
                     "tokenizer/tokenv5.json",
                     "data/gene_median.pkl",
-                    "spatial_embeddings/xenium_5k_pandavid_gene_embeddings.pkl",
                 )
             ),
+            location.parent / "xenium_5k_pandavid_gene_embeddings.pkl",
         ]
     for path in required:
         if not path.is_file():
@@ -152,22 +152,15 @@ def foundation_metadata_from_config(root, spec, backbone, configuration):
 
 
 def foundation_source_binding(root, backbone):
-    """Bind installed upstream Python code as well as weights and vocabulary."""
-    packages = {
-        "scgpt": ("external/scGPT/scgpt",),
-        "scgpt_spatial": ("external/scGPT/scgpt", "external/scGPT-spatial/scgpt_spatial"),
-        "scfoundation": ("external/scFoundation/model",),
-        "spatialformer": ("external/Spatialformer/spatialformer",),
-        "state_se": ("external/state/src/state/emb",),
-    }
-    root = Path(root)
-    result = {}
-    for package in packages[backbone]:
-        paths = sorted((root / package).rglob("*.py"))
-        if not paths:
-            raise FileNotFoundError(f"Missing upstream foundation implementation: {package}")
-        result.update((str(path.relative_to(root)), sha256_file(path)) for path in paths)
-    return result
+    """Bind integrated model code independently of the dataset root."""
+    del root
+    if backbone not in {"scgpt", "scgpt_spatial", "scfoundation", "spatialformer", "state_se"}:
+        raise ValueError(f"Unknown foundation backbone: {backbone}")
+    directory = Path(__file__).resolve().parents[1] / "models"
+    names = [backbone, "shared"]
+    if backbone == "scgpt_spatial":
+        names.append("scgpt")
+    return {f"models/{name}.py": sha256_file(directory / (name + ".py")) for name in names}
 
 
 def source_statistics(records, genes, matched):
@@ -327,18 +320,20 @@ class GeneFoundationStore:
                 )
                 files.append(Path(__file__).resolve().parents[1] / "models/state_se.py")
             else:
-                files.append(Path(m["model_checkpoint"]))
+                checkpoint = (self.root / m["model_checkpoint"]).resolve()
+                files.append(checkpoint)
                 if m["backbone"] == "scfoundation":
-                    files.append(Path("external/scFoundation/OS_scRNA_gene_index.19264.tsv"))
+                    files.append(checkpoint.parent / "OS_scRNA_gene_index.19264.tsv")
                 else:
                     files.extend(
-                        Path("external/Spatialformer/spatialformer") / name
+                        checkpoint.parent / name
                         for name in (
                             "config/_config_train_large_pair.json",
                             "tokenizer/tokenv5.json",
                             "data/gene_median.pkl",
                         )
                     )
+                    files.append(checkpoint.parent / "xenium_5k_pandavid_gene_embeddings.pkl")
             self._binding = {
                 "schema": GENE_FOUNDATION_SCHEMA,
                 "backbone": m["backbone"],

@@ -1,5 +1,5 @@
 foundation:
   backbone: spatialformer
-  model_checkpoint: artifacts/upstream/spatialformer/stepstep=0176000-traintrain_total_loss=-2.7789-valval_total_loss=0.0000.ckpt
+  model_checkpoint: weights/spatialformer/stepstep=0176000-traintrain_total_loss=-2.7789-valval_total_loss=0.0000.ckpt
   embedding_dimension: 512
   encoder_max_length: 1200

@@ -1,5 +1,5 @@
 foundation:
   backbone: scgpt_spatial
-  model_directory: artifacts/upstream/scgpt-spatial/scGPT_spatial_v1
+  model_directory: weights/scgpt-spatial/scGPT_spatial_v1
   embedding_dimension: 512
   encoder_max_length: 1200

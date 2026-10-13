@@ -22,6 +22,7 @@ __pycache__/
 /data/
 /datasets/
 /artifacts/
+/weights/
 /external/
 /outputs/
 /results/

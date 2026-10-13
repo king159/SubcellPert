@@ -82,7 +82,9 @@ uv pip install -e .
 python -m subcellpert.main --help
 ```
 
-Data and pretrained weights are downloaded separately.
+Data and pretrained weights are downloaded separately. Keep each model's
+weights, vocabulary, and configuration together under `weights/`, following
+the [pretrained-model instructions](docs/pretrained_models.md).
 
 ### 💾 Data Preparation
 
@@ -157,8 +159,10 @@ These are data-split seeds, not an additional model-seed sweep.
 | STATE-SE | `state_se` | Required |
 
 The five foundation-model baselines use frozen encoders with trainable
-prediction heads. Follow the [pretrained-model instructions](docs/pretrained_models.md)
-for upstream source revisions, weight downloads, and checksums. When code and
+prediction heads. Their networks are implemented directly in
+`src/subcellpert/models/`; no upstream source checkout is required. Follow the
+[pretrained-model instructions](docs/pretrained_models.md) for weight and vocabulary
+downloads, source revisions, and checksums. When code and
 data live in separate directories, follow the
 [resource-path setup](docs/reproduction.md#data-and-model-resources) before
 running these baselines.
@@ -240,3 +244,10 @@ The all-gene panel is primary; the top-100 DEG panel is supplementary. Shared-ge
 spatial scores and target-gene coverage are diagnostics: a missing predicted
 gene does not have zero spatial error. Compare spatial scores only over matching
 gene support.
+
+### 📄 License
+
+Original SubcellPert code is released under the [MIT license](LICENSE).
+Integrated foundation-model code retains its original terms; see
+[third-party notices](THIRD_PARTY_LICENSES.md) for attribution and licenses.
+Pretrained weights and source datasets retain their respective terms.

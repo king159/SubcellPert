@@ -1,14 +1,13 @@
-"""scgpt baseline: source encoder/analytic transport and joint/oracle prediction."""
+"""scGPT network and benchmark adapter. Derived layers: MIT, see THIRD_PARTY_LICENSES.md."""
 
 from __future__ import annotations
 
-import importlib
 import json
-import sys
 from pathlib import Path
 
 import numpy as np
 import torch
+from torch import Tensor, nn
 
 from subcellpert.models.shared import Baseline, GearsCellJointModel, GearsCellOracleModel
 from subcellpert.utils import (
@@ -84,15 +83,104 @@ def load_gene_vocabulary(GeneVocab, path):
     return vocab
 
 
+class GeneVocab:
+    """Contiguous checkpoint vocabulary without a torchtext dependency."""
+
+    def __init__(self, tokens):
+        self.tokens = dict.fromkeys(tokens)
+        self.tokens = {token: i for i, token in enumerate(self.tokens)}
+        self.default_index = None
+
+    def __len__(self):
+        return len(self.tokens)
+
+    def __contains__(self, token):
+        return token in self.tokens
+
+    def __getitem__(self, token):
+        if token in self.tokens:
+            return self.tokens[token]
+        if self.default_index is not None:
+            return self.default_index
+        raise KeyError(token)
+
+    def append_token(self, token):
+        if token in self.tokens:
+            raise ValueError(f"Duplicate vocabulary token: {token}")
+        self.tokens[token] = len(self.tokens)
+
+    def set_default_index(self, index):
+        self.default_index = index
+
+    def get_stoi(self):
+        return dict(self.tokens)
+
+
+class GeneEncoder(nn.Module):
+    def __init__(self, num_embeddings: int, embedding_dim: int, padding_idx: int | None = None):
+        super().__init__()
+        self.embedding = nn.Embedding(num_embeddings, embedding_dim, padding_idx=padding_idx)
+        self.enc_norm = nn.LayerNorm(embedding_dim)
+
+    def forward(self, x: Tensor) -> Tensor:
+        x = self.embedding(x)
+        x = self.enc_norm(x)
+        return x
+
+
+class ContinuousValueEncoder(nn.Module):
+    """
+    Encode real number values to a vector using neural nets projection.
+    """
+
+    def __init__(self, d_model: int, dropout: float = 0.1, max_value: int = 512):
+        super().__init__()
+        self.dropout = nn.Dropout(p=dropout)
+        self.linear1 = nn.Linear(1, d_model)
+        self.activation = nn.ReLU()
+        self.linear2 = nn.Linear(d_model, d_model)
+        self.norm = nn.LayerNorm(d_model)
+        self.max_value = max_value
+
+    def forward(self, x: Tensor) -> Tensor:
+        """
+        Args:
+            x: Tensor, shape [batch_size, seq_len]
+        """
+        x = x.unsqueeze(-1)
+        x = torch.clamp(x, max=self.max_value)
+        x = self.activation(self.linear1(x))
+        x = self.linear2(x)
+        x = self.norm(x)
+        return self.dropout(x)
+
+
+class ScGPTNetwork(nn.Module):
+    """Continuous-value Transformer used by the scGPT benchmark encoder.
+
+    Derived from scGPT (MIT); decoder/pretraining heads are not part of the
+    source-gene feature contract. Parameter names match the pretrained encoder.
+    """
+
+    def __init__(self, config, vocabulary_size, padding_id):
+        super().__init__()
+        width = config["embsize"]
+        self.encoder = GeneEncoder(vocabulary_size, width, padding_id)
+        self.value_encoder = ContinuousValueEncoder(width, config["dropout"])
+        layer = nn.TransformerEncoderLayer(
+            width, config["nheads"], config["d_hid"], config["dropout"], batch_first=True
+        )
+        self.transformer_encoder = nn.TransformerEncoder(layer, config["nlayers"])
+
+    def _encode(self, tokens, values, src_key_padding_mask):
+        total = self.encoder(tokens) + self.value_encoder(values)
+        return self.transformer_encoder(total, src_key_padding_mask=src_key_padding_mask)
+
+
 class ScGPTGeneEncoder:
+    network_class = ScGPTNetwork
+
     def __init__(self, root, metadata, device):
-        spatial = metadata["backbone"] == "scgpt_spatial"
-        sys.path.insert(0, str(root / "external/scGPT"))
-        if spatial:
-            sys.path.insert(0, str(root / "external/scGPT-spatial"))
-        package = "scgpt_spatial" if spatial else "scgpt"
-        Model = importlib.import_module(f"{package}.model").TransformerModel
-        GeneVocab = importlib.import_module("scgpt.tokenizer").GeneVocab
         directory = resolve_model_directory(root, metadata)
         config = json.loads((directory / "args.json").read_text())
         vocab = load_gene_vocabulary(GeneVocab, directory / "vocab.json")
@@ -100,47 +188,24 @@ class ScGPTGeneEncoder:
             if special not in vocab:
                 vocab.append_token(special)
         vocab.set_default_index(vocab[config["pad_token"]])
-        options = {
-            "ntoken": len(vocab),
-            "d_model": config["embsize"],
-            "nhead": config["nheads"],
-            "d_hid": config["d_hid"],
-            "nlayers": config["nlayers"],
-            "nlayers_cls": config["n_layers_cls"],
-            "n_cls": 1,
-            "vocab": vocab,
-            "dropout": config["dropout"],
-            "pad_token": config["pad_token"],
-            "pad_value": config["pad_value"],
-            "do_mvc": True,
-            "do_dab": False,
-            "use_batch_labels": False,
-            "explicit_zero_prob": False,
-            "use_fast_transformer": False,
-            "pre_norm": False,
-        }
-        if spatial:
-            options.update(use_generative_training=False, use_MVC_impute=True, use_moe_dec=True)
-        self.model = Model(**options)
+        self.model = self.network_class(config, len(vocab), vocab[config["pad_token"]])
         _load_encoder_weights(
             self.model, torch.load(directory / "best_model.pt", map_location="cpu", weights_only=False)
         )
         install_transformer_sdpa(self.model)
         freeze(self.model, device)
         self.vocabulary = vocab.get_stoi()
-        self.dimension, self.device, self.spatial = (config["embsize"] + 1, device, spatial)
+        self.dimension, self.device = (config["embsize"] + 1, device)
         self.pad_id, self.cls_id, self.pad_value = (vocab[config["pad_token"]], vocab["<cls>"], config["pad_value"])
         self.max_length = int(metadata.get("encoder_max_length", 1200))
         self.statistics = None
-        self.gene_means = {}
-        if spatial:
-            import pandas as pd
-
-            table = pd.read_csv(directory / "all_dict_mean_std.csv", index_col=0)
-            self.gene_means = {int(key): float(value) for key, value in table["mean"].items()}
 
     def gene_ids(self, genes):
         return align_gene_ids(genes, self.vocabulary)
+
+    def normalize_values(self, values, genes, selected):
+        """scGPT bins raw eligible counts; spatial checkpoints override this step."""
+        return values
 
     @torch.no_grad()
     def encode(self, matrix, genes, condition):
@@ -157,18 +222,7 @@ class ScGPTGeneEncoder:
         selected = keys.argsort(dim=1, stable=True)[:, :length]
         valid_genes = torch.arange(length, device=self.device)[None] < lengths[:, None]
         values = matrix.gather(1, selected)
-        if self.spatial:
-            if self.statistics is None:
-                raise ValueError("scGPT-spatial needs frozen training-source normalization statistics")
-            scale = self.statistics["nonzero_mean"]
-            fallback = np.asarray(self.statistics["gene_nonzero_mean"]) / scale
-            axis_ids = self.gene_ids(genes)
-            means = np.asarray(
-                [self.gene_means.get(int(token), value) for token, value in zip(axis_ids, fallback, strict=True)]
-            )
-            means = torch.as_tensor(means, dtype=torch.float64, device=self.device)
-            means = torch.where(torch.isfinite(means) & (means > 0), means, 1.0)
-            values = (values / scale / means[selected]).float()
+        values = self.normalize_values(values, genes, selected)
         binned = deterministic_bins(values, valid=valid_genes)
         tokens = torch.full((len(matrix), length + 1), self.pad_id, dtype=torch.long, device=self.device)
         expressions = torch.full(tokens.shape, self.pad_value, dtype=torch.float32, device=self.device)

@@ -1,6 +1,6 @@
 foundation:
   backbone: state_se
-  model_directory: artifacts/upstream/state-se
+  model_directory: weights/state-se
   embedding_dimension: 2048
   encoder_max_length: 2048
   state_feature_policy: state_se_gene_tokens_deterministic_source_only_v1
