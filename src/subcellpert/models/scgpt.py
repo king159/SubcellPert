@@ -1,4 +1,4 @@
-"""scGPT network and benchmark adapter. Derived layers: MIT, see THIRD_PARTY_LICENSES.md."""
+"""scGPT network and benchmark adapter. Derived layers: MIT, see the repository LICENSE."""
 
 from __future__ import annotations
 

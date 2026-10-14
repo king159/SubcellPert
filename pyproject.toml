@@ -8,7 +8,7 @@ version = "0.1.0"
 description = "Perturbation prediction for marked RNA molecule point patterns"
 readme = "README.md"
 license = "MIT AND Apache-2.0 AND CC-BY-NC-SA-4.0"
-license-files = ["LICENSE", "THIRD_PARTY_LICENSES.md"]
+license-files = ["LICENSE"]
 requires-python = ">=3.12,<3.13"
 dependencies = [
   "numpy>=2.0,<2.5",
@@ -67,7 +67,7 @@ packages = ["src/subcellpert"]
 
 [tool.hatch.build.targets.sdist]
 include = ["/src/subcellpert", "/configs", "/benchmark", "/docs",
-           "/release/environment-reference.json", "/README.md", "/pyproject.toml", "/LICENSE", "/THIRD_PARTY_LICENSES.md"]
+           "/README.md", "/pyproject.toml", "/LICENSE"]
 
 [tool.ruff]
 target-version = "py312"

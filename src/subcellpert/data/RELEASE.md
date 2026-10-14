@@ -2,7 +2,7 @@
 
 The baseline runtime reads a complete, versioned data bundle containing processed
 RNA observations, frozen train/validation/test memberships, and condition
-metadata. Obtain the bundle using the [reproduction guide](../../../docs/reproduction.md).
+metadata. Obtain the bundle using the [data preparation instructions](../../../README.md#-data-preparation).
 The code repository provides the loaders, configurations, training, and metrics;
 RNA observations and pretrained model weights are separate downloads.
 
@@ -76,8 +76,8 @@ current context tasks construct known-condition one-hot vectors from the frozen
 task and split metadata.
 
 These descriptors are separate from the cellular foundation-model encoders.
-See [pretrained models](../../../docs/pretrained_models.md) for the five encoders'
-integrated implementations, checkpoint downloads, and resource checksums.
+The five encoders are implemented in `src/subcellpert/models/`; resource paths
+and checksums are listed in [configs/models/](../../../configs/models/).
 
 ## Validate a downloaded snapshot
 

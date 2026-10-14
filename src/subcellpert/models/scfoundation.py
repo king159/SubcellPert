@@ -1,7 +1,7 @@
 """scFoundation MAE, Transformer, Performer and benchmark adapter.
 
 Derived from BioMap scFoundation (Copyright 2023 BioMap); Apache-2.0,
-see THIRD_PARTY_LICENSES.md. Only the frozen benchmark computation is retained.
+see the repository LICENSE. Only the frozen benchmark computation is retained.
 """
 
 from __future__ import annotations

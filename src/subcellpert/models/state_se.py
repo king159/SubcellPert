@@ -1,4 +1,4 @@
-"""STATE-SE network and benchmark adapter. Derived code: THIRD_PARTY_LICENSES.md."""
+"""STATE-SE network and benchmark adapter. Derived code: the repository LICENSE."""
 
 from __future__ import annotations
 

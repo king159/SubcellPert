@@ -16,7 +16,7 @@ class ScGPTSpatialNetwork(ScGPTNetwork):
 
     Its source-only encoding path shares scGPT's gene/value embeddings and
     Transformer. Spatial MoE, imputation and generation heads are unused here.
-    See THIRD_PARTY_LICENSES.md for the original implementation's MIT terms.
+    See the repository LICENSE for the original implementation's MIT terms.
     """
 
     def _encode(self, tokens, values, src_key_padding_mask):

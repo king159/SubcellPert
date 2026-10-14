@@ -55,7 +55,7 @@ dataset inventory in the data snapshot's `manifest.json`:
 From the code repository root, activate the Python environment described in
 the [installation instructions](../README.md). Set the data root
 to a complete snapshot prepared using the
-[reproduction guide](../docs/reproduction.md#data-and-model-resources):
+[data preparation instructions](../README.md#-data-preparation):
 
 ```bash
 export SUBCELLPERT_CODE="$PWD"
@@ -75,8 +75,8 @@ python -m subcellpert.main \
 ```
 
 Adjust `SUBCELLPERT_ROOT` if the data live elsewhere. The scGPT example also
-requires the [pretrained resources](../docs/pretrained_models.md) and the
-resource-path setup in the reproduction guide.
+requires the pretrained resources at the paths in [models/](models/), with
+the complete `weights/` directory visible under `SUBCELLPERT_ROOT`.
 
 Remove `--dry-run` to train and evaluate. For a bounded diagnostic, replace it
 with `--smoke` and choose a separate output directory.
@@ -133,8 +133,7 @@ dataset-specific prefix configuration. Classical baselines use the dataset's
 gene axis directly.
 
 Training loads this resolved configuration and the upstream weights directly.
-Official checkpoint download links and exact local destinations are listed in
-[pretrained models](../docs/pretrained_models.md).
+Model resource paths and checksums are listed in [models/](models/).
 Use an explicit `--config` path when code and data have separate roots.
 Without it, the CLI looks for shared configurations under `--project-root`.
 `--dry-run` checks configured assets and source/token identities before outputs
@@ -157,9 +156,8 @@ The effective encoder batch is the smaller of its configured cap and the
 per-rank training batch. There is no startup profiling or automatic OOM batch reduction; all five
 use `training.matmul_precision: high`. The configured sizes stay fixed throughout training.
 Foundation runs default to CUDA; `run.device=cpu` remains available for development.
-Smoke checks cap both batches at 2. See the
-[reproduction guide](../docs/reproduction.md#multiple-gpus) for global and
-per-rank batch semantics.
+Smoke checks cap both batches at 2. With multiple GPUs, `training.batch_size`
+is the global batch and each rank receives that batch divided by world size.
 
 All eight implemented baselines, including `state_se`, are in the formal schedule.
 The 38 frozen data-split instances produce 608 planned fits across both settings.

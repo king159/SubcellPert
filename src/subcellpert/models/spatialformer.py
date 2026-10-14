@@ -1,4 +1,4 @@
-"""SpatialFormer network and benchmark adapter. Derived layers: THIRD_PARTY_LICENSES.md."""
+"""SpatialFormer network and benchmark adapter. Derived layers: the repository LICENSE."""
 
 from __future__ import annotations
 

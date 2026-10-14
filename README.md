@@ -4,7 +4,7 @@
   <a href="https://personal-page.wjh.app/">Jinghao Wang</a><sup>1</sup>,
   <a href="https://chq1155.github.io/">Hanqun Cao</a><sup>1</sup>,
   <a href="https://icecreamartist.github.io/">Xilin Dang</a><sup>1</sup>,
-  <a href="https://scholar.google.com/citations?user=aUerEOMAAAAJ">Tianhui Zhou</a><sup>2</sup>,
+  <a href="https://scholar.google.com/citations?user=aUerEOMAAAAJ">Tianhui Zhou</a><sup>2</sup>,<br>
   <a href="https://yiyangzha0.github.io/">Yiyang Zhao</a><sup>3,4</sup>,
   <a href="https://scholar.google.com/citations?user=K-AjhSgAAAAJ">Chang-Yu Hsieh</a><sup>3</sup>,
   <a href="https://scholar.google.com/citations?user=BlSFT8UAAAAJ">Chunbin Gu</a><sup>1,✉</sup>,
@@ -19,12 +19,17 @@
 </p>
 
 <div align="center">
-  <img src="https://img.shields.io/badge/Paper-Coming%20soon-lightgrey" alt="Paper: coming soon" height="20">
+  <img src="https://raw.githubusercontent.com/jpswalsh/academicons/master/svg/biorxiv.svg" alt="bioRxiv" height="20">
+  <img src="https://img.shields.io/badge/bioRxiv-Coming%20soon-b31b1b" alt="bioRxiv paper: coming soon" height="20">
   <a href="https://personal-page.wjh.app/SubcellPert/" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/Project-Page-1E90FF" alt="Project page" height="20"></a>
   <a href="https://huggingface.co/datasets/king159/SubcellPert" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/Dataset-Hugging%20Face-FFD21E?logo=huggingface" alt="Dataset on Hugging Face" height="20"></a>
 </div>
 
 > **TL;DR:** SubcellPert benchmarks perturbation-response prediction across 14 imaging datasets and eight baselines, extending virtual cell evaluation from gene counts to intracellular RNA organization.
+
+<p align="center">
+  <img src="docs/teaser.png" alt="SubcellPert overview: perturbation prediction from gene counts to intracellular RNA organization, with 14 imaging datasets, Oracle and Joint evaluation, and eight baselines." width="100%">
+</p>
 
 ## 📄 Abstract
 
@@ -55,8 +60,7 @@ SubcellPert/
 │   ├── models/          # Foundation-model settings and weight checksums
 │   ├── oracle/          # Localization with target counts
 │   └── joint/           # Abundance and localization prediction
-├── docs/                # Reproduction and pretrained-model instructions
-├── release/             # Reference environment
+├── docs/                # README figures
 ├── src/subcellpert/     # Data loading, baselines, training, and evaluation
 ├── LICENSE
 └── pyproject.toml
@@ -83,8 +87,8 @@ python -m subcellpert.main --help
 ```
 
 Data and pretrained weights are downloaded separately. Keep each model's
-weights, vocabulary, and configuration together under `weights/`, following
-the [pretrained-model instructions](docs/pretrained_models.md).
+weights, vocabulary, and configuration together under `weights/<model>/`,
+using the paths specified in [configs/models/](configs/models/).
 
 ### 💾 Data Preparation
 
@@ -126,8 +130,7 @@ Follow the
 to check the inventory and content hashes. Keep the bundle together so its
 relative paths remain valid.
 
-See the [reproduction guide](docs/reproduction.md) for data-root setup and the
-[dataset format](src/subcellpert/data/RELEASE.md) for the bundle layout.
+See the [dataset format](src/subcellpert/data/RELEASE.md) for the bundle layout.
 
 ## 🧬 SubcellPert
 
@@ -160,12 +163,17 @@ These are data-split seeds, not an additional model-seed sweep.
 
 The five foundation-model baselines use frozen encoders with trainable
 prediction heads. Their networks are implemented directly in
-`src/subcellpert/models/`; no upstream source checkout is required. Follow the
-[pretrained-model instructions](docs/pretrained_models.md) for weight and vocabulary
-downloads, source revisions, and checksums. When code and
-data live in separate directories, follow the
-[resource-path setup](docs/reproduction.md#data-and-model-resources) before
-running these baselines.
+`src/subcellpert/models/`; no upstream source checkout is required. Resource
+locations are specified in [configs/models/](configs/models/), with checksums
+in [checkpoints.sha256](configs/models/checkpoints.sha256).
+When code and data live in separate directories, expose the complete weight
+directory at the data root before running these baselines:
+
+```bash
+ln -s "$SUBCELLPERT_CODE/weights" "$SUBCELLPERT_ROOT/weights"
+```
+
+Create this link only if the destination does not already exist.
 
 ### 🚀 Training
 
@@ -225,9 +233,6 @@ optimizer batch. Scientific settings are defined in the YAML files.
 > command plus `--resume`, keeping the code, data, weights, and training settings
 > unchanged.
 
-For multiple GPUs, resume details, and resource checks, see the
-[reproduction guide](docs/reproduction.md).
-
 ### 📊 Validation and Results
 
 Foundation-model fits select checkpoints using the validation split. ATM-RT
@@ -248,6 +253,6 @@ gene support.
 ### 📄 License
 
 Original SubcellPert code is released under the [MIT license](LICENSE).
-Integrated foundation-model code retains its original terms; see
-[third-party notices](THIRD_PARTY_LICENSES.md) for attribution and licenses.
+Integrated foundation-model code retains its original terms; attribution and
+license texts are included in the same [LICENSE](LICENSE) file.
 Pretrained weights and source datasets retain their respective terms.
