@@ -100,7 +100,9 @@
     };
   };
 
-  const dotColors = ["#6957db", "#18a999", "#ef6f91", "#d9a224"];
+  const theme = getComputedStyle(document.documentElement);
+  const dotColors = ["--gene-a", "--gene-b", "--gene-c", "--gene-d"]
+    .map((token) => theme.getPropertyValue(token).trim());
   const morph = document.querySelector("[data-rna-morph]");
   if (morph) {
     const random = seededRandom(20260908);
@@ -201,20 +203,39 @@
       });
     };
     let frame;
-    const play = () => {
+    let started = false;
+    let visibilityObserver;
+    const finish = () => {
       cancelAnimationFrame(frame);
-      if (motionPreference.matches) { render(animationDuration); return; }
+      started = true;
+      visibilityObserver?.disconnect();
+      render(animationDuration);
+    };
+    const play = () => {
+      if (started) return;
+      started = true;
+      visibilityObserver?.disconnect();
+      if (motionPreference.matches) { finish(); return; }
       const start = performance.now();
-      render(0);
       const tick = (now) => {
-        const phase = (now - start) % (animationDuration * 2);
-        render(phase <= animationDuration ? phase : animationDuration * 2 - phase);
+        const elapsed = now - start;
+        if (elapsed >= animationDuration) { finish(); return; }
+        render(elapsed);
         frame = requestAnimationFrame(tick);
       };
       frame = requestAnimationFrame(tick);
     };
-    motionPreference.addEventListener("change", play);
-    play();
+    motionPreference.addEventListener("change", () => {
+      if (motionPreference.matches) finish();
+    });
+    render(0);
+    if (motionPreference.matches) finish();
+    else if ("IntersectionObserver" in window) {
+      visibilityObserver = new IntersectionObserver((entries) => {
+        if (entries.some((entry) => entry.isIntersecting && entry.intersectionRatio >= .2)) play();
+      }, { threshold: .2 });
+      visibilityObserver.observe(morph);
+    } else play();
   }
 
   const compactNumber = new Intl.NumberFormat("en", {
