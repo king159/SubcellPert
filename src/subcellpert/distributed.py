@@ -89,7 +89,7 @@ def synchronized_batch_norm(module, values):
 
     Complete-cell shards are equal-sized. GEARS normalizes either cells or
     cell×gene rows, so every rank contributes the same number of observations.
-    Works on Gloo for equivalence tests and NCCL for GPU training.
+    Supports Gloo and NCCL backends.
     """
     count = len(values) * world_size()
     work = values.float() if values.dtype in (torch.float16, torch.bfloat16) else values

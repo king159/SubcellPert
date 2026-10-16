@@ -19,10 +19,9 @@
 </p>
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/jpswalsh/academicons/master/svg/biorxiv.svg" alt="bioRxiv" height="20">
   <img src="https://img.shields.io/badge/bioRxiv-Coming%20soon-b31b1b" alt="bioRxiv paper: coming soon" height="20">
   <a href="https://personal-page.wjh.app/SubcellPert/" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/Project-Page-1E90FF" alt="Project page" height="20"></a>
-  <a href="https://huggingface.co/datasets/king159/SubcellPert" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/Dataset-Hugging%20Face-FFD21E?logo=huggingface" alt="Dataset on Hugging Face" height="20"></a>
+  <a href="https://huggingface.co/datasets/king159/SubcellPert" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/Dataset-king159/SubcellPert-FFD21E?logo=huggingface" alt="Dataset on Hugging Face" height="20"></a>
 </div>
 
 > **TL;DR:** SubcellPert benchmarks perturbation-response prediction across 14 imaging datasets and eight baselines, extending virtual cell evaluation from gene counts to intracellular RNA organization.
@@ -57,10 +56,11 @@ SubcellPert/
 ├── benchmark/           # Frozen schedules and sampling protocol
 ├── configs/
 │   ├── datasets/        # Dataset definitions
-│   ├── models/          # Foundation-model settings and weight checksums
+│   ├── models/          # Foundation-model settings and resource paths
 │   ├── oracle/          # Localization with target counts
 │   └── joint/           # Abundance and localization prediction
 ├── docs/                # README figures
+├── scripts/             # Pretrained resource download and preparation
 ├── src/subcellpert/     # Data loading, baselines, training, and evaluation
 ├── LICENSE
 └── pyproject.toml
@@ -69,13 +69,7 @@ SubcellPert/
 </details>
 
 ### 🛠️ Environment Setup
-
-Use **Linux and Python 3.12**. Dependencies, including the pinned PyTorch and
-torchvision versions, are specified in [pyproject.toml](pyproject.toml).
-GPU runs require a compatible NVIDIA driver. Install
-[uv](https://docs.astral.sh/uv/getting-started/installation/) first.
-On a shared cluster, install dependencies on a networked login node into shared
-storage, then use an allocated compute node for environment checks and experiments.
+[uv](https://docs.astral.sh/uv/getting-started/installation/) is used for environment management in this project. Dependencies are specified in [pyproject.toml](pyproject.toml).
 
 Run these commands from the code repository root:
 
@@ -88,7 +82,7 @@ python -m subcellpert.main --help
 
 Data and pretrained weights are downloaded separately. Keep each model's
 weights, vocabulary, and configuration together under `weights/<model>/`,
-using the paths specified in [configs/models/](configs/models/).
+using the [pretrained model preparation script](#-baselines).
 
 ### 💾 Data Preparation
 
@@ -99,13 +93,11 @@ the Hub downloader does not remove leftover files from older snapshots. On
 clusters without compute-node internet access, download on a networked login
 node to shared storage, then validate and run experiments in a compute allocation.
 
-<details open>
+<details>
 <summary>Download the pinned dataset snapshot</summary>
 
 ```bash
 export SUBCELLPERT_CODE="$PWD"
-export SUBCELLPERT_ROOT="$PWD/data/subcellpert_population_min50_20260924"
-export SUBCELLPERT_DATA_REVISION="b6db87c2023de68344e2c4a4a8d45a03eb86fdb7"
 
 python - <<'PY'
 import os
@@ -114,8 +106,6 @@ from huggingface_hub import snapshot_download
 snapshot_download(
     repo_id="king159/SubcellPert",
     repo_type="dataset",
-    revision=os.environ["SUBCELLPERT_DATA_REVISION"],
-    local_dir=os.environ["SUBCELLPERT_ROOT"],
     ignore_patterns=[".gitattributes"],
     token=True,
 )
@@ -123,14 +113,6 @@ PY
 ```
 
 </details>
-
-`.gitattributes` is Hub repository metadata and is excluded from the download.
-Follow the
-[dataset validation instructions](src/subcellpert/data/RELEASE.md#validate-a-downloaded-snapshot)
-to check the inventory and content hashes. Keep the bundle together so its
-relative paths remain valid.
-
-See the [dataset format](src/subcellpert/data/RELEASE.md) for the bundle layout.
 
 ## 🧬 SubcellPert
 
@@ -146,7 +128,6 @@ The benchmark has two independently fitted settings:
 There are **224 run configurations**: 14 datasets × eight baselines × two settings.
 The frozen schedule contains 38 dataset/split instances and 608 planned fits.
 Most datasets have split seeds 1–3; ATM-RT and DDX54-PD1 have seed 1 only.
-These are data-split seeds, not an additional model-seed sweep.
 
 ### 🧪 Baselines
 
@@ -163,17 +144,71 @@ These are data-split seeds, not an additional model-seed sweep.
 
 The five foundation-model baselines use frozen encoders with trainable
 prediction heads. Their networks are implemented directly in
-`src/subcellpert/models/`; no upstream source checkout is required. Resource
-locations are specified in [configs/models/](configs/models/), with checksums
-in [checkpoints.sha256](configs/models/checkpoints.sha256).
-When code and data live in separate directories, expose the complete weight
-directory at the data root before running these baselines:
+`src/subcellpert/models/`. Resource
+locations are specified in [configs/models/](configs/models/).
+
+<details>
+<summary>Download the pretrained models</summary>
+
+The five foundation-model baselines require pretrained weights and auxiliary
+resources. From the code repository root, with the environment active, run:
 
 ```bash
-ln -s "$SUBCELLPERT_CODE/weights" "$SUBCELLPERT_ROOT/weights"
+python scripts/prepare_pretrained_models.py
 ```
 
-Create this link only if the destination does not already exist.
+The [script](scripts/prepare_pretrained_models.py) downloads all five models into
+`weights/`, extracts scGPT-spatial, and prepares the inference configuration for
+SpatialFormer. Existing files are kept. To download only selected models:
+
+```bash
+python scripts/prepare_pretrained_models.py --models scgpt state_se
+```
+
+Downloads use `huggingface_hub` (installed with the project dependencies) and
+the following sources. Hugging Face and GitHub resources use fixed revisions
+recorded in the script; Figshare downloads use fixed file IDs.
+
+| Model | Download source | Destination under `weights/` |
+| --- | --- | --- |
+| scGPT | [whole-human HF mirror](https://huggingface.co/wanglab/scGPT-human/tree/a24c237737a40f3720f75abb555489e9fe753be6); [official model zoo](https://github.com/bowang-lab/scGPT#pretrained-scgpt-model-zoo) | `scgpt-human/` |
+| scGPT-spatial | [official V1 archive](https://figshare.com/articles/software/scGPT-spatial_V1_Model_Weights/28356068?file=52163879) | `scgpt-spatial/scGPT_spatial_v1/` |
+| scFoundation | [HF checkpoint mirror](https://huggingface.co/genbio-ai/scFoundation/tree/cb434153a1acfacd215eefc956ea445f7cc39cc3) and [official gene index](https://github.com/biomap-research/scFoundation/blob/397631c495eddf9ad6644fc00c6ea8139e651245/OS_scRNA_gene_index.19264.tsv) | `scfoundation/` |
+| SpatialFormer | [official single-input 5k checkpoint](https://figshare.com/articles/dataset/single_input_checkpoint_5k/31146238?file=61331527) and [upstream inference resources](https://github.com/TerminatorJ/Spatialformer/tree/f02e7776e8a99c9abdc5fe5572a1a20369faf159/spatialformer) | `spatialformer/` |
+| STATE-SE | [official SE-600M](https://huggingface.co/arcinstitute/SE-600M/tree/5a9a80f44f7ce32ce57059933ef0d735d7c10ce5) and [MGI mouse–human homology report](https://www.informatics.jax.org/downloads/reports/HOM_MouseHumanSequence.rpt) | `state-se/` |
+
+
+Required resource layout:
+
+```text
+weights/
+├── scgpt-human/
+│   ├── best_model.pt
+│   ├── args.json
+│   └── vocab.json
+├── scgpt-spatial/scGPT_spatial_v1/
+│   ├── best_model.pt
+│   ├── args.json
+│   ├── vocab.json
+│   ├── batch_mapping_dict.json
+│   └── all_dict_mean_std.csv
+├── scfoundation/
+│   ├── models.ckpt
+│   └── OS_scRNA_gene_index.19264.tsv
+├── spatialformer/
+│   ├── stepstep=0176000-traintrain_total_loss=-2.7789-valval_total_loss=0.0000.ckpt
+│   ├── xenium_5k_pandavid_gene_embeddings.pkl
+│   ├── config/_config_train_large_pair.json
+│   ├── tokenizer/tokenv5.json
+│   └── data/gene_median.pkl
+└── state-se/
+    ├── model.safetensors
+    ├── protein_embeddings.pt
+    ├── config.yaml
+    └── HOM_MouseHumanSequence.rpt
+```
+
+</details>
 
 ### 🚀 Training
 

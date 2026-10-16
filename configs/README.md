@@ -133,7 +133,7 @@ dataset-specific prefix configuration. Classical baselines use the dataset's
 gene axis directly.
 
 Training loads this resolved configuration and the upstream weights directly.
-Model resource paths and checksums are listed in [models/](models/).
+Model resource paths are listed in [models/](models/).
 Use an explicit `--config` path when code and data have separate roots.
 Without it, the CLI looks for shared configurations under `--project-root`.
 `--dry-run` checks configured assets and source/token identities before outputs

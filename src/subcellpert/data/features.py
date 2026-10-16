@@ -91,7 +91,6 @@ def foundation_metadata_from_config(root, spec, backbone, configuration):
                 "protein_embeddings.pt",
                 "config.yaml",
                 "HOM_MouseHumanSequence.rpt",
-                "assets.json",
             )
         ]
     elif backbone == "scfoundation":
@@ -315,7 +314,6 @@ class GeneFoundationStore:
                         "protein_embeddings.pt",
                         "config.yaml",
                         "HOM_MouseHumanSequence.rpt",
-                        "assets.json",
                     )
                 )
                 files.append(Path(__file__).resolve().parents[1] / "models/state_se.py")
@@ -362,7 +360,7 @@ class GeneFoundationStore:
             if m["backbone"] == "state_se":
                 from subcellpert.models.state_se import state_binding_details
 
-                self._binding["state_se"] = state_binding_details(self.root, m)
+                self._binding["state_se"] = state_binding_details(m)
                 self._binding["normalization"] = self._binding["state_se"]["normalization"]
             if m["backbone"] == "scfoundation":
                 self._binding["scfoundation_gene_context"] = m.get("scfoundation_gene_context", "assay")

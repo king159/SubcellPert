@@ -66,7 +66,7 @@ subcellpert-benchmark = "subcellpert.main:main"
 packages = ["src/subcellpert"]
 
 [tool.hatch.build.targets.sdist]
-include = ["/src/subcellpert", "/configs", "/benchmark", "/docs",
+include = ["/src/subcellpert", "/configs", "/benchmark", "/docs", "/scripts",
            "/README.md", "/pyproject.toml", "/LICENSE"]
 
 [tool.ruff]

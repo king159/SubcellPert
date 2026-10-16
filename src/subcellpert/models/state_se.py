@@ -3,7 +3,6 @@
 from __future__ import annotations
 
 import csv
-import json
 import math
 from collections import defaultdict
 from pathlib import Path
@@ -330,12 +329,10 @@ def state_token_batch(matrix, genes, ids, max_length):
 STATE_SOURCE_REVISION = "9bbfe78a434a55205e4de834e1ea99f85f7a3add"
 
 
-def state_binding_details(root, metadata):
+def state_binding_details(metadata):
     """Bind local inference choices separately from pretrained weight identity."""
-    assets = json.loads((Path(root) / metadata["model_directory"] / "assets.json").read_text())
     return {
         "feature_policy": STATE_FEATURE_POLICY,
-        "model_revision": assets["model_revision"],
         "source_revision": STATE_SOURCE_REVISION,
         "species": metadata["species"],
         "gene_mapping": "exact_human_symbols" if metadata["species"] == "Human" else "MGI_one_to_one_mouse_human",
