@@ -19,7 +19,7 @@
 </p>
 
 <div align="center">
-  <img src="https://img.shields.io/badge/bioRxiv-Coming%20soon-b31b1b" alt="bioRxiv paper: coming soon" height="20">
+  <a href="https://www.biorxiv.org/content/10.64898/2026.10.11.758305v1" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/bioRxiv-10.64898/2026.10.11.758305v1-b31b1b" alt="bioRxiv paper: 10.64898/2026.10.11.758305v1" height="20"></a>
   <a href="https://personal-page.wjh.app/SubcellPert/" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/Project-Page-1E90FF" alt="Project page" height="20"></a>
   <a href="https://huggingface.co/datasets/king159/SubcellPert" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/Dataset-king159/SubcellPert-FFD21E?logo=huggingface" alt="Dataset on Hugging Face" height="20"></a>
 </div>
