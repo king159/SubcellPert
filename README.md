@@ -1,29 +1,5 @@
 <h1 align="center">SubcellPert: Benchmarking Subcellular Perturbation Prediction</h1>
 
-<p align="center">
-  <a href="https://personal-page.wjh.app/">Jinghao Wang</a><sup>1</sup>,
-  <a href="https://chq1155.github.io/">Hanqun Cao</a><sup>1</sup>,
-  <a href="https://icecreamartist.github.io/">Xilin Dang</a><sup>1</sup>,
-  <a href="https://scholar.google.com/citations?user=aUerEOMAAAAJ">Tianhui Zhou</a><sup>2</sup>,<br>
-  <a href="https://yiyangzha0.github.io/">Yiyang Zhao</a><sup>3,4</sup>,
-  <a href="https://scholar.google.com/citations?user=K-AjhSgAAAAJ">Chang-Yu Hsieh</a><sup>3</sup>,
-  <a href="https://scholar.google.com/citations?user=BlSFT8UAAAAJ">Chunbin Gu</a><sup>1,✉</sup>,
-  <a href="https://appsrv.cse.cuhk.edu.hk/~pheng/index.php">Pheng Ann Heng</a><sup>1</sup>
-</p>
-
-<p align="center">
-  <sup>1</sup> The Chinese University of Hong Kong &nbsp;
-  <sup>2</sup> Duke University<br>
-  <sup>3</sup> Zhejiang University &nbsp;
-  <sup>4</sup> Shanghai Innovation Institute<br>
-</p>
-
-<div align="center">
-  <a href="https://www.biorxiv.org/content/10.64898/2026.10.11.758305v1" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/bioRxiv-10.64898/2026.10.11.758305v1-b31b1b" alt="bioRxiv paper: 10.64898/2026.10.11.758305v1" height="20"></a>
-  <a href="https://personal-page.wjh.app/SubcellPert/" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/Project-Page-1E90FF" alt="Project page" height="20"></a>
-  <a href="https://huggingface.co/datasets/king159/SubcellPert" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/Dataset-king159/SubcellPert-FFD21E?logo=huggingface" alt="Dataset on Hugging Face" height="20"></a>
-</div>
-
 > **TL;DR:** SubcellPert benchmarks perturbation-response prediction across 14 imaging datasets and eight baselines, extending virtual cell evaluation from gene counts to intracellular RNA organization.
 
 <p align="center">
@@ -86,33 +62,14 @@ using the [pretrained model preparation script](#-baselines).
 
 ### 💾 Data Preparation
 
-The dataset repository is [HF king159/SubcellPert](https://huggingface.co/datasets/king159/SubcellPert).
-
-Authenticate with `hf auth login` or `HF_TOKEN`. Use a new, empty destination:
-the Hub downloader does not remove leftover files from older snapshots. On
-clusters without compute-node internet access, download on a networked login
-node to shared storage, then validate and run experiments in a compute allocation.
-
-<details>
-<summary>Download the pinned dataset snapshot</summary>
+Use a prepared benchmark data snapshot. Set `SUBCELLPERT_ROOT` to the snapshot
+root and keep its frozen split definitions unchanged. An anonymized dataset
+download link is not yet included in this review snapshot.
 
 ```bash
 export SUBCELLPERT_CODE="$PWD"
-
-python - <<'PY'
-import os
-from huggingface_hub import snapshot_download
-
-snapshot_download(
-    repo_id="king159/SubcellPert",
-    repo_type="dataset",
-    ignore_patterns=[".gitattributes"],
-    token=True,
-)
-PY
+export SUBCELLPERT_ROOT="/path/to/prepared-data-snapshot"
 ```
-
-</details>
 
 ## 🧬 SubcellPert
 
@@ -127,7 +84,7 @@ The benchmark has two independently fitted settings:
 
 There are **224 run configurations**: 14 datasets × eight baselines × two settings.
 The frozen schedule contains 38 dataset/split instances and 608 planned fits.
-Most datasets have split seeds 1–3; ATM-RT and DDX54-PD1 have seed 1 only.
+Most datasets have split seeds 1–3; ATM-RT and Ddx54-PD1 have seed 1 only.
 
 ### 🧪 Baselines
 
@@ -271,7 +228,7 @@ optimizer batch. Scientific settings are defined in the YAML files.
 ### 📊 Validation and Results
 
 Foundation-model fits select checkpoints using the validation split. ATM-RT
-and DDX54-PD1 have no validation split and use the final epoch. Test responses
+and Ddx54-PD1 have no validation split and use the final epoch. Test responses
 are reserved for evaluation. Joint and Oracle are fitted independently.
 
 Each fit saves its resolved configuration in `run_config.json`, its checkpoint
