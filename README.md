@@ -1,5 +1,9 @@
 <h1 align="center">SubcellPert: Benchmarking Subcellular Perturbation Prediction</h1>
 
+<div align="center">
+  <a href="https://huggingface.co/datasets/king159/SubcellPert" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/Dataset-king159/SubcellPert-FFD21E?logo=huggingface" alt="Dataset on Hugging Face" height="20"></a>
+</div>
+
 > **TL;DR:** SubcellPert benchmarks perturbation-response prediction across 14 imaging datasets and eight baselines, extending virtual cell evaluation from gene counts to intracellular RNA organization.
 
 <p align="center">
@@ -62,14 +66,33 @@ using the [pretrained model preparation script](#-baselines).
 
 ### 💾 Data Preparation
 
-Use a prepared benchmark data snapshot. Set `SUBCELLPERT_ROOT` to the snapshot
-root and keep its frozen split definitions unchanged. An anonymized dataset
-download link is not yet included in this review snapshot.
+The dataset repository is [HF king159/SubcellPert](https://huggingface.co/datasets/king159/SubcellPert).
+
+Authenticate with `hf auth login` or `HF_TOKEN`. Use a new, empty destination:
+the Hub downloader does not remove leftover files from older snapshots. On
+clusters without compute-node internet access, download on a networked login
+node to shared storage, then validate and run experiments in a compute allocation.
+
+<details>
+<summary>Download the dataset</summary>
 
 ```bash
 export SUBCELLPERT_CODE="$PWD"
-export SUBCELLPERT_ROOT="/path/to/prepared-data-snapshot"
+
+python - <<'PY'
+import os
+from huggingface_hub import snapshot_download
+
+snapshot_download(
+    repo_id="king159/SubcellPert",
+    repo_type="dataset",
+    ignore_patterns=[".gitattributes"],
+    token=True,
+)
+PY
 ```
+
+</details>
 
 ## 🧬 SubcellPert
 
