@@ -1,69 +1,38 @@
 (() => {
   "use strict";
 
-  const header = document.querySelector("[data-header]");
   const menuButton = document.querySelector("[data-menu-toggle]");
   const navigation = document.querySelector("[data-nav]");
-  const mobileNavigation = window.matchMedia("(max-width: 900px)");
+  const mobileNavigation = window.matchMedia("(max-width: 760px)");
 
-  const setHeaderState = () => {
-    header?.classList.toggle("is-scrolled", window.scrollY > 12);
-  };
+  if (menuButton && navigation) {
+    const setMenuOpen = (open) => {
+      menuButton.setAttribute("aria-expanded", String(open));
+      menuButton.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+      menuButton.querySelector("span").textContent = open ? "−" : "+";
+      navigation.classList.toggle("is-open", open);
+      navigation.inert = mobileNavigation.matches && !open;
+      if (navigation.inert) navigation.setAttribute("aria-hidden", "true");
+      else navigation.removeAttribute("aria-hidden");
+    };
 
-  setHeaderState();
-  window.addEventListener("scroll", setHeaderState, { passive: true });
-
-  const closeMenu = ({ returnFocus = false } = {}) => {
-    if (!menuButton || !navigation) return;
-    const wasOpen = menuButton.getAttribute("aria-expanded") === "true";
-    menuButton.setAttribute("aria-expanded", "false");
-    menuButton.setAttribute("aria-label", "Open menu");
-    navigation.classList.remove("is-open");
-    document.body.classList.remove("menu-open");
-    navigation.inert = mobileNavigation.matches;
-    if (mobileNavigation.matches) navigation.setAttribute("aria-hidden", "true");
-    else navigation.removeAttribute("aria-hidden");
-    if (returnFocus && wasOpen) menuButton.focus();
-  };
-
-  menuButton?.addEventListener("click", () => {
-    const opening = menuButton.getAttribute("aria-expanded") !== "true";
-    menuButton.setAttribute("aria-expanded", String(opening));
-    menuButton.setAttribute("aria-label", opening ? "Close menu" : "Open menu");
-    navigation?.classList.toggle("is-open", opening);
-    document.body.classList.toggle("menu-open", opening);
-    if (navigation) {
-      navigation.inert = !opening;
-      navigation.setAttribute("aria-hidden", String(!opening));
-      if (opening) window.requestAnimationFrame(() => navigation.querySelector("a")?.focus());
-    }
-  });
-
-  navigation?.querySelectorAll("a").forEach((link) => link.addEventListener("click", closeMenu));
-  document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape") {
-      closeMenu({ returnFocus: true });
-      return;
-    }
-    if (
-      event.key !== "Tab" ||
-      !mobileNavigation.matches ||
-      menuButton?.getAttribute("aria-expanded") !== "true"
-    ) return;
-    const focusable = [menuButton, ...(navigation?.querySelectorAll("a[href]") || [])].filter(Boolean);
-    if (!focusable.length) return;
-    const first = focusable[0];
-    const last = focusable[focusable.length - 1];
-    if (event.shiftKey && document.activeElement === first) {
-      event.preventDefault();
-      last.focus();
-    } else if (!event.shiftKey && document.activeElement === last) {
-      event.preventDefault();
-      first.focus();
-    }
-  });
-  mobileNavigation.addEventListener("change", () => closeMenu());
-  closeMenu();
+    menuButton.addEventListener("click", () => {
+      setMenuOpen(menuButton.getAttribute("aria-expanded") !== "true");
+    });
+    navigation.addEventListener("click", (event) => {
+      if (event.target.closest("a")) setMenuOpen(false);
+    });
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && menuButton.getAttribute("aria-expanded") === "true") {
+        setMenuOpen(false);
+        menuButton.focus();
+      }
+    });
+    mobileNavigation.addEventListener("change", () => setMenuOpen(false));
+    menuButton.hidden = false;
+    document.body.classList.add("js-ready");
+    setMenuOpen(false);
+  }
 
   const navLinks = [...document.querySelectorAll('.site-nav a[href^="#"]')];
   const navSections = navLinks

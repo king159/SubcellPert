@@ -6,17 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description"
         content="SubcellPert benchmarks perturbation-response prediction across 14 imaging datasets and eight baselines, extending virtual cell evaluation from gene counts to intracellular RNA organization." />
-    <meta name="theme-color" content="#263943" />
+    <meta name="theme-color" content="#25333d" />
     <meta property="og:title" content="SubcellPert" />
     <meta property="og:description" content="SubcellPert benchmarks perturbation-response prediction across 14 imaging datasets and eight baselines, extending virtual cell evaluation from gene counts to intracellular RNA organization." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://personal-page.wjh.app/SubcellPert/" />
     <meta property="og:image" content="https://personal-page.wjh.app/SubcellPert/img/subcellpert-overview.svg" />
     <link rel="canonical" href="https://personal-page.wjh.app/SubcellPert/" />
+    <link rel="icon" type="image/svg+xml" sizes="any" href="img/favicon.svg" />
     <title>SubcellPert · Subcellular Perturbation Prediction</title>
-    <link rel="preload" href="css/fonts/newsreader.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="css/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="stylesheet" href="css/site.css" />
     <link rel="stylesheet" href="css/boreas-gradient.css" />
+    <link rel="stylesheet" href="css/project-series.css" />
     <script src="js/results-data.js" defer></script>
     <script src="js/site.js" defer></script>
     <noscript><style>.menu-toggle, .filter-bar, .rna-morph > svg, .rna-morph-steps, .rna-morph-legend { display: none; }</style></noscript>
@@ -25,7 +27,7 @@
 <body>
     <a class="skip-link" href="#main-content">Skip to content</a>
 
-    <header class="site-header" data-header>
+    <header class="site-header">
         <div class="nav-shell">
             <a class="brand" href="#top" aria-label="SubcellPert home">
                 <svg class="brand-mark" viewBox="0 0 42 42" aria-hidden="true">
@@ -39,8 +41,8 @@
             </a>
 
             <button class="menu-toggle" type="button" aria-label="Open menu" aria-controls="site-nav"
-                aria-expanded="false" data-menu-toggle>
-                <span>Menu</span><span class="menu-lines" aria-hidden="true"></span>
+                aria-expanded="false" data-menu-toggle hidden>
+                Menu <span aria-hidden="true">+</span>
             </button>
 
             <nav class="site-nav" id="site-nav" aria-label="Primary navigation" data-nav>
@@ -49,37 +51,38 @@
                 <a href="#statistics">Statistics</a>
                 <a href="#results">Results</a>
                 <a class="nav-code" href="https://github.com/king159/SubcellPert" target="_blank"
-                    rel="noreferrer">Code <span aria-hidden="true">↗</span></a>
+                    rel="noreferrer">Code</a>
             </nav>
         </div>
     </header>
 
     <main id="main-content">
-        <section class="hero" id="top">
-            <div class="hero-grid page-shell">
+        <section class="hero" id="top" aria-labelledby="paper-title">
+            <div class="page-shell hero-grid">
                 <div class="hero-copy">
-                    <h1>SubcellPert</h1>
-                    <p class="paper-title">Benchmarking Subcellular Perturbation Prediction</p>
+                    <p class="venue"><strong>bioRxiv</strong><span>Preprint</span></p>
+                    <h1 id="paper-title"><span class="wordmark">SubcellPert</span> <span class="paper-title">Benchmarking Subcellular Perturbation Prediction</span></h1>
                     <p class="hero-deck">SubcellPert extends virtual cell evaluation from gene counts to intracellular RNA organization, benchmarking perturbation-response prediction across 14 imaging datasets and eight baselines.</p>
                     <nav class="hero-actions" aria-label="Project resources">
-                        <a class="button paper-link" href="https://www.biorxiv.org/content/10.64898/2026.10.11.758305v1" target="_blank" rel="noreferrer">Read the paper <span aria-hidden="true">↗</span></a>
-                        <a href="https://github.com/king159/SubcellPert" target="_blank" rel="noreferrer">Code <span aria-hidden="true">↗</span></a>
-                        <a href="https://huggingface.co/datasets/king159/SubcellPert" target="_blank" rel="noreferrer">Dataset <span aria-hidden="true">↗</span></a>
-                        <a href="#results">Explore results <span aria-hidden="true">↓</span></a>
+                        <a class="button button-primary" href="https://www.biorxiv.org/content/10.64898/2026.10.11.758305v1" target="_blank" rel="noreferrer">Read the paper</a>
+                        <a class="button" href="https://github.com/king159/SubcellPert" target="_blank" rel="noreferrer">Code on GitHub</a>
+                        <a class="button" href="https://huggingface.co/datasets/king159/SubcellPert" target="_blank" rel="noreferrer">Dataset</a>
+                        <a class="results-jump" href="#results">Explore results <span aria-hidden="true">↓</span></a>
                     </nav>
                 </div>
                 <figure class="hero-art">
-                    <a href="img/waterhouse-boreas.jpg" target="_blank" rel="noreferrer"
-                        aria-label="View the full painting, Boreas by John William Waterhouse">
+                    <a class="art-link" href="img/waterhouse-boreas.jpg" target="_blank" rel="noreferrer"
+                        aria-label="Open the full painting, Boreas by John William Waterhouse, in a new tab">
                         <img src="img/waterhouse-boreas-560.webp"
                             srcset="img/waterhouse-boreas-560.webp 560w, img/waterhouse-boreas-850.webp 850w"
-                            sizes="(max-width: 730px) 91vw, (max-width: 1400px) 36vw, 475px"
+                            sizes="(max-width: 425px) calc(100vw - 60px), (max-width: 760px) 365px, (max-width: 960px) 37vw, 365px"
                             width="853" height="1200" fetchpriority="high"
                             alt="A woman wraps herself in wind-blown blue-grey drapery in Waterhouse’s Boreas." />
+                        <span class="art-expand" aria-hidden="true">↗</span>
                     </a>
                     <figcaption><span><cite>Boreas</cite>, 1903</span><span>John William Waterhouse</span></figcaption>
                 </figure>
-                <div class="paper-credit">
+                <div class="hero-meta">
                     <p class="paper-authors">
                         <a href="https://personal-page.wjh.app/" target="_blank" rel="noreferrer">Jinghao
                             Wang<sup>1</sup></a>
@@ -98,45 +101,42 @@
                         <a href="https://appsrv.cse.cuhk.edu.hk/~pheng/index.php" target="_blank"
                             rel="noreferrer">Pheng Ann Heng<sup>1</sup></a>
                     </p>
-                    <details class="affiliation-details">
-                        <summary>Affiliations and contact</summary>
-                        <p class="paper-affiliations">
-                            <span><sup>1</sup> The Chinese University of Hong Kong</span>
-                            <span><sup>2</sup> Duke University</span>
-                            <span><sup>3</sup> Zhejiang University</span>
-                            <span><sup>4</sup> Shanghai Innovation Institute</span>
-                        </p>
-                        <a class="paper-contact" href="mailto:jinghao.w@link.cuhk.edu.hk">jinghao.w@link.cuhk.edu.hk</a>
-                    </details>
-                </div>
-            </div>
-            <div class="corpus-summary">
-                <div class="stat-rail page-shell">
-                    <div class="stat-item">
-                        <span class="stat-value" data-count="14">14</span>
-                        <span class="stat-label">datasets</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-value" data-count="13880723" data-format="compact">13.88M</span>
-                        <span class="stat-label">cells in prepared corpus</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-value" data-count="3653986724" data-format="compact">3.65B</span>
-                        <span class="stat-label">retained RNA molecules</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-value" data-count="8">8</span>
-                        <span class="stat-label">evaluated baselines</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-value" data-count="608">608</span>
-                        <span class="stat-label">completed runs</span>
-                    </div>
+                    <p class="paper-affiliations">
+                        <span><sup>1</sup> The Chinese University of Hong Kong</span>
+                        <span><sup>2</sup> Duke University</span>
+                        <span><sup>3</sup> Zhejiang University</span>
+                        <span><sup>4</sup> Shanghai Innovation Institute</span>
+                    </p>
+                    <p class="paper-contact"><span><sup>*</sup> Corresponding author</span><span>Contact: <a href="mailto:jinghao.w@link.cuhk.edu.hk">jinghao.w@link.cuhk.edu.hk</a></span></p>
                 </div>
             </div>
         </section>
+        <div class="corpus-summary">
+            <div class="stat-rail page-shell">
+                <div class="stat-item">
+                    <span class="stat-value" data-count="14">14</span>
+                    <span class="stat-label">datasets</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value" data-count="13880723" data-format="compact">13.88M</span>
+                    <span class="stat-label">cells in prepared corpus</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value" data-count="3653986724" data-format="compact">3.65B</span>
+                    <span class="stat-label">retained RNA molecules</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value" data-count="8">8</span>
+                    <span class="stat-label">evaluated baselines</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value" data-count="608">608</span>
+                    <span class="stat-label">completed runs</span>
+                </div>
+            </div>
+        </div>
 
-        <section class="section section-editorial" id="overview">
+        <section class="section section-white section-editorial" id="overview">
             <div class="page-shell editorial-grid">
                 <div class="section-heading">
                     <h2>A cell is more than a vector.</h2>
@@ -195,7 +195,7 @@
                             <path d="M92 72V316H358 M542 72V316H808" />
                             <path d="M92 256H358M92 196H358M92 136H358M542 256H808M542 196H808M542 136H808"
                                 stroke-dasharray="3 7" opacity=".55" />
-                            <g fill="var(--muted)" stroke="none" font-family="Source Sans 3, sans-serif" font-size="12"
+                            <g fill="var(--muted)" stroke="none" font-family="Inter, sans-serif" font-size="12"
                                 text-anchor="middle">
                                 <text x="132" y="340">Gene A</text><text x="198" y="340">Gene B</text>
                                 <text x="264" y="340">Gene C</text><text x="330" y="340">Gene D</text>
@@ -203,9 +203,9 @@
                                 <text x="714" y="340">Gene C</text><text x="780" y="340">Gene D</text>
                                 <text transform="translate(68 205) rotate(-90)">RNA count</text>
                                 <text transform="translate(518 205) rotate(-90)">RNA count</text>
-                                <text x="225" y="48" font-family="Source Sans 3, sans-serif" font-size="10"
+                                <text x="225" y="48" font-family="Inter, sans-serif" font-size="10"
                                     font-weight="600" letter-spacing="1.4">SOURCE</text>
-                                <text x="675" y="48" font-family="Source Sans 3, sans-serif" font-size="10"
+                                <text x="675" y="48" font-family="Inter, sans-serif" font-size="10"
                                     font-weight="600" letter-spacing="1.4">PERTURBED</text>
                             </g>
                         </g>
@@ -221,7 +221,7 @@
                         <g data-morph-arrow>
                             <rect x="385" y="116" width="130" height="34" rx="17" fill="var(--surface)" stroke="var(--line)" />
                             <text x="450" y="138" text-anchor="middle" fill="var(--primary-dark)"
-                                font-family="Source Sans 3, sans-serif" font-size="11"
+                                font-family="Inter, sans-serif" font-size="11"
                                 font-weight="600">PERTURBATION</text>
                             <path d="M390 202H510" fill="none" stroke="var(--primary)" stroke-width="3" stroke-dasharray="8 6"
                                 marker-end="url(#morphArrowHead)" />
@@ -238,7 +238,7 @@
                         <g data-morph-source-dots></g>
                         <g data-morph-target-dots></g>
 
-                        <g data-morph-cell-labels fill="var(--muted)" font-family="Source Sans 3, sans-serif" font-size="14"
+                        <g data-morph-cell-labels fill="var(--muted)" font-family="Inter, sans-serif" font-size="14"
                             text-anchor="middle" opacity="0">
                             <text x="220" y="382">Source cell · observed RNA coordinates</text>
                             <text x="680" y="382">Perturbed cell · predicted RNA coordinates</text>
@@ -257,7 +257,7 @@
 
         </section>
 
-        <section class="section benchmark-section" id="benchmark">
+        <section class="section section-wash benchmark-section" id="benchmark">
             <div class="page-shell">
                 <div class="split-heading">
                     <div>
@@ -379,7 +379,7 @@
             </div>
         </section>
 
-        <section class="section observations-section" id="statistics">
+        <section class="section section-white observations-section" id="statistics">
             <div class="page-shell">
                 <div class="split-heading">
                     <div>
@@ -480,7 +480,7 @@
             </div>
         </section>
 
-        <section class="section dataset-results-section" id="results">
+        <section class="section section-wash dataset-results-section" id="results">
             <div class="page-shell">
                 <div class="split-heading">
                     <div>
