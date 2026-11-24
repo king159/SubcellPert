@@ -17,7 +17,7 @@
     if (!menuButton || !navigation) return;
     const wasOpen = menuButton.getAttribute("aria-expanded") === "true";
     menuButton.setAttribute("aria-expanded", "false");
-    menuButton.setAttribute("aria-label", "Open navigation");
+    menuButton.setAttribute("aria-label", "Open menu");
     navigation.classList.remove("is-open");
     document.body.classList.remove("menu-open");
     navigation.inert = mobileNavigation.matches;
@@ -29,7 +29,7 @@
   menuButton?.addEventListener("click", () => {
     const opening = menuButton.getAttribute("aria-expanded") !== "true";
     menuButton.setAttribute("aria-expanded", String(opening));
-    menuButton.setAttribute("aria-label", opening ? "Close navigation" : "Open navigation");
+    menuButton.setAttribute("aria-label", opening ? "Close menu" : "Open menu");
     navigation?.classList.toggle("is-open", opening);
     document.body.classList.toggle("menu-open", opening);
     if (navigation) {
@@ -114,8 +114,6 @@
     const cellLabels = morph.querySelector("[data-morph-cell-labels]");
     const arrow = morph.querySelector("[data-morph-arrow]");
     const arrowPath = arrow?.querySelector("path");
-    const countLabel = morph.querySelector("[data-count-label]");
-    const spaceLabel = morph.querySelector("[data-space-label]");
     const motionPreference = window.matchMedia("(prefers-reduced-motion: reduce)");
     const particles = [];
 
@@ -193,8 +191,6 @@
       cellLabels?.setAttribute("opacity", String(progress));
       arrow?.setAttribute("opacity", String(.55 + arrowProgress * .45));
       if (arrowPath) arrowPath.style.strokeDashoffset = String(32 * (1 - arrowProgress));
-      if (countLabel) countLabel.style.opacity = String(1 - progress * .55);
-      if (spaceLabel) spaceLabel.style.opacity = String(.45 + progress * .55);
       particles.forEach(({ dot, start, target, delay, drift }) => {
         const t = ease(clamp((elapsed - 1400 - delay) / 3400));
         const arc = Math.sin(Math.PI * t);
@@ -278,17 +274,13 @@
   const figureDialog = document.querySelector("[data-figure-dialog]");
   const openFigureButton = document.querySelector("[data-open-figure]");
   const closeFigureButton = document.querySelector("[data-close-figure]");
-  const openFigure = () => {
-    if (!figureDialog) return;
-    if (typeof figureDialog.showModal === "function") figureDialog.showModal();
-    else figureDialog.setAttribute("open", "");
-  };
-  const closeFigure = () => {
-    if (!figureDialog) return;
-    if (typeof figureDialog.close === "function") figureDialog.close();
-    else figureDialog.removeAttribute("open");
-  };
-  openFigureButton?.addEventListener("click", openFigure);
+  openFigureButton?.addEventListener("click", (event) => {
+    if (typeof figureDialog?.showModal !== "function" || event.ctrlKey || event.metaKey ||
+        event.shiftKey || event.altKey) return;
+    event.preventDefault();
+    figureDialog.showModal();
+  });
+  const closeFigure = () => figureDialog?.close();
   closeFigureButton?.addEventListener("click", closeFigure);
   figureDialog?.addEventListener("click", (event) => {
     if (event.target === figureDialog) closeFigure();

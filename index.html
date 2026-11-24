@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description"
         content="SubcellPert benchmarks perturbation-response prediction across 14 imaging datasets and eight baselines, extending virtual cell evaluation from gene counts to intracellular RNA organization." />
-    <meta name="theme-color" content="#f4f0e8" />
+    <meta name="theme-color" content="#263943" />
     <meta property="og:title" content="SubcellPert" />
     <meta property="og:description" content="SubcellPert benchmarks perturbation-response prediction across 14 imaging datasets and eight baselines, extending virtual cell evaluation from gene counts to intracellular RNA organization." />
     <meta property="og:type" content="website" />
@@ -14,15 +14,12 @@
     <meta property="og:image" content="https://personal-page.wjh.app/SubcellPert/img/subcellpert-overview.svg" />
     <link rel="canonical" href="https://personal-page.wjh.app/SubcellPert/" />
     <title>SubcellPert · Subcellular Perturbation Prediction</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;family=Playfair+Display:ital,wght@0,600;0,700;1,600&amp;display=swap"
-        rel="stylesheet" />
+    <link rel="preload" href="css/fonts/newsreader.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="stylesheet" href="css/site.css" />
     <link rel="stylesheet" href="css/boreas-gradient.css" />
     <script src="js/results-data.js" defer></script>
     <script src="js/site.js" defer></script>
+    <noscript><style>.menu-toggle, .filter-bar, .rna-morph > svg, .rna-morph-steps, .rna-morph-legend { display: none; }</style></noscript>
 </head>
 
 <body>
@@ -41,9 +38,9 @@
                 <span>SubcellPert</span>
             </a>
 
-            <button class="menu-toggle" type="button" aria-label="Open navigation" aria-controls="site-nav"
+            <button class="menu-toggle" type="button" aria-label="Open menu" aria-controls="site-nav"
                 aria-expanded="false" data-menu-toggle>
-                <span></span><span></span>
+                <span>Menu</span><span class="menu-lines" aria-hidden="true"></span>
             </button>
 
             <nav class="site-nav" id="site-nav" aria-label="Primary navigation" data-nav>
@@ -52,22 +49,37 @@
                 <a href="#statistics">Statistics</a>
                 <a href="#results">Results</a>
                 <a class="nav-code" href="https://github.com/king159/SubcellPert" target="_blank"
-                    rel="noreferrer">Code</a>
+                    rel="noreferrer">Code <span aria-hidden="true">↗</span></a>
             </nav>
         </div>
     </header>
 
     <main id="main-content">
         <section class="hero" id="top">
-            <div class="hero-orb hero-orb-one" aria-hidden="true"></div>
-            <div class="hero-orb hero-orb-two" aria-hidden="true"></div>
             <div class="hero-grid page-shell">
                 <div class="hero-copy">
-                    <h1>
-                        SubcellPert<br />
-                        <em>Benchmarking Subcellular Perturbation Prediction</em>
-                    </h1>
-                    <span class="mono-label">AUTHORS &amp; AFFILIATIONS</span>
+                    <h1>SubcellPert</h1>
+                    <p class="paper-title">Benchmarking Subcellular Perturbation Prediction</p>
+                    <p class="hero-deck">SubcellPert extends virtual cell evaluation from gene counts to intracellular RNA organization, benchmarking perturbation-response prediction across 14 imaging datasets and eight baselines.</p>
+                    <nav class="hero-actions" aria-label="Project resources">
+                        <a class="button paper-link" href="https://www.biorxiv.org/content/10.64898/2026.10.11.758305v1" target="_blank" rel="noreferrer">Read the paper <span aria-hidden="true">↗</span></a>
+                        <a href="https://github.com/king159/SubcellPert" target="_blank" rel="noreferrer">Code <span aria-hidden="true">↗</span></a>
+                        <a href="https://huggingface.co/datasets/king159/SubcellPert" target="_blank" rel="noreferrer">Dataset <span aria-hidden="true">↗</span></a>
+                        <a href="#results">Explore results <span aria-hidden="true">↓</span></a>
+                    </nav>
+                </div>
+                <figure class="hero-art">
+                    <a href="img/waterhouse-boreas.jpg" target="_blank" rel="noreferrer"
+                        aria-label="View the full painting, Boreas by John William Waterhouse">
+                        <img src="img/waterhouse-boreas-560.webp"
+                            srcset="img/waterhouse-boreas-560.webp 560w, img/waterhouse-boreas-850.webp 850w"
+                            sizes="(max-width: 730px) 91vw, (max-width: 1400px) 36vw, 475px"
+                            width="853" height="1200" fetchpriority="high"
+                            alt="A woman wraps herself in wind-blown blue-grey drapery in Waterhouse’s Boreas." />
+                    </a>
+                    <figcaption><span><cite>Boreas</cite>, 1903</span><span>John William Waterhouse</span></figcaption>
+                </figure>
+                <div class="paper-credit">
                     <p class="paper-authors">
                         <a href="https://personal-page.wjh.app/" target="_blank" rel="noreferrer">Jinghao
                             Wang<sup>1</sup></a>
@@ -86,41 +98,19 @@
                         <a href="https://appsrv.cse.cuhk.edu.hk/~pheng/index.php" target="_blank"
                             rel="noreferrer">Pheng Ann Heng<sup>1</sup></a>
                     </p>
-                    <p class="paper-affiliations">
-                        <span><sup>1</sup> The Chinese University of Hong Kong</span>
-                        <span><sup>2</sup> Duke University</span>
-                        <span><sup>3</sup> Zhejiang University</span>
-                        <span><sup>4</sup> Shanghai Innovation Institute</span>
-                    </p>
-                    <p class="paper-contact">
-                        <a href="mailto:jinghao.w@link.cuhk.edu.hk">jinghao.w@link.cuhk.edu.hk</a>
-                        <span></a>
-                    </p>
-                    <p class="hero-deck">
-                        SubcellPert benchmarks perturbation-response prediction across 14 imaging datasets and eight baselines, <strong>extending virtual cell evaluation from gene counts to intracellular RNA organization.</strong>
-                    </p>
-
-                    <nav class="hero-actions" aria-label="Project resources">
-                        <a class="button button-outline" aria-disabled="true" href="https://www.biorxiv.org/content/10.64898/2026.10.11.758305v1"><span class="biorxiv-icon"></span><span>Paper</span><small>bioRxiv</small></a>
-                        <a class="button button-outline" href="https://github.com/king159/SubcellPert" target="_blank"
-                            rel="noreferrer"><svg class="github-icon" viewBox="0 0 24 24" aria-hidden="true">
-                                <path d="M9 19c-4 1-4-2-6-2m12 5v-4a3.5 3.5 0 0 0-1-3c4 0 6-2 6-5a4 4 0 0 0-1-3 4 4 0 0 0 0-4s-2 0-4 2a14 14 0 0 0-6 0C7 3 5 3 5 3a4 4 0 0 0 0 4 4 4 0 0 0-1 3c0 3 2 5 6 5a3.5 3.5 0 0 0-1 3v4" />
-                            </svg><span>Code</span><small>GitHub</small></a>
-                        <a class="button button-outline" href="https://huggingface.co/datasets/king159/SubcellPert"
-                            target="_blank" rel="noreferrer"><img class="resource-icon-image" src="img/huggingface.svg" width="17" height="17" alt="" />Dataset <small>Hugging Face</small></a>
-                        <a class="button button-outline" href="#results">Explore results <span aria-hidden="true">↗</span></a>
-                    </nav>
+                    <details class="affiliation-details">
+                        <summary>Affiliations and contact</summary>
+                        <p class="paper-affiliations">
+                            <span><sup>1</sup> The Chinese University of Hong Kong</span>
+                            <span><sup>2</sup> Duke University</span>
+                            <span><sup>3</sup> Zhejiang University</span>
+                            <span><sup>4</sup> Shanghai Innovation Institute</span>
+                        </p>
+                        <a class="paper-contact" href="mailto:jinghao.w@link.cuhk.edu.hk">jinghao.w@link.cuhk.edu.hk</a>
+                    </details>
                 </div>
-                <figure class="hero-art">
-                    <a href="img/waterhouse-boreas.jpg" target="_blank" rel="noreferrer"
-                        aria-label="View the full painting, Boreas by John William Waterhouse">
-                        <img src="img/waterhouse-boreas.jpg" width="853" height="1200" fetchpriority="high"
-                            alt="A woman wraps herself in wind-blown blue-grey drapery in Waterhouse’s Boreas." />
-                    </a>
-                    <figcaption>
-                        Boreas, 1903 · John William Waterhouse
-                    </figcaption>
-                </figure>
+            </div>
+            <div class="corpus-summary">
                 <div class="stat-rail page-shell">
                     <div class="stat-item">
                         <span class="stat-value" data-count="14">14</span>
@@ -149,7 +139,6 @@
         <section class="section section-editorial" id="overview">
             <div class="page-shell editorial-grid">
                 <div class="section-heading">
-                    <div class="eyebrow"><span></span> The missing prediction object</div>
                     <h2>A cell is more than a vector.</h2>
                 </div>
                 <div class="editorial-copy">
@@ -167,14 +156,13 @@
             <div class="page-shell">
                 <figure class="rna-morph" data-rna-morph>
                     <div class="rna-morph-heading">
-                        <div><span class="mono-label">FROM COUNTS TO COORDINATES</span>
-                            <h3>The same perturbation response. A new dimension.</h3>
-                        </div>
+                        <h3>From gene counts to RNA coordinates</h3>
+                        <a class="figure-link" href="img/subcellpert-overview.svg" data-open-figure>View benchmark figure <span aria-hidden="true">⤢</span></a>
                     </div>
                     <div class="rna-morph-steps" aria-hidden="true">
-                        <span data-count-label>01 · Perturbation prediction<small>Gene abundance only</small></span>
+                        <span>Perturbation prediction<small>Gene abundance only</small></span>
                         <span class="rna-morph-step-arrow">→</span>
-                        <span data-space-label>02 · Subcellular Perturbation prediction<small>Gene abundance + RNA
+                        <span>Subcellular perturbation prediction<small>Gene abundance + RNA
                                 coordinates</small></span>
                     </div>
                     <svg viewBox="0 0 900 410" role="img" aria-labelledby="rna-morph-title rna-morph-desc">
@@ -207,7 +195,7 @@
                             <path d="M92 72V316H358 M542 72V316H808" />
                             <path d="M92 256H358M92 196H358M92 136H358M542 256H808M542 196H808M542 136H808"
                                 stroke-dasharray="3 7" opacity=".55" />
-                            <g fill="var(--muted)" stroke="none" font-family="Inter, sans-serif" font-size="12"
+                            <g fill="var(--muted)" stroke="none" font-family="Source Sans 3, sans-serif" font-size="12"
                                 text-anchor="middle">
                                 <text x="132" y="340">Gene A</text><text x="198" y="340">Gene B</text>
                                 <text x="264" y="340">Gene C</text><text x="330" y="340">Gene D</text>
@@ -215,9 +203,9 @@
                                 <text x="714" y="340">Gene C</text><text x="780" y="340">Gene D</text>
                                 <text transform="translate(68 205) rotate(-90)">RNA count</text>
                                 <text transform="translate(518 205) rotate(-90)">RNA count</text>
-                                <text x="225" y="48" font-family="JetBrains Mono, monospace" font-size="10"
+                                <text x="225" y="48" font-family="Source Sans 3, sans-serif" font-size="10"
                                     font-weight="600" letter-spacing="1.4">SOURCE</text>
-                                <text x="675" y="48" font-family="JetBrains Mono, monospace" font-size="10"
+                                <text x="675" y="48" font-family="Source Sans 3, sans-serif" font-size="10"
                                     font-weight="600" letter-spacing="1.4">PERTURBED</text>
                             </g>
                         </g>
@@ -233,7 +221,7 @@
                         <g data-morph-arrow>
                             <rect x="385" y="116" width="130" height="34" rx="17" fill="var(--surface)" stroke="var(--line)" />
                             <text x="450" y="138" text-anchor="middle" fill="var(--primary-dark)"
-                                font-family="JetBrains Mono, monospace" font-size="11"
+                                font-family="Source Sans 3, sans-serif" font-size="11"
                                 font-weight="600">PERTURBATION</text>
                             <path d="M390 202H510" fill="none" stroke="var(--primary)" stroke-width="3" stroke-dasharray="8 6"
                                 marker-end="url(#morphArrowHead)" />
@@ -250,19 +238,19 @@
                         <g data-morph-source-dots></g>
                         <g data-morph-target-dots></g>
 
-                        <g data-morph-cell-labels fill="var(--muted)" font-family="Inter, sans-serif" font-size="14"
+                        <g data-morph-cell-labels fill="var(--muted)" font-family="Source Sans 3, sans-serif" font-size="14"
                             text-anchor="middle" opacity="0">
                             <text x="220" y="382">Source cell · observed RNA coordinates</text>
                             <text x="680" y="382">Perturbed cell · predicted RNA coordinates</text>
                         </g>
                     </svg>
+                    <noscript><img src="img/subcellpert-overview.svg" alt="SubcellPert benchmark overview" loading="lazy" /></noscript>
                     <figcaption>
                         <div class="rna-morph-legend"><span><i style="--gene-color:var(--gene-a)"></i>Gene A</span><span><i
                                     style="--gene-color:var(--gene-b)"></i>Gene B</span><span><i
                                     style="--gene-color:var(--gene-c)"></i>Gene C</span><span><i
                                     style="--gene-color:var(--gene-d)"></i>Gene D</span></div>
-                        <p>One dot = one RNA molecule. Color marks gene identity; perturbation changes abundance and
-                            intracellular organization.</p>
+                        <p>Each dot represents one RNA molecule. Color indicates gene identity.</p>
                     </figcaption>
                 </figure>
             </div>
@@ -273,8 +261,7 @@
             <div class="page-shell">
                 <div class="split-heading">
                     <div>
-                        <div class="eyebrow"><span></span> The benchmark corpus</div>
-                        <h2>Benchmark</h2>
+                        <h2>Benchmark datasets</h2>
                     </div>
                     <p>
                         Three datasets evaluate perturbation OOD; eleven evaluate cellular-context OOD.
@@ -291,80 +278,80 @@
 
                 <div class="dataset-grid" data-dataset-grid>
                     <div class="dataset-group-heading" data-track-heading="perturbation">
-                        <span class="dataset-group-index">3 DATASETS</span>
+                        <span class="dataset-group-index">3 datasets</span>
                         <div><strong>Perturbation-OOD</strong><p>Unseen intervention identities and registered combination stress tests.</p></div>
                     </div>
                     <article class="dataset-card" data-track="perturbation" data-dataset="perturbfish_astrocytes">
-                        <div class="dataset-top"><h3><span class="dataset-id">01</span>PF-Astro</h3><span class="dataset-tissue" title="Organ / tissue">Brain</span></div>
+                        <div class="dataset-top"><h3>PF-Astro</h3><span class="dataset-tissue" title="Organ / tissue">Brain</span></div>
                         <p>Brain-derived astrocyte culture; single-guide CRISPRi.</p>
                         <dl><div><dt>RNA</dt><dd>10,670,839</dd></div><div><dt>Cells</dt><dd>11,454</dd></div><div><dt>Genes</dt><dd>485</dd></div></dl>
                     </article>
                     <article class="dataset-card" data-track="perturbation" data-dataset="gse246584_atm_radiation_xenium">
-                        <div class="dataset-top"><h3><span class="dataset-id">02</span>ATM-RT</h3><span class="dataset-tissue" title="Organ / tissue">Brain</span></div>
+                        <div class="dataset-top"><h3>ATM-RT</h3><span class="dataset-tissue" title="Organ / tissue">Brain</span></div>
                         <p>Diffuse midline glioma; ATM loss and focal radiotherapy.</p>
                         <dl><div><dt>RNA</dt><dd>147,722,071</dd></div><div><dt>Cells</dt><dd>790,166</dd></div><div><dt>Genes</dt><dd>298</dd></div></dl>
                     </article>
                     <article class="dataset-card" data-track="perturbation" data-dataset="gse285341_ddx54_pd1_xenium">
-                        <div class="dataset-top"><h3><span class="dataset-id">03</span>Ddx54-PD1</h3><span class="dataset-tissue" title="Organ / tissue">Lung</span></div>
+                        <div class="dataset-top"><h3>Ddx54-PD1</h3><span class="dataset-tissue" title="Organ / tissue">Lung</span></div>
                         <p>Lung-tumor model; Ddx54 knockdown and anti-PD-1 antibody.</p>
                         <dl><div><dt>RNA</dt><dd>494,265,984</dd></div><div><dt>Cells</dt><dd>1,155,233</dd></div><div><dt>Genes</dt><dd>5,006</dd></div></dl>
                     </article>
                     <div class="dataset-group-heading" data-track-heading="context">
-                        <span class="dataset-group-index">11 DATASETS</span>
+                        <span class="dataset-group-index">11 datasets</span>
                         <div><strong>Context-OOD</strong><p>Known responses evaluated in held-out cellular contexts.</p></div>
                     </div>
                     <article class="dataset-card" data-track="context" data-dataset="gse325253_lung_drug_xenium">
-                        <div class="dataset-top"><h3><span class="dataset-id">04</span>Lung-Drug</h3><span class="dataset-tissue" title="Organ / tissue">Lung</span></div>
+                        <div class="dataset-top"><h3>Lung-Drug</h3><span class="dataset-tissue" title="Organ / tissue">Lung</span></div>
                         <p>Formal drug family only: AZD3965 and VB124 added after bleomycin.</p>
                         <dl><div><dt>RNA</dt><dd>681,015,170</dd></div><div><dt>Cells</dt><dd>1,561,700</dd></div><div><dt>Genes</dt><dd>5,006</dd></div></dl>
                     </article>
                     <article class="dataset-card" data-track="context" data-dataset="merfish_sickness">
-                        <div class="dataset-top"><h3><span class="dataset-id">05</span>Sickness</h3><span class="dataset-tissue" title="Organ / tissue">Brain</span></div>
+                        <div class="dataset-top"><h3>Sickness</h3><span class="dataset-tissue" title="Organ / tissue">Brain</span></div>
                         <p>Hypothalamus; DSS chemical challenge and LPS/poly(I:C)/PLA2/STAg immune stimuli.</p>
                         <dl><div><dt>RNA</dt><dd>1,101,298,121</dd></div><div><dt>Cells</dt><dd>1,765,443</dd></div><div><dt>Genes</dt><dd>941</dd></div></dl>
                     </article>
                     <article class="dataset-card" data-track="context" data-dataset="dss_colitis_merfish">
-                        <div class="dataset-top"><h3><span class="dataset-id">06</span>DSS-Colitis</h3><span class="dataset-tissue" title="Organ / tissue">Intestine</span></div>
+                        <div class="dataset-top"><h3>DSS-Colitis</h3><span class="dataset-tissue" title="Organ / tissue">Intestine</span></div>
                         <p>Colon; DSS-induced colitis and recovery.</p>
                         <dl><div><dt>RNA</dt><dd>119,553,365</dd></div><div><dt>Cells</dt><dd>1,439,542</dd></div><div><dt>Genes</dt><dd>940</dd></div></dl>
                     </article>
                     <article class="dataset-card" data-track="context" data-dataset="gse295862_adipose_weightloss_xenium">
-                        <div class="dataset-top"><h3><span class="dataset-id">07</span>Adipose</h3><span class="dataset-tissue" title="Organ / tissue">Adipose</span></div>
+                        <div class="dataset-top"><h3>Adipose</h3><span class="dataset-tissue" title="Organ / tissue">Adipose</span></div>
                         <p>Subcutaneous adipose before and after bariatric-surgery-associated weight loss.</p>
                         <dl><div><dt>RNA</dt><dd>1,907,755</dd></div><div><dt>Cells</dt><dd>13,972</dd></div><div><dt>Genes</dt><dd>477</dd></div></dl>
                     </article>
                     <article class="dataset-card" data-track="context" data-dataset="uc_vedolizumab_cosmx">
-                        <div class="dataset-top"><h3><span class="dataset-id">08</span>UC-VDZ</h3><span class="dataset-tissue" title="Organ / tissue">Intestine</span></div>
+                        <div class="dataset-top"><h3>UC-VDZ</h3><span class="dataset-tissue" title="Organ / tissue">Intestine</span></div>
                         <p>Colon; vedolizumab antibody treatment.</p>
                         <dl><div><dt>RNA</dt><dd>19,552,710</dd></div><div><dt>Cells</dt><dd>80,562</dd></div><div><dt>Genes</dt><dd>1,000</dd></div></dl>
                     </article>
                     <article class="dataset-card" data-track="context" data-dataset="gse269719_kidney_iri_xenium">
-                        <div class="dataset-top"><h3><span class="dataset-id">09</span>Kidney-IRI</h3><span class="dataset-tissue" title="Organ / tissue">Kidney</span></div>
+                        <div class="dataset-top"><h3>Kidney-IRI</h3><span class="dataset-tissue" title="Organ / tissue">Kidney</span></div>
                         <p>Kidney; surgical ischemia-reperfusion injury.</p>
                         <dl><div><dt>RNA</dt><dd>168,519,194</dd></div><div><dt>Cells</dt><dd>1,374,915</dd></div><div><dt>Genes</dt><dd>300</dd></div></dl>
                     </article>
                     <article class="dataset-card" data-track="context" data-dataset="gut_microbiota_merfish">
-                        <div class="dataset-top"><h3><span class="dataset-id">10</span>Gut-Microbiota</h3><span class="dataset-tissue" title="Organ / tissue">Intestine</span></div>
+                        <div class="dataset-top"><h3>Gut-Microbiota</h3><span class="dataset-tissue" title="Organ / tissue">Intestine</span></div>
                         <p>Small-intestine and colon regions; SPF to germ-free condition.</p>
                         <dl><div><dt>RNA</dt><dd>189,197,264</dd></div><div><dt>Cells</dt><dd>2,057,563</dd></div><div><dt>Genes</dt><dd>1,815</dd></div></dl>
                     </article>
                     <article class="dataset-card" data-track="context" data-dataset="gse280376_cardiac_repair_xenium">
-                        <div class="dataset-top"><h3><span class="dataset-id">11</span>Cardiac-MI</h3><span class="dataset-tissue" title="Organ / tissue">Heart</span></div>
+                        <div class="dataset-top"><h3>Cardiac-MI</h3><span class="dataset-tissue" title="Organ / tissue">Heart</span></div>
                         <p>Heart; myocardial infarction induced by surgical coronary ligation.</p>
                         <dl><div><dt>RNA</dt><dd>61,134,068</dd></div><div><dt>Cells</dt><dd>225,023</dd></div><div><dt>Genes</dt><dd>475</dd></div></dl>
                     </article>
                     <article class="dataset-card" data-track="context" data-dataset="gse296517_breast_fus_cosmx">
-                        <div class="dataset-top"><h3><span class="dataset-id">12</span>Breast-FUS</h3><span class="dataset-tissue" title="Organ / tissue">Breast</span></div>
+                        <div class="dataset-top"><h3>Breast-FUS</h3><span class="dataset-tissue" title="Organ / tissue">Breast</span></div>
                         <p>Breast cancer; focused ultrasound with or without gemcitabine.</p>
                         <dl><div><dt>RNA</dt><dd>102,102,171</dd></div><div><dt>Cells</dt><dd>880,565</dd></div><div><dt>Genes</dt><dd>1,000</dd></div></dl>
                     </article>
                     <article class="dataset-card" data-track="context" data-dataset="gse296577_gbm_ohsv_xenium">
-                        <div class="dataset-top"><h3><span class="dataset-id">13</span>GBM-oHSV</h3><span class="dataset-tissue" title="Organ / tissue">Brain</span></div>
+                        <div class="dataset-top"><h3>GBM-oHSV</h3><span class="dataset-tissue" title="Organ / tissue">Brain</span></div>
                         <p>Glioblastoma; oncolytic HSV treatment-associated recurrence.</p>
                         <dl><div><dt>RNA</dt><dd>520,974,197</dd></div><div><dt>Cells</dt><dd>2,401,940</dd></div><div><dt>Genes</dt><dd>480</dd></div></dl>
                     </article>
                     <article class="dataset-card" data-track="context" data-dataset="gse291460_spinal_ko_xenium">
-                        <div class="dataset-top"><h3><span class="dataset-id">14</span>Spinal-KO</h3><span class="dataset-tissue" title="Organ / tissue">Spinal cord</span></div>
+                        <div class="dataset-top"><h3>Spinal-KO</h3><span class="dataset-tissue" title="Organ / tissue">Spinal cord</span></div>
                         <p>Spinal cord; four developmental knockout responses.</p>
                         <dl><div><dt>RNA</dt><dd>36,073,815</dd></div><div><dt>Cells</dt><dd>122,645</dd></div><div><dt>Genes</dt><dd>347</dd></div></dl>
                     </article>
@@ -373,13 +360,13 @@
                     <h3>Evaluation</h3>
                     <div class="evaluation-pair">
                         <article>
-                            <span class="mono-label">TARGET COUNTS GIVEN</span>
+                            <span class="mono-label">Target counts given</span>
                             <h4>Oracle</h4>
                             <p><strong>Spatial W1 ↓</strong> measures RNA localization error
                                 with exact target counts supplied.</p>
                         </article>
                         <article>
-                            <span class="mono-label">COUNTS + COORDINATES PREDICTED</span>
+                            <span class="mono-label">Counts and coordinates predicted</span>
                             <h4>Joint</h4>
                             <p><strong>MSE ↓</strong> and <strong>PCC-delta ↑</strong> measure abundance.
                                 <strong>Spatial W1 ↓</strong> measures localization on recovered genes,
@@ -396,7 +383,6 @@
             <div class="page-shell">
                 <div class="split-heading">
                     <div>
-                        <div class="eyebrow"><span></span> Inside the datasets</div>
                         <h2>Within-dataset statistics</h2>
                     </div>
                     <p>Observed RNA responses reveal how abundance, spatial organization,
@@ -453,7 +439,7 @@
                     </div>
                 </div>
                 <details class="decoding-details">
-                    <summary>Condition-decoding statistics · all 14 datasets</summary>
+                    <summary>Condition-decoding statistics for all 14 datasets</summary>
                     <div class="decoding-intro">
                         <p>Adding spatial principal components (PCs) to abundance features; identical three
                             stratified cell splits, λ = 1. Gains are medians of context-level mean
@@ -498,8 +484,7 @@
             <div class="page-shell">
                 <div class="split-heading">
                     <div>
-                        <div class="eyebrow"><span></span> Every dataset · every baseline · every metric</div>
-                        <h2>Results</h2>
+                        <h2>Explore the results</h2>
                     </div>
                     <p>608 runs across 14 datasets and eight baselines.
                         Compare all-gene and top-100 DEG scores.</p>
@@ -600,7 +585,7 @@
                 <p>SubcellPert: Benchmarking Subcellular Perturbation Prediction</p>
             </div>
             <div class="footer-authors">
-                <span class="footer-label">AUTHORS</span>
+                <span class="footer-label">Authors</span>
                 <p>
                     <a href="https://personal-page.wjh.app/" target="_blank" rel="noreferrer">Jinghao Wang</a>,
                     <a href="https://chq1155.github.io/" target="_blank" rel="noreferrer">Hanqun Cao</a>,
@@ -618,22 +603,23 @@
                 <small>The Chinese University of Hong Kong · Duke University · Zhejiang University · Shanghai Innovation Institute</small>
             </div>
             <div class="footer-links">
-                <span class="footer-label">PROJECT</span>
+                <span class="footer-label">Project</span>
                 <a href="#overview">Overview</a><a href="#benchmark">Benchmark</a><a href="#statistics">Statistics</a><a href="#results">Results</a><a
                     href="https://github.com/king159/SubcellPert" target="_blank" rel="noreferrer">Code</a>
             </div>
         </div>
         <div class="page-shell footer-bottom">
             <span>© <span data-year>2026</span> SubcellPert authors</span>
-            <span>Built for transparent, molecule-level evaluation.</span>
+            <a href="#top">Back to top <span aria-hidden="true">↑</span></a>
         </div>
     </footer>
 
     <dialog class="figure-dialog" aria-labelledby="figure-dialog-title" data-figure-dialog>
         <button type="button" class="dialog-close" data-close-figure aria-label="Close figure">×</button>
         <h2 class="visually-hidden" id="figure-dialog-title">SubcellPert benchmark overview</h2>
-        <img src="img/subcellpert-overview.svg" alt="Expanded SubcellPert benchmark overview" />
+        <img loading="lazy" src="img/subcellpert-overview.svg" alt="Expanded SubcellPert benchmark overview" />
         <p>SubcellPert benchmark overview: 14 active datasets, eight evaluated baselines, and two evaluation modes.
+            <a href="img/subcellpert-overview.svg" target="_blank" rel="noreferrer">Open full-size figure</a>
         </p>
     </dialog>
 
