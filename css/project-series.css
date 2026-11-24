@@ -69,14 +69,11 @@ html { scroll-padding-top: calc(var(--header-height) + 24px); }
 .paper-title { display: block; max-width: 24em; font-size: clamp(1.5rem, 2.25vw, 2.12rem); letter-spacing: -.042em; text-wrap: balance; }
 .hero-deck { max-width: 52ch; margin-top: 19px; color: var(--cover-muted); font-size: 1rem; line-height: 1.65; }
 .hero-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
-.hero-actions .button, .results-jump { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 44px; font: 550 .82rem/1.4 var(--sans); text-decoration: none; }
-.hero-actions .button { padding: 10px 15px; border: 1px solid var(--cover-rule); border-radius: 5px; color: var(--cover-ink); background: transparent; }
+.hero-actions .button { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 44px; font: 550 .82rem/1.4 var(--sans); text-decoration: none; padding: 10px 15px; border: 1px solid var(--cover-rule); border-radius: 5px; color: var(--cover-ink); background: transparent; }
 .hero-actions .button:hover { background: var(--cover-hover); }
 .hero-actions .button-primary { color: var(--cover-button-ink); background: var(--cover-button); border-color: var(--cover-button); }
 .hero-actions .button-primary:hover { color: var(--cover-button-ink); background: var(--cover-accent); border-color: var(--cover-accent); }
 .hero-actions .button svg { width: 17px; height: 17px; }
-.results-jump { padding-inline: 9px; color: var(--cover-muted); font-weight: 450; }
-.results-jump:hover { color: var(--cover-accent); text-decoration: underline; text-underline-offset: 4px; }
 .paper-status { color: var(--cover-muted); font-size: .79rem; }
 .hero-meta { grid-area: meta; align-self: start; padding-top: 20px; border-top: 1px solid var(--cover-rule); }
 .paper-authors, .paper-affiliations, .paper-contact { display: flex; flex-wrap: wrap; align-items: baseline; }
@@ -135,7 +132,6 @@ html { scroll-padding-top: calc(var(--header-height) + 24px); }
 }
 @media (max-width: 590px) {
   .paper-affiliations, .paper-contact { font-size: .79rem; }
-  .results-jump { padding-inline: 2px; }
   .metric-picker button, .panel-picker button { padding: 8px 10px; font-size: .8rem; }
 }
 @media print {
