@@ -1,0 +1,14 @@
+.hero-art > a {
+  position: relative;
+  isolation: isolate;
+  overflow: visible;
+}
+
+.hero-art > a::before {
+  position: absolute;
+  inset: 8px -8px -8px 8px;
+  z-index: -1;
+  pointer-events: none;
+  content: "";
+  background: linear-gradient(140deg, var(--primary), var(--green) 55%, var(--rose));
+}
